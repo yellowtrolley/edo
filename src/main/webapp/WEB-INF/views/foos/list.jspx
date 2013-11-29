@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_it_verding_edo_model_Foo" items="${foos}" z="tKWJC0LTdeyZjy4ed9mFpP5uOuw=">
+        <table:table data="${foos}" id="l_it_verding_edo_model_Foo" path="/foos" z="E1UHN2lpXbcr3IJwAnX+8qLSuwk=">
+            <table:column id="c_it_verding_edo_model_Foo_string" property="string" z="1B0xCUYheY2VioBdEd4WxtJZbZY="/>
+            <table:column id="c_it_verding_edo_model_Foo_integer" property="integer" z="zV03rWVuHmu4nxOX7T9I8VETysA="/>
+            <table:column id="c_it_verding_edo_model_Foo_bigdecimal" property="bigdecimal" z="REeZnkRtzV42rQ7cphaByMaRXgU="/>
+            <table:column id="c_it_verding_edo_model_Foo_bar" property="bar" z="BWaaeVchsyaUB1sgkq1L3nZPwtI="/>
+            <table:column id="c_it_verding_edo_model_Foo_barlist" property="barlist" z="UCLs/f9QsaHZ+GchBkGru4HxSls="/>
+            <table:column id="c_it_verding_edo_model_Foo_barset" property="barset" z="rHHZgwjNSQL0cK1cQl+VP+qvfII="/>
+        </table:table>
+    </page:list>
+</div>

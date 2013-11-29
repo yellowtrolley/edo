@@ -1,0 +1,27 @@
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-25 15:30:45
+project --topLevelPackage it.verding.edo --projectName edo --java 7 --packaging WAR
+mongo setup --databaseName p459pqRNmj7jF4GpjBO1WQ --host paulo.mongohq.com --port 10055
+entity mongo --class ~.model.Foo --testAutomatically
+entity mongo --class ~.model.Bar --testAutomatically 
+repository mongo --interface ~.repositories.FooRepository --entity ~.model.Foo
+repository mongo --interface ~.repositories.BarRepository --entity ~.model.Bar
+service type --interface ~.service.FooService --entity ~.model.Foo
+service type --interface ~.service.BarService --entity ~.model.Bar
+web mvc setup
+web mvc scaffold --backingType ~.model.Foo --class ~.web.FooController
+web mvc scaffold --backingType ~.model.Bar --class ~.web.BarController
+web mvc json all 
+json all 
+logging setup --level ERROR 
+security setup
+perform tests
+perform tests
+perform package
+backup
+selenium test --controller ~.web.FooController
+selenium test --controller ~.web.BarController
+web mvc language --code it 
+addon list 
+//@RooWebScaffold(path = "bars", formBackingObject = Bar.class)quit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-26 01:26:33
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-28 21:32:26

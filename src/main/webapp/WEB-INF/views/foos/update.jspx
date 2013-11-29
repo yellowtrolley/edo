@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_it_verding_edo_model_Foo" modelAttribute="foo" path="/foos" versionField="none" z="Orvq18V9H8FdH5izezmtC1DImeM=">
+        <field:input field="string" id="c_it_verding_edo_model_Foo_string" z="U0BoU0BWmyES1JbStrHcVSxkRZk="/>
+        <field:input field="integer" id="c_it_verding_edo_model_Foo_integer" validationMessageCode="field_invalid_integer" z="nILP4r13Mz6XEvS8ETfSXcxDo2I="/>
+        <field:input field="bigdecimal" id="c_it_verding_edo_model_Foo_bigdecimal" validationMessageCode="field_invalid_number" z="TTzYVrFSgsKQSNTCZlK/Beo91OY="/>
+        <field:input field="bar" id="c_it_verding_edo_model_Foo_bar" z="k/t59h5vEygLJRkqa2IigHW1GQU="/>
+        <field:input field="barlist" id="c_it_verding_edo_model_Foo_barlist" z="Y+CIYAoQRnsN6ioF9vSiD1vk+cU="/>
+        <field:input field="barset" id="c_it_verding_edo_model_Foo_barset" z="M/veKSFvdloGxY6VpPO1/aBPzOQ="/>
+    </form:update>
+</div>

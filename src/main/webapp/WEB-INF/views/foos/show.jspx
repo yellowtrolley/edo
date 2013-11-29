@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_it_verding_edo_model_Foo" object="${foo}" path="/foos" z="FIhQlXJLkrn8d4PNtlolU6Yfpbo=">
+        <field:display field="string" id="s_it_verding_edo_model_Foo_string" object="${foo}" z="DAGjR1ypYia34YlhoCx2zlSAxU0="/>
+        <field:display field="integer" id="s_it_verding_edo_model_Foo_integer" object="${foo}" z="IcLoeNT0CAZOyqXXIIKDblRKLYA="/>
+        <field:display field="bigdecimal" id="s_it_verding_edo_model_Foo_bigdecimal" object="${foo}" z="n2QIaDk2CpMnUBqtTEiuI/PxrDc="/>
+        <field:display field="bar" id="s_it_verding_edo_model_Foo_bar" object="${foo}" z="Hvwlflh4PYFBd7c8AtVtHdGgypY="/>
+        <field:display field="barlist" id="s_it_verding_edo_model_Foo_barlist" object="${foo}" z="YrOiDY/uzNcX8VLlgIMEzjANzbk="/>
+        <field:display field="barset" id="s_it_verding_edo_model_Foo_barset" object="${foo}" z="xcieJHe/ngZ8dasiDQF4rcXxPdQ="/>
+    </page:show>
+</div>
