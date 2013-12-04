@@ -15,7 +15,6 @@ json all
 logging setup --level ERROR 
 security setup
 perform tests
-perform tests
 perform package
 backup
 selenium test --controller ~.web.FooController
@@ -23,5 +22,9 @@ selenium test --controller ~.web.BarController
 web mvc language --code it 
 addon list 
 //@RooWebScaffold(path = "bars", formBackingObject = Bar.class)quit
-// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-10-26 01:26:33
-// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-28 21:32:26
+entity mongo --class ~.model.Comune --identifierType org.bson.types.ObjectId --testAutomatically 
+field number --type java.lang.Integer --fieldName nome
+entity mongo --class ~.model.ZonaClimatica --identifierType org.bson.types.ObjectId --testAutomatically 
+repository mongo --interface ~.repositories.ComuneRepository --entity ~.domain.Comune
+repository mongo  --entity ~.domain.ZonaClimatica --interface ~.repositories.ZonaClimaticaRepository
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-12-04 23:44:21

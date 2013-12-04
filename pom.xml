@@ -9,7 +9,7 @@
     <properties>
         <aspectj.version>1.7.2</aspectj.version>
         <java.version>7</java.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
         <roo.version>1.2.4.RELEASE</roo.version>
         <slf4j.version>1.7.5</slf4j.version>
         <spring.version>3.2.3.RELEASE</spring.version>
@@ -82,6 +82,7 @@
             <artifactId>slf4j-log4j12</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
+        
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjrt</artifactId>
@@ -268,6 +269,13 @@
             <artifactId>spring-security-taglibs</artifactId>
             <version>${spring-security.version}</version>
         </dependency>
+        
+        <!-- jexcel api -->
+        <dependency>
+			<groupId>net.sourceforge.jexcelapi</groupId>
+			<artifactId>jxl</artifactId>
+			<version>2.6.12</version>
+		</dependency>
     </dependencies>
     <build>
         <plugins>
@@ -378,7 +386,7 @@
                 <!-- Note 2.8 does not work with AspectJ aspect path -->
                 <configuration>
                     <downloadSources>true</downloadSources>
-                    <downloadJavadocs>false</downloadJavadocs>
+                    <downloadJavadocs>true</downloadJavadocs>
                     <wtpversion>2.0</wtpversion>
                     <additionalBuildcommands>
                         <buildCommand>
