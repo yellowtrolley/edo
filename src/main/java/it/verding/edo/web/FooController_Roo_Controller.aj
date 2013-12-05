@@ -8,9 +8,9 @@ import it.verding.edo.service.BarService;
 import it.verding.edo.service.FooService;
 import it.verding.edo.web.FooController;
 import java.io.UnsupportedEncodingException;
-import java.math.BigInteger;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -47,7 +47,7 @@ privileged aspect FooController_Roo_Controller {
     }
     
     @RequestMapping(value = "/{id}", produces = "text/html")
-    public String FooController.show(@PathVariable("id") BigInteger id, Model uiModel) {
+    public String FooController.show(@PathVariable("id") ObjectId id, Model uiModel) {
         uiModel.addAttribute("foo", fooService.findFoo(id));
         uiModel.addAttribute("itemId", id);
         return "foos/show";
@@ -79,13 +79,13 @@ privileged aspect FooController_Roo_Controller {
     }
     
     @RequestMapping(value = "/{id}", params = "form", produces = "text/html")
-    public String FooController.updateForm(@PathVariable("id") BigInteger id, Model uiModel) {
+    public String FooController.updateForm(@PathVariable("id") ObjectId id, Model uiModel) {
         populateEditForm(uiModel, fooService.findFoo(id));
         return "foos/update";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = "text/html")
-    public String FooController.delete(@PathVariable("id") BigInteger id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+    public String FooController.delete(@PathVariable("id") ObjectId id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
         Foo foo = fooService.findFoo(id);
         fooService.deleteFoo(foo);
         uiModel.asMap().clear();

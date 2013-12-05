@@ -28,3 +28,7 @@ entity mongo --class ~.model.ZonaClimatica --identifierType org.bson.types.Objec
 repository mongo --interface ~.repositories.ComuneRepository --entity ~.domain.Comune
 repository mongo  --entity ~.domain.ZonaClimatica --interface ~.repositories.ZonaClimaticaRepository
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-12-04 23:44:21
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-12-05 09:24:31
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-12-05 09:58:50
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-12-05 11:50:10
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-12-05 12:05:09

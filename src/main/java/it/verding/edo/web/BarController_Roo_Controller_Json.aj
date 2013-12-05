@@ -6,8 +6,8 @@ package it.verding.edo.web;
 import it.verding.edo.model.Bar;
 import it.verding.edo.service.BarService;
 import it.verding.edo.web.BarController;
-import java.math.BigInteger;
 import java.util.List;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -25,7 +25,7 @@ privileged aspect BarController_Roo_Controller_Json {
     
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, headers = "Accept=application/json")
     @ResponseBody
-    public ResponseEntity<String> BarController.showJson(@PathVariable("id") BigInteger id) {
+    public ResponseEntity<String> BarController.showJson(@PathVariable("id") ObjectId id) {
         Bar bar = barService.findBar(id);
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json; charset=utf-8");
@@ -64,7 +64,7 @@ privileged aspect BarController_Roo_Controller_Json {
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT, headers = "Accept=application/json")
-    public ResponseEntity<String> BarController.updateFromJson(@RequestBody String json, @PathVariable("id") BigInteger id) {
+    public ResponseEntity<String> BarController.updateFromJson(@RequestBody String json, @PathVariable("id") ObjectId id) {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json");
         Bar bar = Bar.fromJsonToBar(json);
@@ -75,7 +75,7 @@ privileged aspect BarController_Roo_Controller_Json {
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, headers = "Accept=application/json")
-    public ResponseEntity<String> BarController.deleteFromJson(@PathVariable("id") BigInteger id) {
+    public ResponseEntity<String> BarController.deleteFromJson(@PathVariable("id") ObjectId id) {
         Bar bar = barService.findBar(id);
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json");

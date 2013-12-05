@@ -6,7 +6,7 @@ package it.verding.edo.web;
 import it.verding.edo.model.Foo;
 import it.verding.edo.service.FooService;
 import it.verding.edo.web.ApplicationConversionServiceFactoryBean;
-import java.math.BigInteger;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.core.convert.converter.Converter;
@@ -27,9 +27,9 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
-    public Converter<BigInteger, Foo> ApplicationConversionServiceFactoryBean.getIdToFooConverter() {
-        return new org.springframework.core.convert.converter.Converter<java.math.BigInteger, it.verding.edo.model.Foo>() {
-            public it.verding.edo.model.Foo convert(java.math.BigInteger id) {
+    public Converter<ObjectId, Foo> ApplicationConversionServiceFactoryBean.getIdToFooConverter() {
+        return new org.springframework.core.convert.converter.Converter<org.bson.types.ObjectId, it.verding.edo.model.Foo>() {
+            public it.verding.edo.model.Foo convert(org.bson.types.ObjectId id) {
                 return fooService.findFoo(id);
             }
         };
@@ -38,7 +38,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<String, Foo> ApplicationConversionServiceFactoryBean.getStringToFooConverter() {
         return new org.springframework.core.convert.converter.Converter<java.lang.String, it.verding.edo.model.Foo>() {
             public it.verding.edo.model.Foo convert(String id) {
-                return getObject().convert(getObject().convert(id, BigInteger.class), Foo.class);
+                return getObject().convert(getObject().convert(id, ObjectId.class), Foo.class);
             }
         };
     }

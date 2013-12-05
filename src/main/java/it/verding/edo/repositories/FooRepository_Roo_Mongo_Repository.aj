@@ -5,13 +5,13 @@ package it.verding.edo.repositories;
 
 import it.verding.edo.model.Foo;
 import it.verding.edo.repositories.FooRepository;
-import java.math.BigInteger;
+import org.bson.types.ObjectId;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
 privileged aspect FooRepository_Roo_Mongo_Repository {
     
-    declare parents: FooRepository extends PagingAndSortingRepository<Foo, BigInteger>;
+    declare parents: FooRepository extends PagingAndSortingRepository<Foo, ObjectId>;
     
     declare @type: FooRepository: @Repository;
     

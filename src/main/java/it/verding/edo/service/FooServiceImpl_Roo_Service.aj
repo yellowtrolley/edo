@@ -6,8 +6,8 @@ package it.verding.edo.service;
 import it.verding.edo.model.Foo;
 import it.verding.edo.repositories.FooRepository;
 import it.verding.edo.service.FooServiceImpl;
-import java.math.BigInteger;
 import java.util.List;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,7 +29,7 @@ privileged aspect FooServiceImpl_Roo_Service {
         fooRepository.delete(foo);
     }
     
-    public Foo FooServiceImpl.findFoo(BigInteger id) {
+    public Foo FooServiceImpl.findFoo(ObjectId id) {
         return fooRepository.findOne(id);
     }
     

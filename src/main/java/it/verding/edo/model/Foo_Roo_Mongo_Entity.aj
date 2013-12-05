@@ -4,7 +4,7 @@
 package it.verding.edo.model;
 
 import it.verding.edo.model.Foo;
-import java.math.BigInteger;
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Persistent;
 
@@ -13,13 +13,13 @@ privileged aspect Foo_Roo_Mongo_Entity {
     declare @type: Foo: @Persistent;
     
     @Id
-    private BigInteger Foo.id;
+    private ObjectId Foo.id;
     
-    public BigInteger Foo.getId() {
+    public ObjectId Foo.getId() {
         return this.id;
     }
     
-    public void Foo.setId(BigInteger id) {
+    public void Foo.setId(ObjectId id) {
         this.id = id;
     }
     

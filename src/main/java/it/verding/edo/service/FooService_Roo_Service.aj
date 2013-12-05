@@ -5,14 +5,14 @@ package it.verding.edo.service;
 
 import it.verding.edo.model.Foo;
 import it.verding.edo.service.FooService;
-import java.math.BigInteger;
 import java.util.List;
+import org.bson.types.ObjectId;
 
 privileged aspect FooService_Roo_Service {
     
     public abstract long FooService.countAllFoos();    
     public abstract void FooService.deleteFoo(Foo foo);    
-    public abstract Foo FooService.findFoo(BigInteger id);    
+    public abstract Foo FooService.findFoo(ObjectId id);    
     public abstract List<Foo> FooService.findAllFoos();    
     public abstract List<Foo> FooService.findFooEntries(int firstResult, int maxResults);    
     public abstract void FooService.saveFoo(Foo foo);    

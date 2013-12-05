@@ -1,4 +1,5 @@
 package it.verding.edo.web;
+import it.verding.edo.model.Bar;
 import it.verding.edo.model.Comune;
 import it.verding.edo.model.Foo;
 import it.verding.edo.model.ZonaClimatica;
@@ -7,6 +8,8 @@ import it.verding.edo.repositories.ZonaClimaticaRepository;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashSet;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -55,7 +58,7 @@ public class FooController {
 	@RequestMapping("/populateComune")
 	public String readExcel(HttpServletRequest request, Model model) throws IOException {
 //		String filePath = request.getSession().getServletContext().getRealPath("excel");
-	    File inputWorkbook = new File("/home/pab/Documents/Kali_persistence/Docs/proyectos/EDO/Foglio_demo_RAF_solo riscaldamento_rev5-2.xls");
+	    File inputWorkbook = new File("/home/pablo/backups/persistence/Docs/proyectos/EDO/Foglio_demo_RAF_solo riscaldamento_rev5-2.xls");
 		Workbook w;
 		try {
 			w = Workbook.getWorkbook(inputWorkbook);
@@ -87,9 +90,44 @@ public class FooController {
 				}
 			}
 		} catch (BiffException e) {
-			e.printStackTrace();
+			log.debug(e.getMessage(), e);
 		}
 	    
+		return "redirect:/";
+	}
+	
+	
+	@RequestMapping("/testCascade")
+	public String testCascade(HttpServletRequest request, Model model) throws IOException {
+		Bar aBar = new Bar();
+    	aBar.setBirra("menabrea");
+    	
+    	Bar anotherBar = new Bar();
+    	anotherBar.setBirra("peroni");
+    	
+    	Foo aFoo = new Foo();
+    	aFoo.setBar(aBar);
+    	
+    	aFoo.setBarlist(new ArrayList<Bar>());
+    	aFoo.getBarlist().add(aBar);
+    	aFoo.getBarlist().add(anotherBar);
+    	aFoo.setBarset(new HashSet<Bar>());
+    	aFoo.getBarset().add(aBar);
+    	aFoo.getBarset().add(anotherBar);
+    	
+    	fooService.saveFoo(aFoo);
+    	
+    	log.debug("aFoo was saved with id: " + aFoo.getId());
+    	log.debug("aBar was cascade saved with id: " + aBar.getId());
+    	log.debug("anotherBar was cascade saved with id: " + anotherBar.getId());
+    	log.debug("Number of Bars found in db: " + barService.findAllBars().size());
+    	
+    	fooService.deleteFoo(aFoo);
+
+    	log.debug("aFoo was deleted. Foos found on DB: " + fooService.findAllFoos().size());
+    	log.debug("Number of Bars found in db: " + barService.findAllBars().size());
+    	
+		
 		return "redirect:/";
 	}
 }

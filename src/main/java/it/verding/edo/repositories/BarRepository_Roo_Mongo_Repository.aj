@@ -5,13 +5,13 @@ package it.verding.edo.repositories;
 
 import it.verding.edo.model.Bar;
 import it.verding.edo.repositories.BarRepository;
-import java.math.BigInteger;
+import org.bson.types.ObjectId;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
 privileged aspect BarRepository_Roo_Mongo_Repository {
     
-    declare parents: BarRepository extends PagingAndSortingRepository<Bar, BigInteger>;
+    declare parents: BarRepository extends PagingAndSortingRepository<Bar, ObjectId>;
     
     declare @type: BarRepository: @Repository;
     

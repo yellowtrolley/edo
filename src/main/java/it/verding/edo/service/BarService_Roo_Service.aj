@@ -5,14 +5,14 @@ package it.verding.edo.service;
 
 import it.verding.edo.model.Bar;
 import it.verding.edo.service.BarService;
-import java.math.BigInteger;
 import java.util.List;
+import org.bson.types.ObjectId;
 
 privileged aspect BarService_Roo_Service {
     
     public abstract long BarService.countAllBars();    
     public abstract void BarService.deleteBar(Bar bar);    
-    public abstract Bar BarService.findBar(BigInteger id);    
+    public abstract Bar BarService.findBar(ObjectId id);    
     public abstract List<Bar> BarService.findAllBars();    
     public abstract List<Bar> BarService.findBarEntries(int firstResult, int maxResults);    
     public abstract void BarService.saveBar(Bar bar);    

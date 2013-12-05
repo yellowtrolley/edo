@@ -6,8 +6,8 @@ package it.verding.edo.service;
 import it.verding.edo.model.Bar;
 import it.verding.edo.repositories.BarRepository;
 import it.verding.edo.service.BarServiceImpl;
-import java.math.BigInteger;
 import java.util.List;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,7 +29,7 @@ privileged aspect BarServiceImpl_Roo_Service {
         barRepository.delete(bar);
     }
     
-    public Bar BarServiceImpl.findBar(BigInteger id) {
+    public Bar BarServiceImpl.findBar(ObjectId id) {
         return barRepository.findOne(id);
     }
     

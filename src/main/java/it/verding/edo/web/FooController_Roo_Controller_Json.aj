@@ -5,8 +5,8 @@ package it.verding.edo.web;
 
 import it.verding.edo.model.Foo;
 import it.verding.edo.web.FooController;
-import java.math.BigInteger;
 import java.util.List;
+import org.bson.types.ObjectId;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +20,7 @@ privileged aspect FooController_Roo_Controller_Json {
     
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, headers = "Accept=application/json")
     @ResponseBody
-    public ResponseEntity<String> FooController.showJson(@PathVariable("id") BigInteger id) {
+    public ResponseEntity<String> FooController.showJson(@PathVariable("id") ObjectId id) {
         Foo foo = fooService.findFoo(id);
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json; charset=utf-8");
@@ -59,7 +59,7 @@ privileged aspect FooController_Roo_Controller_Json {
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT, headers = "Accept=application/json")
-    public ResponseEntity<String> FooController.updateFromJson(@RequestBody String json, @PathVariable("id") BigInteger id) {
+    public ResponseEntity<String> FooController.updateFromJson(@RequestBody String json, @PathVariable("id") ObjectId id) {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json");
         Foo foo = Foo.fromJsonToFoo(json);
@@ -70,7 +70,7 @@ privileged aspect FooController_Roo_Controller_Json {
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, headers = "Accept=application/json")
-    public ResponseEntity<String> FooController.deleteFromJson(@PathVariable("id") BigInteger id) {
+    public ResponseEntity<String> FooController.deleteFromJson(@PathVariable("id") ObjectId id) {
         Foo foo = fooService.findFoo(id);
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json");

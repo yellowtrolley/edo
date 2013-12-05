@@ -6,7 +6,7 @@
         <field:input field="string" id="c_it_verding_edo_model_Foo_string" z="U0BoU0BWmyES1JbStrHcVSxkRZk="/>
         <field:input field="integer" id="c_it_verding_edo_model_Foo_integer" validationMessageCode="field_invalid_integer" z="nILP4r13Mz6XEvS8ETfSXcxDo2I="/>
         <field:input field="bigdecimal" id="c_it_verding_edo_model_Foo_bigdecimal" validationMessageCode="field_invalid_number" z="TTzYVrFSgsKQSNTCZlK/Beo91OY="/>
-        <field:input field="id" id="c_it_verding_edo_model_Foo_id" required="true" validationMessageCode="field_invalid_integer" z="EE1moygnZrT+5Wz2lm4IcygGexo="/>
+        <field:input field="id" id="c_it_verding_edo_model_Foo_id" required="true" z="gzjR7kAWG6riep0PXZj1iPGTaUI="/>
         <field:input field="bar" id="c_it_verding_edo_model_Foo_bar" z="k/t59h5vEygLJRkqa2IigHW1GQU="/>
         <field:input field="barlist" id="c_it_verding_edo_model_Foo_barlist" z="Y+CIYAoQRnsN6ioF9vSiD1vk+cU="/>
         <field:input field="barset" id="c_it_verding_edo_model_Foo_barset" z="M/veKSFvdloGxY6VpPO1/aBPzOQ="/>
