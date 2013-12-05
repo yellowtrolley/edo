@@ -1,4 +1,4 @@
-package org.pabloguerrero.mongo;
+package foo.pabloguerrero.mongo.mapping;
 
 /**
  * Used to define cascade type in {@link EdoDBRef} annotation

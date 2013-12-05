@@ -108,12 +108,12 @@ public class FooController {
     	Foo aFoo = new Foo();
     	aFoo.setBar(aBar);
     	
-    	aFoo.setBarlist(new ArrayList<Bar>());
-    	aFoo.getBarlist().add(aBar);
-    	aFoo.getBarlist().add(anotherBar);
-    	aFoo.setBarset(new HashSet<Bar>());
-    	aFoo.getBarset().add(aBar);
-    	aFoo.getBarset().add(anotherBar);
+//    	aFoo.setBarlist(new ArrayList<Bar>());
+//    	aFoo.getBarlist().add(aBar);
+//    	aFoo.getBarlist().add(anotherBar);
+//    	aFoo.setBarset(new HashSet<Bar>());
+//    	aFoo.getBarset().add(aBar);
+//    	aFoo.getBarset().add(anotherBar);
     	
     	fooService.saveFoo(aFoo);
     	

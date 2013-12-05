@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.pabloguerrero.mongo;
+package foo.pabloguerrero.mongo.mapping.event;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -81,7 +81,7 @@ public abstract class AbstractMongoEventListener<E> implements ApplicationListen
 		} else if (event instanceof AfterConvertEvent) {
 			onAfterConvert(event.getDBObject(), source);
 		} else if (event instanceof AfterDeleteEvent) {
-			onAfterDelete(source, ((AfterDeleteEvent<E>) event).getType());
+			onAfterDelete(source);
 		}
 	}
 
@@ -115,7 +115,7 @@ public abstract class AbstractMongoEventListener<E> implements ApplicationListen
 		}
 	}
 
-	public void onAfterDelete(E source, Class<E> type) {
+	public void onAfterDelete(E source) {
 		if (LOG.isDebugEnabled()) {
 			LOG.debug("onAfterDelete(" + source + ")");
 		}

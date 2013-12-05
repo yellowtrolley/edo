@@ -16,11 +16,13 @@
 
     <!-- To translate any MongoExceptions thrown in @Repository annotated classes -->
     <context:annotation-config/>
-
+    
+    
     <bean class="org.springframework.data.mongodb.core.MongoTemplate" id="mongoTemplate">
         <constructor-arg name="mongoDbFactory" ref="mongoDbFactory"/>
-        <constructor-arg name="mongoConverter" ref="mongoConverter" />
+        <!-- <constructor-arg name="mongoConverter" ref="mongoConverter" /> -->
     </bean>
+<!-- 
     
     <bean id="mappingContext" class="org.springframework.data.mongodb.core.mapping.MongoMappingContext"/>   
 
@@ -28,6 +30,6 @@
 	        <constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
 	        <constructor-arg name="mappingContext" ref="mappingContext" />        
     </bean> 
-
-	<bean class="org.pabloguerrero.mongo.CascadingMongoEventListener" />
+ -->
+	<bean class="foo.pabloguerrero.mongo.mapping.event.CascadingMongoEventListener" />
 </beans>

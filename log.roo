@@ -32,3 +32,5 @@ repository mongo  --entity ~.domain.ZonaClimatica --interface ~.repositories.Zon
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-12-05 09:58:50
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-12-05 11:50:10
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-12-05 12:05:09
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-12-05 19:18:54
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-12-05 21:05:03

@@ -5,14 +5,15 @@ import java.util.List;
 import java.util.Set;
 
 import org.bson.types.ObjectId;
-import org.pabloguerrero.mongo.Cascade;
-import org.pabloguerrero.mongo.CascadeType;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.json.RooJson;
 import org.springframework.roo.addon.layers.repository.mongo.RooMongoEntity;
 import org.springframework.roo.addon.tostring.RooToString;
+
+import foo.pabloguerrero.mongo.mapping.Cascade;
+import foo.pabloguerrero.mongo.mapping.CascadeType;
 
 @RooJavaBean
 @RooToString

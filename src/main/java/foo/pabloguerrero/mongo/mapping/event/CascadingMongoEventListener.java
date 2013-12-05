@@ -1,4 +1,4 @@
-package org.pabloguerrero.mongo;
+package foo.pabloguerrero.mongo.mapping.event;
 
 import java.util.Collection;
 
@@ -7,15 +7,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.data.mapping.Association;
 import org.springframework.data.mapping.AssociationHandler;
-import org.springframework.data.mapping.context.MappingContext;
 import org.springframework.data.mapping.model.BeanWrapper;
 import org.springframework.data.mapping.model.MappingException;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.convert.MongoConverter;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.MongoPersistentEntity;
 import org.springframework.data.mongodb.core.mapping.MongoPersistentProperty;
+
+import foo.pabloguerrero.mongo.mapping.Cascade;
 
 /*
 **
@@ -26,9 +26,6 @@ import org.springframework.data.mongodb.core.mapping.MongoPersistentProperty;
 public class CascadingMongoEventListener extends AbstractMongoEventListener {
 	Logger log = Logger.getLogger(this.getClass());
 	@Autowired private MongoTemplate mongoTemplate;
-	@Autowired private MappingContext<? extends MongoPersistentEntity<?>, MongoPersistentProperty> mappingContext;
-	@Autowired private MongoConverter mongoConverter;
-
 
 	/**
 	 * Executes {@link CascadeSaveAssociationHandler} on each property annotated with {@link DBRef}
@@ -40,7 +37,7 @@ public class CascadingMongoEventListener extends AbstractMongoEventListener {
 	public void onBeforeConvert(final Object source) {
 		log.debug("before convert: {}" + source);
 
-		final MongoPersistentEntity<?> persistentEntity = mappingContext.getPersistentEntity(source.getClass());
+		final MongoPersistentEntity<?> persistentEntity = mongoTemplate.getConverter().getMappingContext().getPersistentEntity(source.getClass());
 
 		persistentEntity.doWithAssociations(new CascadeSaveAssociationHandler(source));
 	}
@@ -52,11 +49,12 @@ public class CascadingMongoEventListener extends AbstractMongoEventListener {
 	 * @param source object that has just been deleted
 	 */
 	@Override
-	public void onAfterDelete(Object source, Class type) {
+	public void onAfterDelete(Object source) {
 		log.debug("before delete: {}" + source);
-		final MongoPersistentEntity<?> persistentEntity = mappingContext.getPersistentEntity(type);
-
-		persistentEntity.doWithAssociations(new CascadeDeleteAssociationHandler(source));
+//		final MongoPersistentEntity<?> persistentEntity = mongoTemplate.getConverter().getMappingContext().getPersistentEntity(source.getClass());
+//		persistentEntity.doWithAssociations(new CascadeDeleteAssociationHandler(source));
+		
+		
 	}
 
 	/**
@@ -74,7 +72,7 @@ public class CascadingMongoEventListener extends AbstractMongoEventListener {
 
 		@Override
 		void handleObject(Object referencedObject) {
-			final MongoPersistentEntity<?> referencedObjectEntity = mappingContext.getPersistentEntity(referencedObject.getClass());
+			final MongoPersistentEntity<?> referencedObjectEntity = mongoTemplate.getConverter().getMappingContext().getPersistentEntity(referencedObject.getClass());
 
 			if (referencedObjectEntity.getIdProperty() == null) {
 				throw new MappingException("Cannot perform cascade save on child object without id set");
@@ -142,8 +140,7 @@ public class CascadingMongoEventListener extends AbstractMongoEventListener {
 		}
 
 		private Object getReferredObject(MongoPersistentProperty mongoPersistentProperty) {
-			ConversionService service = mongoConverter.getConversionService();
-
+			ConversionService service = mongoTemplate.getConverter().getConversionService();
 			return BeanWrapper.create(source, service).getProperty(mongoPersistentProperty, Object.class, true);
 		}
 

@@ -1,4 +1,4 @@
-package org.pabloguerrero.mongo;
+package foo.pabloguerrero.mongo.mapping;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

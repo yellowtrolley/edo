@@ -14,7 +14,7 @@
         <slf4j.version>1.7.5</slf4j.version>
         <spring.version>3.2.5.RELEASE</spring.version>
     	<spring-security.version>3.1.0.RELEASE</spring-security.version>
-    	<spring-data-mongodb.version>1.3.2.RELEASE</spring-data-mongodb.version>
+    	<spring-data-mongodb.version>1.4.0.M1</spring-data-mongodb.version>
     </properties>
     <repositories>
         <repository>
@@ -180,6 +180,12 @@
             <artifactId>cloudfoundry-runtime</artifactId>
             <version>0.8.0</version>
         </dependency>
+        <dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-commons-core</artifactId>
+			<version>1.4.1.RELEASE</version>
+		</dependency>
+		            
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-mongodb</artifactId>
