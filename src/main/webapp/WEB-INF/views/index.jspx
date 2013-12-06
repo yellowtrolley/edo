@@ -3,12 +3,25 @@
   <jsp:output omit-xml-declaration="yes" />
   <spring:message var="app_name" code="application_name" htmlEscape="false" />
   <spring:message var="title" code="welcome_titlepane" arguments="${app_name}" htmlEscape="false" />
-  <util:panel id="title" title="${title}">
-    <h3>
-      <spring:message code="welcome_h3" arguments="${app_name}" />
-    </h3>
-    <p>
-      <spring:message code="welcome_text" />
-    </p>
-  </util:panel>
+  <!-- pagetitle start here -->
+	<section id="pagetitle-wrapper">
+	    <div class="pagetitle-content">    
+	    	<h2>Prova EDO </h2>   
+	    </div>
+	</section>
+	<!-- pagetitle end here --> 
+	
+	<!-- breadcrumb start here -->
+	<section id="breadcrumb-wrapper">
+	  <div id="breadcrumb-content">
+	      <ul>
+	       	  <li>Compila i campi </li>
+	      </ul>
+	    </div>
+	</section>
+	<!-- breadcrumb end here --> 
+	
+	<section id="content-wrapper">
+	
+	</section>
 </div>

@@ -1,16 +1,68 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" id="footer" version="2.0">
+<div class="row" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" id="footer" version="2.0">
   <jsp:directive.page contentType="text/html;charset=UTF-8"/>
   <jsp:output omit-xml-declaration="yes"/>
 
   <spring:url value="/" var="home"/>
-  <span>
-    <a href="${home}">
-      <spring:message code="button_home"/>
-    </a>
-  </span>
+  <spring:url var="logo2" value="/resources/images/logo2.png" />
+  <spring:url var="facebook" value="/resources/images/facebook.png" />
+  <spring:url var="linkedin" value="/resources/images/linkedin.png" />
+  <spring:url var="startcupsardegna" value="/resources/images/start-cup-sardegna.png" />
+  <spring:url var="sistemastartup" value="/resources/images/sistemastartup.png" />
+  <spring:url var="uniss" value="/resources/images/uniss.png" />
+  
+  <spring:message code="copyright_text" var="copyrightText" htmlEscape="false" />
+  <spring:message code="contact_us" var="contactUs" htmlEscape="false" />
+  <spring:message code="verding_email" var="verdingEmail" htmlEscape="false" />
+  <spring:message code="info_email" var="infoEmail" htmlEscape="false" />
+  <spring:message code="seguici" var="seguici" htmlEscape="false" />
+  
+  <div class="three columns mobile-two">
+      <img src="${logo2}" alt="" class="img-left" />
+      <p class="copyright-text">${copyrightText}</p>
+  </div>
+  <div class="three columns mobile-two">
+	<h5>${contactUs}</h5>
+	<ul class="contact-info">
+     	<li><a href="mailto:verding@progettoedo.it">${verdingEmail}</a><br/></li>
+        <li><a href="mailto:info@progettoedo.it">${infoEmail}</a></li>
+	</ul>
+  </div>
+  <div class="three columns mobile-two">
+	<h5>${seguici}</h5>
+     <ul class="contact-info">
+		<li>
+			<a href="https://www.facebook.com/verding.srl" title="facebook" target="_blank" class="tooltip">
+				<img src="${facebook}" alt="" vspace="5" border="0" align="absmiddle"/>
+				Facebook
+			</a>
+		</li>
+		<li>
+			<a href="http://www.linkedin.com/company/verding " title="Linkedin" target="_blank" class="tooltip">
+				<img src="${linkedin}" alt="" vspace="5" border="0" align="absmiddle"/> 
+				Linkedin
+			</a>
+		</li>
+     </ul>
+  </div>
+  <div class="three columns mobile-two">
+	<h5>&#160;</h5>
+    <p>
+    	<a href="http://www.startcupsardegna.it/" target="_blank">
+    		<img src="${startcupsardegna}" alt="Start Cup Sardegna" width="58" height="60" hspace="10" vspace="10" border="0" style="max-width: none;" />
+    	</a> 
+    	<a href="http://www.sistemastartup.it/" target="_blank">
+    		<img src="${sistemastartup}" alt="Sistema Startup Sardegna Ricerche" width="104" height="60" hspace="10" vspace="10" border="0" style="max-width: none;" />
+    	</a>
+    	<br />
+		<a href="www.uniss.it/" target="_blank">
+			<img src="${uniss}" alt="Università di Sassari" width="139" height="40" hspace="10" border="0" />
+		</a>
+	</p>
+  </div>
+  
+<!--   
   <c:if test="${pageContext['request'].userPrincipal != null}">
-    <c:out value=" | "/>
     <span>
       <spring:url value="/resources/j_spring_security_logout" var="logout"/>
       <a href="${logout}">
@@ -18,21 +70,15 @@
       </a>
     </span>
   </c:if>
-
+   -->
+<!-- 
   <span id="language">
     <c:out value=" | "/>
     <spring:message code="global_language"/>
     <c:out value=": "/>
-  <util:language label="English" locale="en"/>
+  	<util:language label="English" locale="en"/>
     <util:language label="Italiano" locale="it"/>
-    </span>
-  <util:theme/>
-
-  <spring:url value="/resources/images/springsource-logo.png" var="logo"/>
-  <spring:message code="global_sponsored" htmlEscape="false" var="sponsored"/>
-  <span>
-    <a href="http://springsource.com" title="${fn:escapeXml(sponsored)}">
-      <img align="right" alt="${fn:escapeXml(sponsored)}" src="${logo}"/>
-    </a>
   </span>
+  <util:theme/>
+ -->
 </div>

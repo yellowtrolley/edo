@@ -27,6 +27,10 @@
     <!-- Selects a static view for rendering without the need for an explicit controller -->
     <mvc:view-controller path="/login"/>
     <mvc:view-controller path="/" view-name="index"/>
+    <mvc:view-controller path="/about" view-name="about"/>
+    <mvc:view-controller path="/filosofia" view-name="filosofia"/>
+    <mvc:view-controller path="/howitworks" view-name="howitworks"/>
+    <mvc:view-controller path="/contatti" view-name="contatti"/>
     <mvc:view-controller path="/uncaughtException"/>
     <mvc:view-controller path="/resourceNotFound"/>
     <mvc:view-controller path="/dataAccessFailure"/>
@@ -43,7 +47,7 @@
     <bean class="org.springframework.ui.context.support.ResourceBundleThemeSource" id="themeSource"/>
 
     <!-- Store preferred theme configuration in a cookie -->
-    <bean class="org.springframework.web.servlet.theme.CookieThemeResolver" id="themeResolver" p:cookieName="theme" p:defaultThemeName="standard"/>
+    <bean class="org.springframework.web.servlet.theme.CookieThemeResolver" id="themeResolver" p:cookieName="theme" p:defaultThemeName="edo"/>
 
     <!-- This bean resolves specific types of exceptions to corresponding logical - view names for error views. 
     The default behaviour of DispatcherServlet - is to propagate all exceptions to the servlet 

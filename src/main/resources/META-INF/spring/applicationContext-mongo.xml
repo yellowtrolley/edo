@@ -31,5 +31,5 @@
 	        <constructor-arg name="mappingContext" ref="mappingContext" />        
     </bean> 
  -->
-	<bean class="foo.pabloguerrero.mongo.mapping.event.CascadingMongoEventListener" />
+	<bean class="org.pgg.mongo.mapping.event.CascadingMongoEventListener" />
 </beans>

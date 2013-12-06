@@ -1,18 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" id="menu" version="2.0">
+<div xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" xmlns:spring="http://www.springframework.org/tags" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
-        <menu:category id="c_foo" z="rD/ynbqIWhUzkM4O47H1KKcg2wE=">
-            <menu:item id="i_foo_new" messageCode="global_menu_new" url="/foos?form" z="ONrdrdDB1/LmyiFJC0GtOMccfPo="/>
-            <menu:item id="i_foo_list" messageCode="global_menu_list" url="/foos?page=1&amp;size=${empty param.size ? 10 : param.size}" z="WHA3eebh812sdwVNQZQ/AnWHNl0="/>
-        </menu:category>
-        <menu:category id="c_bar" z="Lx4r+7YX86pyZJDDPBTExNAOOiQ=">
-            <menu:item id="i_bar_new" messageCode="global_menu_new" url="/bars?form" z="LzqmGecCj71aWQjgWvRB3IeOIFg="/>
-            <menu:item id="i_bar_list" messageCode="global_menu_list" url="/bars?page=1&amp;size=${empty param.size ? 10 : param.size}" z="AvUtnHJXA8PaIlBkWPqUToz9yvI="/>
-        </menu:category>
-        <menu:category id="c_seleniumtests" z="PPLMd2yNB6/LSbjIWogAacRPU+Q=">
-            <menu:item id="si_seleniumtests_test" messageCode="selenium_menu_test_suite" url="/resources/selenium/test-suite.xhtml" z="wwunW/IPDcunN97u41MvMJZQ2to="/>
+    <spring:url value="/" var="home"/>
+    <spring:url value="/about" var="about"/>
+    <spring:url value="/filosofia" var="filosofia"/>
+    <spring:url value="/howitworks" var="howitworks"/>
+    <spring:url value="/contatti" var="contatti"/>
+    <spring:message code="button_home" htmlEscape="false" var="home_label"/>
+    <spring:message code="about_label" htmlEscape="false" var="about_label"/>
+    <spring:message code="filosofia_label" htmlEscape="false" var="filosofia_label"/>
+    <spring:message code="howitworks_label" htmlEscape="false" var="howitworks_label"/>
+    <spring:message code="contatti_label" htmlEscape="false" var="contatti_label"/>
+    <nav id="mainmenu">
+        <ul id="menu">
+            <li>
+                <a href="${home}">${fn:escapeXml(home_label)}</a>
+            </li>
+            <li>
+                <a href="${about}">${fn:escapeXml(about_label)}</a>
+            </li>
+            <li>
+                <a href="${filosofia}">${fn:escapeXml(filosofia_label)}</a>
+            </li>
+            <li>
+                <a href="${howitworks}">${fn:escapeXml(howitworks_label)}</a>
+            </li>
+            <li>
+                <a href="${contatti}">${fn:escapeXml(contatti_label)}</a>
+            </li>
+        </ul>
+    </nav>
+    <menu:menu id="_menu" render="false" z="user-managed">
+        <menu:category id="c_questionarioriscaldamento" z="3ym6JkXy8/OzLJFYGK6GvEBw+GU=">
+            <menu:item id="i_questionarioriscaldamento_new" messageCode="global_menu_new" url="/riscaldamento?form" z="he6KwMB73f5qrMisLTVkbHhzgm4="/>
+            <menu:item id="i_questionarioriscaldamento_list" messageCode="global_menu_list" url="/riscaldamento?page=1&amp;size=${empty param.size ? 10 : param.size}" z="V/MohCMW83DA0W0uj94kwELf6Vw="/>
         </menu:category>
     </menu:menu>
 </div>

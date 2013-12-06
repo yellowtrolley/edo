@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_it_verding_edo_model_QuestionarioRiscaldamento" modelAttribute="questionarioRiscaldamento" path="/riscaldamento" versionField="none" z="CdBPSBYswOafW+HERw55RPdOkg8=">
+        <field:input field="tipoEnte" id="c_it_verding_edo_model_QuestionarioRiscaldamento_tipoEnte" z="uPa0bBqkznF8K9t1vBDjOih5AlA="/>
+        <field:input field="comune" id="c_it_verding_edo_model_QuestionarioRiscaldamento_comune" z="iRZSy/EDS1jFOgBdHqwM01f6tVA="/>
+        <field:input field="tipoCombustibile" id="c_it_verding_edo_model_QuestionarioRiscaldamento_tipoCombustibile" z="3r1sLtzUG2jJSWKqDWyY0h0dDT8="/>
+        <field:input field="tipoTerminaleRiscaldamento" id="c_it_verding_edo_model_QuestionarioRiscaldamento_tipoTerminaleRiscaldamento" z="gVbP2DfZ9vhMvQ2gipuNXfY//nI="/>
+        <field:input field="metri2" id="c_it_verding_edo_model_QuestionarioRiscaldamento_metri2" validationMessageCode="field_invalid_integer" z="Nl7wMQQMN3Hy9w4ihHi3mTk4nqM="/>
+        <field:input field="litriCombustibileAnno" id="c_it_verding_edo_model_QuestionarioRiscaldamento_litriCombustibileAnno" validationMessageCode="field_invalid_integer" z="VizrjK9vQjeRGhDx7h/oGU7OM4Q="/>
+        <field:checkbox field="isSistemaTermoregolazione" id="c_it_verding_edo_model_QuestionarioRiscaldamento_isSistemaTermoregolazione" z="a4wpRetaDoHc6f5FEGLsYQHjNu0="/>
+        <field:checkbox field="isPiuDi10anni" id="c_it_verding_edo_model_QuestionarioRiscaldamento_isPiuDi10anni" z="qlDNXA0RDPDbfgtRKPVV9wFluAY="/>
+    </form:update>
+</div>

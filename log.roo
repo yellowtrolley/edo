@@ -1,36 +1,40 @@
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-10-25 15:30:45
 project --topLevelPackage it.verding.edo --projectName edo --java 7 --packaging WAR
-mongo setup --databaseName p459pqRNmj7jF4GpjBO1WQ --host paulo.mongohq.com --port 10055
-entity mongo --class ~.model.Foo --testAutomatically
-entity mongo --class ~.model.Bar --testAutomatically 
-repository mongo --interface ~.repositories.FooRepository --entity ~.model.Foo
-repository mongo --interface ~.repositories.BarRepository --entity ~.model.Bar
-service type --interface ~.service.FooService --entity ~.model.Foo
-service type --interface ~.service.BarService --entity ~.model.Bar
+mongo setup --databaseName HPmSfc7ACHvgZQ7IRfZSQ --host 127.0.0.1 --port 27017 --password test --username test
+
+entity mongo --class ~.model.ZonaClimatica --identifierType org.bson.types.ObjectId 
+entity mongo --class ~.model.Comune --identifierType org.bson.types.ObjectId 
+entity mongo --class ~.model.Provincia --identifierType org.bson.types.ObjectId
+entity mongo --class ~.model.Regione --identifierType org.bson.types.ObjectId
+entity mongo --class ~.model.TipoEnte --identifierType org.bson.types.ObjectId
+entity mongo --class ~.model.TipoCombustibile --identifierType org.bson.types.ObjectId
+entity mongo --class ~.model.TipoTerminaleRiscaldamento --identifierType org.bson.types.ObjectId
+entity mongo --class ~.model.QuestionarioRiscaldamento --identifierType org.bson.types.ObjectId
+
+repository mongo --entity ~.model.ZonaClimatica --interface ~.repositories.ZonaClimaticaRepo
+repository mongo --entity ~.model.Comune --interface ~.repositories.ComuneRepo 
+repository mongo --entity ~.model.Provincia --interface ~.repositories.ProvinciaRepo
+repository mongo --entity ~.model.Regione --interface ~.repositories.RegioneRepo
+repository mongo --entity ~.model.TipoEnte --interface ~.repositories.TipoEnteRepo
+repository mongo --entity ~.model.TipoCombustibile --interface ~.repositories.TipoCombustibileRepo
+repository mongo --entity ~.model.TipoTerminaleRiscaldamento --interface ~.repositories.TipoTerminaleRiscaldamentoRepo
+repository mongo --entity ~.model.QuestionarioRiscaldamento --interface ~.repositories.QuestionarioRiscaldamentoRepo
+
+service type --interface ~.service.ComuneService --entity ~.model.Comune
+service type --interface ~.service.QuestionarioRiscaldamentoService --entity ~.model.QuestionarioRiscaldamento
+
 web mvc setup
 web mvc scaffold --backingType ~.model.Foo --class ~.web.FooController
 web mvc scaffold --backingType ~.model.Bar --class ~.web.BarController
-web mvc json all 
-json all 
-logging setup --level ERROR 
-security setup
-perform tests
-perform package
-backup
-selenium test --controller ~.web.FooController
-selenium test --controller ~.web.BarController
 web mvc language --code it 
-addon list 
-//@RooWebScaffold(path = "bars", formBackingObject = Bar.class)quit
-entity mongo --class ~.model.Comune --identifierType org.bson.types.ObjectId --testAutomatically 
-field number --type java.lang.Integer --fieldName nome
-entity mongo --class ~.model.ZonaClimatica --identifierType org.bson.types.ObjectId --testAutomatically 
-repository mongo --interface ~.repositories.ComuneRepository --entity ~.domain.Comune
-repository mongo  --entity ~.domain.ZonaClimatica --interface ~.repositories.ZonaClimaticaRepository
-// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-12-04 23:44:21
-// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-12-05 09:24:31
-// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-12-05 09:58:50
-// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-12-05 11:50:10
-// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-12-05 12:05:09
-// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-12-05 19:18:54
-// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-12-05 21:05:03
+web mvc language --code en
+
+web mvc scaffold --backingType ~.model.QuestionarioRiscaldamento --class ~.web.QuestionarioRiscaldamento --path riscaldamento
+web mvc scaffold --backingType ~.model.QuestionarioRiscaldamento --class ~.web.RiscaldamentoController --path riscaldamento
+
+
+security setup
+json add --class ~.model.Comune 
+web mvc json add --jsonObject ~.model.Comune 
+web mvc json add --jsonObject ~.model.Comune --class ~.web.ComuneController
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-12-06 18:18:18

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_it_verding_edo_model_QuestionarioRiscaldamento" object="${questionarioriscaldamento}" path="/riscaldamento" z="1X6KcuQy0Q8KJDnBBcEUEEcjOwg=">
+        <field:display field="tipoEnte" id="s_it_verding_edo_model_QuestionarioRiscaldamento_tipoEnte" object="${questionarioriscaldamento}" z="3SvgZmoXc8owceHXxY3NbDsXZqE="/>
+        <field:display field="comune" id="s_it_verding_edo_model_QuestionarioRiscaldamento_comune" object="${questionarioriscaldamento}" z="zNpha2ClILc6n4JAhAMraWOQ7dk="/>
+        <field:display field="tipoCombustibile" id="s_it_verding_edo_model_QuestionarioRiscaldamento_tipoCombustibile" object="${questionarioriscaldamento}" z="2noZRydGA8ufc4qfF3hl1prI5yk="/>
+        <field:display field="tipoTerminaleRiscaldamento" id="s_it_verding_edo_model_QuestionarioRiscaldamento_tipoTerminaleRiscaldamento" object="${questionarioriscaldamento}" z="XPbcUTpTUoQyjoDCXwSQ5f1AC4w="/>
+        <field:display field="metri2" id="s_it_verding_edo_model_QuestionarioRiscaldamento_metri2" object="${questionarioriscaldamento}" z="ajpo9DnAb/uEyODiJqNjPASPTpY="/>
+        <field:display field="litriCombustibileAnno" id="s_it_verding_edo_model_QuestionarioRiscaldamento_litriCombustibileAnno" object="${questionarioriscaldamento}" z="g0ZkTDW/rxu9ioU7MZRHd/2D5ro="/>
+        <field:display field="isSistemaTermoregolazione" id="s_it_verding_edo_model_QuestionarioRiscaldamento_isSistemaTermoregolazione" object="${questionarioriscaldamento}" z="7EBp4NuDQ8Xh6m2L6T4sVTtqj4k="/>
+        <field:display field="isPiuDi10anni" id="s_it_verding_edo_model_QuestionarioRiscaldamento_isPiuDi10anni" object="${questionarioriscaldamento}" z="9SGkHcwu7TUTmqS6ZC/6EdeExsw="/>
+    </page:show>
+</div>

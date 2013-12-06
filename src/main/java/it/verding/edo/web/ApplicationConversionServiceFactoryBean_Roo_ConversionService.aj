@@ -3,8 +3,8 @@
 
 package it.verding.edo.web;
 
-import it.verding.edo.model.Foo;
-import it.verding.edo.service.FooService;
+import it.verding.edo.model.QuestionarioRiscaldamento;
+import it.verding.edo.service.QuestionarioRiscaldamentoService;
 import it.verding.edo.web.ApplicationConversionServiceFactoryBean;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,36 +17,36 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     declare @type: ApplicationConversionServiceFactoryBean: @Configurable;
     
     @Autowired
-    FooService ApplicationConversionServiceFactoryBean.fooService;
+    QuestionarioRiscaldamentoService ApplicationConversionServiceFactoryBean.questionarioRiscaldamentoService;
     
-    public Converter<Foo, String> ApplicationConversionServiceFactoryBean.getFooToStringConverter() {
-        return new org.springframework.core.convert.converter.Converter<it.verding.edo.model.Foo, java.lang.String>() {
-            public String convert(Foo foo) {
-                return new StringBuilder().append(foo.getString()).append(' ').append(foo.getInteger()).append(' ').append(foo.getBigdecimal()).toString();
+    public Converter<QuestionarioRiscaldamento, String> ApplicationConversionServiceFactoryBean.getQuestionarioRiscaldamentoToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<it.verding.edo.model.QuestionarioRiscaldamento, java.lang.String>() {
+            public String convert(QuestionarioRiscaldamento questionarioRiscaldamento) {
+                return new StringBuilder().append(questionarioRiscaldamento.getMetri2()).append(' ').append(questionarioRiscaldamento.getLitriCombustibileAnno()).toString();
             }
         };
     }
     
-    public Converter<ObjectId, Foo> ApplicationConversionServiceFactoryBean.getIdToFooConverter() {
-        return new org.springframework.core.convert.converter.Converter<org.bson.types.ObjectId, it.verding.edo.model.Foo>() {
-            public it.verding.edo.model.Foo convert(org.bson.types.ObjectId id) {
-                return fooService.findFoo(id);
+    public Converter<ObjectId, QuestionarioRiscaldamento> ApplicationConversionServiceFactoryBean.getIdToQuestionarioRiscaldamentoConverter() {
+        return new org.springframework.core.convert.converter.Converter<org.bson.types.ObjectId, it.verding.edo.model.QuestionarioRiscaldamento>() {
+            public it.verding.edo.model.QuestionarioRiscaldamento convert(org.bson.types.ObjectId id) {
+                return questionarioRiscaldamentoService.findQuestionarioRiscaldamento(id);
             }
         };
     }
     
-    public Converter<String, Foo> ApplicationConversionServiceFactoryBean.getStringToFooConverter() {
-        return new org.springframework.core.convert.converter.Converter<java.lang.String, it.verding.edo.model.Foo>() {
-            public it.verding.edo.model.Foo convert(String id) {
-                return getObject().convert(getObject().convert(id, ObjectId.class), Foo.class);
+    public Converter<String, QuestionarioRiscaldamento> ApplicationConversionServiceFactoryBean.getStringToQuestionarioRiscaldamentoConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, it.verding.edo.model.QuestionarioRiscaldamento>() {
+            public it.verding.edo.model.QuestionarioRiscaldamento convert(String id) {
+                return getObject().convert(getObject().convert(id, ObjectId.class), QuestionarioRiscaldamento.class);
             }
         };
     }
     
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
-        registry.addConverter(getFooToStringConverter());
-        registry.addConverter(getIdToFooConverter());
-        registry.addConverter(getStringToFooConverter());
+        registry.addConverter(getQuestionarioRiscaldamentoToStringConverter());
+        registry.addConverter(getIdToQuestionarioRiscaldamentoConverter());
+        registry.addConverter(getStringToQuestionarioRiscaldamentoConverter());
     }
     
     public void ApplicationConversionServiceFactoryBean.afterPropertiesSet() {
