@@ -11,5 +11,5 @@ public interface ComuneRepo {
 
     List<Comune> findAll();
     List<Comune> findByNome(String nome);
-    List<Comune> findByNomeLikeIgnoreCase(String nome, Pageable pageable);
+    List<Comune> findByNomeStartingWithIgnoreCase(String nome, Pageable pageable);
 }

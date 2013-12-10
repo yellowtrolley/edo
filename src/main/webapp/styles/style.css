@@ -1507,13 +1507,13 @@ margin-bottom:0px;
 float:right;
 }
 
-form#fc_it_verding_edo_model_QuestionarioRiscaldamento input {
+form#fc_it_verding_edo_model_QuestionarioRiscaldamento input[type="text"] {
 width:60%;
 margin-bottom:15px;
 float:left;	
 }
 
-form#fc_it_verding_edo_model_QuestionarioRiscaldamento textarea {
+form#fc_it_verding_edo_model_QuestionarioRiscaldamento textarea[type="text"] {
 margin-bottom:15px;
 float:left;
 overflow:hidden;	

@@ -55,7 +55,7 @@
       <spring:escapeBody javaScriptEscape="true" >${field}</spring:escapeBody>
     </c:set>
     
-   <!-- <div id="_${fn:escapeXml(id)}_id">  -->
+   <div id="_${fn:escapeXml(id)}_id" class="ui-widget">
       <label for="_${sec_field}_id" style="float: left;font-weight: 800;line-height: normal;margin: 2px;">
         <c:out value="${fn:escapeXml(label)}" />
         :
@@ -120,7 +120,7 @@
 	  		});
 	  	  }); 
       </script>
-    <!-- </div> -->
+    </div>
     <br />
   </c:if>
 </jsp:root>

@@ -40,3 +40,4 @@ web mvc json add --jsonObject ~.model.Comune --class ~.web.ComuneController
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-12-06 18:18:18
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-12-08 20:25:12
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-12-10 00:00:58
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-12-10 09:26:51

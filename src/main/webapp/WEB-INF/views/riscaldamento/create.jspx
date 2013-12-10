@@ -3,42 +3,41 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <spring:url value="/comuni" var="comuniUrl"/>
-    <script>
+    <script><![CDATA[
+    
     	$(function(){
-    		$('#_comune_id').autocomplete({
+    		$("#_comune_id").autocomplete({
     	        source: "${comuniUrl}",
-    	        minLength: 2,
-    	        /*
-    	        select: function(event, ui) {
-    	            var url = ui.item.id;
-    	            if(url != '#') {
-    	                location.href = '/blog/' + url;
-    	            }
-    	        },
-				*/
-    	        // html: true, // optional (jquery.ui.autocomplete.html.js required)
-
+    	        minLength: 2
+    	        
     		   // optional (if other layers overlap autocomplete list)
+    	       /* 
     	       open: function(event, ui) {
     	            $(".ui-autocomplete").css("z-index", 1000);
-    	       }
-    	    });
+    	       } 
+    	       */
+    	    }).data( "ui-autocomplete" )._renderItem = function( ul, item ) {
+                	console.log(item.id);
+    	        	console.log(item.nome);
+    	        	return $( "<li>" )
+    	        	.attr( "data-value", item.id )
+    	        	.append( $( "<a>" ).text( item.nome ) )
+    	        	.appendTo( ul );
+        	};
     	});
-    </script>
+    ]]></script>
     
     
-    <form:create label="Compila i campi" id="fc_it_verding_edo_model_QuestionarioRiscaldamento" modelAttribute="questionarioRiscaldamento" path="/riscaldamento" render="${empty dependencies}" z="">
+    <form:create label="Compila i campi" buttonLabelCode="label_button_questionarioriscaldamento" id="fc_it_verding_edo_model_QuestionarioRiscaldamento" modelAttribute="questionarioRiscaldamento" path="/riscaldamento" render="${empty dependencies}" z="">
         <field:select field="tipoEnte" id="c_it_verding_edo_model_QuestionarioRiscaldamento_tipoEnte" items="${tipiEnte}" itemLabel="nome" itemValue="id" path="/tipoEnte"  z=""/>
-        <div class="ui-widget">
-        	<field:input field="comune" id="c_it_verding_edo_model_QuestionarioRiscaldamento_comune" z=""/>
-        </div>
+        <field:input field="comune" id="c_it_verding_edo_model_QuestionarioRiscaldamento_comune" z=""/>
         <field:select field="tipoCombustibile" id="c_it_verding_edo_model_QuestionarioRiscaldamento_tipoCombustibile" items="${tipiCombustibile}" itemLabel="nome" itemValue="id" path="/tipoCombustibile" z=""/>
         <field:select field="tipoEnte" id="c_it_verding_edo_model_QuestionarioRiscaldamento_tipoTerminaleRiscaldamento" items="${tipiTerminaleRiscaldamento}" itemLabel="nome" itemValue="id" path="/tipoTerminaleRiscaldamento"  z=""/>
         <field:input field="metri2" id="c_it_verding_edo_model_QuestionarioRiscaldamento_metri2" validationMessageCode="field_invalid_integer" z=""/>
         <field:input field="litriCombustibileAnno" id="c_it_verding_edo_model_QuestionarioRiscaldamento_litriCombustibileAnno" validationMessageCode="field_invalid_integer" z="VizrjK9vQjeRGhDx7h/oGU7OM4Q="/>
-        <field:checkbox field="isSistemaTermoregolazione" id="c_it_verding_edo_model_QuestionarioRiscaldamento_isSistemaTermoregolazione" z="a4wpRetaDoHc6f5FEGLsYQHjNu0="/>
+        <field:checkbox field="isSistemaTermoregolazione" id="c_it_verding_edo_model_QuestionarioRiscaldamento_isSistemaTermoregolazione" z=""/>
         <field:checkbox field="isPiuDi10anni" id="c_it_verding_edo_model_QuestionarioRiscaldamento_isPiuDi10anni" z=""/>
         <field:input render="false" field="id" id="c_it_verding_edo_model_QuestionarioRiscaldamento_id" required="true" z=""/>
-	    <form:dependency dependencies="${dependencies}" id="d_it_verding_edo_model_QuestionarioRiscaldamento" render="${not empty dependencies}" z="yPSAH6x0fHxH+RjomQtrsJ15970="/>
+	    <form:dependency dependencies="${dependencies}" id="d_it_verding_edo_model_QuestionarioRiscaldamento" render="${not empty dependencies}" z=""/>
     </form:create>
 </div>
