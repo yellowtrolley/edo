@@ -15,15 +15,35 @@
 		<title><spring:message code="welcome_h3" arguments="${app_name}" /></title>
 	</head>
 	
-  	<body class="tundra spring">
+  	<body>
   		<header>
   		  <div id="main-wrapper">
-	    	<tiles:insertAttribute name="header" ignore="true" />
-	     	<tiles:insertAttribute name="menu" ignore="true" />
+  		  	<div id="header">
+		    	<tiles:insertAttribute name="header" ignore="true" />
+		     	<tiles:insertAttribute name="menu" ignore="true" />
+  		  	</div>
   		  </div>
   		</header>
    		
-   		<tiles:insertAttribute name="body"/> 
+   		<section id="pagetitle-wrapper">
+   			<div class="pagetitle-content">
+				<h2>Prova EDO </h2>
+			</div>
+   		</section>
+   		<section id="breadcrumb-wrapper">
+			<div id="breadcrumb-content">
+				<ul>
+					<li>Compila i campi </li>
+				</ul>
+			</div>
+		</section>
+		<section id="content-wrapper">
+		  <div class="row">
+		  	<div class="twelve columns">
+	   			<tiles:insertAttribute name="body"/>
+	   		</div>
+	   	  </div> 
+		</section>
    		
    		<!-- featured client start here -->
 		<section id="featured-wrapper">

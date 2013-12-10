@@ -15,7 +15,7 @@
   <jsp:directive.attribute name="decimalMin" type="java.lang.String" required="false" rtexprvalue="true" description="Specify the minimum size of the input contents" />
   <jsp:directive.attribute name="decimalMax" type="java.lang.String" required="false" rtexprvalue="true" description="Specify the maximum size of the input contents" />
   <jsp:directive.attribute name="disableFormBinding" type="java.lang.Boolean" required="false" rtexprvalue="true" description="Set to true to disable Spring form binding" />
-  <jsp:directive.attribute name="type" type="java.lang.String" required="false" rtexprvalue="true" description="Set field type (default 'text', or 'password')" />
+  <jsp:directive.attribute name="type" type="java.lang.String" required="false" rtexprvalue="true" description="Set field type (default 'text', 'password', 'number' or 'email')" />
   <jsp:directive.attribute name="render" type="java.lang.Boolean" required="false" rtexprvalue="true" description="Indicate if the contents of this tag and all enclosed tags should be rendered (default 'true')" />
   <jsp:directive.attribute name="z" type="java.lang.String" required="false" description="Used for checking if element has been modified (to recalculate simply provide empty string value)" />
   
@@ -55,22 +55,22 @@
       <spring:escapeBody javaScriptEscape="true" >${field}</spring:escapeBody>
     </c:set>
     
-    <div id="_${fn:escapeXml(id)}_id">
-      <label for="_${sec_field}_id">
+   <!-- <div id="_${fn:escapeXml(id)}_id">  -->
+      <label for="_${sec_field}_id" style="float: left;font-weight: 800;line-height: normal;margin: 2px;">
         <c:out value="${fn:escapeXml(label)}" />
         :
       </label>
       <c:choose>
         <c:when test="${disableFormBinding}">
-          <input id="_${sec_field}_id" name="${sec_field}" type="${fn:escapeXml(type)}" />
+          <input class="textfield" id="_${sec_field}_id" name="${sec_field}" type="${fn:escapeXml(type)}" style="width:25%" />
         </c:when>
         <c:otherwise>
           <c:choose>
             <c:when test="${type eq 'password'}">
-              <form:password id="_${sec_field}_id" path="${sec_field}" disabled="${disabled}" />
+              <form:password id="_${sec_field}_id" path="${sec_field}" disabled="${disabled}" cssStyle="width:25%" />
             </c:when>
             <c:otherwise>
-              <form:input id="_${sec_field}_id" path="${sec_field}" disabled="${disabled}" />
+              <form:input cssClass="textfield" id="_${sec_field}_id" path="${sec_field}" disabled="${disabled}" cssStyle="width:25%" />
             </c:otherwise>
           </c:choose>
           <br />
@@ -100,9 +100,27 @@
         <c:set var="sec_validation_regex" value="regExp : '${validationRegex}', " />
       </c:if>
       <script type="text/javascript">
-        Spring.addDecoration(new Spring.ElementDecoration({elementId : '_${sec_field}_id', widgetType : 'dijit.form.ValidationTextBox', widgetAttrs : {promptMessage: '${sec_field_validation}', invalidMessage: '${sec_field_invalid}', required : ${required}, ${sec_validation_regex} missingMessage : '${sec_field_required}' }})); 
+	      $(document).ready(function(){
+	  		$('#_${sec_field}_id').tooltip({trigger: 'focus', placement: 'auto right', animation: 'true', title:'${label}'});
+	  		$('#_${sec_field}_id').rules('add', { 
+	  			required: ${required},
+	  			
+	  			  <c:choose>
+	  				<c:when test="${type eq 'number'}">
+		  			  <c:if test="${not empty min}">min: ${min},</c:if>
+		  			  <c:if test="${not empty max}">max: ${max},</c:if> 
+	  				</c:when>
+	  				<c:otherwise>
+	  				  <c:if test="${not empty min}">minlength: ${min},</c:if>
+		  			  <c:if test="${not empty max}">maxlength: ${max},</c:if>
+	  				</c:otherwise>
+	  			  </c:choose>
+	  				email: ${type eq 'email'}, number: ${type eq 'number'}, 
+	  			messages: { required:'${field_validation}',minlength:'${field_invalid}',maxlength:'${field_invalid}',email:'${field_invalid}',number:'${field_invalid}' } 
+	  		});
+	  	  }); 
       </script>
-    </div>
+    <!-- </div> -->
     <br />
   </c:if>
 </jsp:root>

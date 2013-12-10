@@ -9,4 +9,10 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooMongoEntity(identifierType = ObjectId.class)
 public class TipoEnte {
 	private String nome;
+	
+	public TipoEnte() {}
+
+	public TipoEnte(String nome) {
+		this.nome = nome;
+	}
 }

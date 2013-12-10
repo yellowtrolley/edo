@@ -123,7 +123,7 @@ border-bottom:1px solid #e2e2e2;
 
 #logo {
 width: 115px;
-margin-top:-25px;
+margin-top:-5px;
 float: left;
 margin-left:-40px;
 }
@@ -243,7 +243,7 @@ margin:8px 18px 0px -25px;
 /* Mainmenu styling */
 #mainmenu {
 width:auto;
-margin:3px 15px 29px 0px;
+margin:23px 15px 29px 0px;
 height:38px;
 float:right;
 /* font-weight:bold; */
@@ -1498,7 +1498,7 @@ fieldset {
 border:0;
 }
 
-form#contactform label {
+form#fc_it_verding_edo_model_QuestionarioRiscaldamento label {
 font-size:13px;
 line-height:57px;
 width:37%;
@@ -1507,19 +1507,19 @@ margin-bottom:0px;
 float:right;
 }
 
-form#contactform input {
+form#fc_it_verding_edo_model_QuestionarioRiscaldamento input {
 width:60%;
 margin-bottom:15px;
 float:left;	
 }
 
-form#contactform textarea {
+form#fc_it_verding_edo_model_QuestionarioRiscaldamento textarea {
 margin-bottom:15px;
 float:left;
 overflow:hidden;	
 }
 
-form#contactform .buttoncontact {
+form#fc_it_verding_edo_model_QuestionarioRiscaldamento .buttoncontact {
 width:30%;
 border:none;
 display:inline-block;
@@ -1543,7 +1543,7 @@ box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset;
 float:left;
 }
 
-form#contactform em {
+form#fc_it_verding_edo_model_QuestionarioRiscaldamento em {
 color:#db4e43;
 display:inline;
 }
@@ -2552,8 +2552,8 @@ ul.client-box li {width:49.7%;}
 #map_canvas {height:320px;}
 #commentform-wrap {width:90%;} 
 #contact-form-area {width:90%; margin-bottom:25px;}
-form#comment-form input, form#contactform input {width:65%;}
-form#comment-form label, form#contactform label {width:32%;}
+form#comment-form input, form#fc_it_verding_edo_model_QuestionarioRiscaldamento input {width:65%;}
+form#comment-form label, form#fc_it_verding_edo_model_QuestionarioRiscaldamento label {width:32%;}
 .testi-text {width:100%;}
 .testi-image {display:none;}
 .pricing-column {width:100%; margin-bottom:-19px;}
@@ -2615,8 +2615,8 @@ ul.client-box li {width:49.7%;}
 #map_canvas {height:300px;}
 #commentform-wrap {width:90%;} 
 #contact-form-area {width:90%; margin-bottom:25px;}
-form#comment-form input, form#contactform input {width:65%;}
-form#comment-form label, form#contactform label {width:32%;}
+form#comment-form input, form#fc_it_verding_edo_model_QuestionarioRiscaldamento input {width:65%;}
+form#comment-form label, form#fc_it_verding_edo_model_QuestionarioRiscaldamento label {width:32%;}
 .testi-text {width:100%;}
 .testi-image {display:none;}
 .pricing-column {width:100%; margin-bottom:-19px;}
@@ -2679,8 +2679,8 @@ ul.client-box li {width:99.6%;}
 #map_canvas {height:280px;}
 #commentform-wrap {width:92%;} 
 #contact-form-area {width:92%; margin-bottom:25px;}
-form#comment-form input, form#contactform input {width:67%;}
-form#comment-form label, form#contactform label {width:29%;}
+form#comment-form input, form#fc_it_verding_edo_model_QuestionarioRiscaldamento input {width:67%;}
+form#comment-form label, form#fc_it_verding_edo_model_QuestionarioRiscaldamento label {width:29%;}
 .testi-text {width:100%;}
 .testi-image {display:none;}
 .pricing-column {width:100%; margin-bottom:-19px;}
@@ -2741,9 +2741,9 @@ ul.client-box li {width:99.6%;}
 #map_canvas {height:260px;}
 #commentform-wrap {width:92%;} 
 #contact-form-area {width:92%; margin-bottom:25px;}
-form#comment-form input, form#contactform input {width:67%;}
-form#comment-form label, form#contactform label {width:29%;}
-form#comment-form .buttoncontact, form#contactform .buttoncontact {width:40%;}
+form#comment-form input, form#fc_it_verding_edo_model_QuestionarioRiscaldamento input {width:67%;}
+form#comment-form label, form#fc_it_verding_edo_model_QuestionarioRiscaldamento label {width:29%;}
+form#comment-form .buttoncontact, form#fc_it_verding_edo_model_QuestionarioRiscaldamento .buttoncontact {width:40%;}
 .testi-text {width:100%;}
 .testi-image {display:none;}
 .pricing-column {width:100%; margin-bottom:-19px;}
@@ -2804,9 +2804,9 @@ ul.client-box li {width:99.6%;}
 #map_canvas {height:240px;}
 #commentform-wrap {width:92%;} 
 #contact-form-area {width:92%; margin-bottom:25px;}
-form#comment-form input, form#contactform input {width:67%;}
-form#comment-form label, form#contactform label {width:29%;}
-form#comment-form .buttoncontact, form#contactform .buttoncontact {width:40%;}
+form#comment-form input, form#fc_it_verding_edo_model_QuestionarioRiscaldamento input {width:67%;}
+form#comment-form label, form#fc_it_verding_edo_model_QuestionarioRiscaldamento label {width:29%;}
+form#comment-form .buttoncontact, form#fc_it_verding_edo_model_QuestionarioRiscaldamento .buttoncontact {width:40%;}
 .testi-text {width:100%;}
 .testi-image {display:none;}
 .pricing-column {width:100%; margin-bottom:-19px;}
@@ -2827,6 +2827,7 @@ form#comment-form .buttoncontact, form#contactform .buttoncontact {width:40%;}
 .infobar{
     float: right;
     font-size:17px;
+    margin: 20px 0 0;
 }
 
 .infobar li{

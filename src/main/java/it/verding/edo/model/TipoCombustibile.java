@@ -8,4 +8,12 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooToString
 @RooMongoEntity(identifierType = ObjectId.class)
 public class TipoCombustibile {
+	private String nome;
+
+	public TipoCombustibile() {}
+	
+	public TipoCombustibile(String nome) {
+		super();
+		this.nome = nome;
+	}
 }

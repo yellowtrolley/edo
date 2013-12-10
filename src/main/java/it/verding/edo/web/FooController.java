@@ -2,10 +2,16 @@ package it.verding.edo.web;
 import it.verding.edo.model.Comune;
 import it.verding.edo.model.Provincia;
 import it.verding.edo.model.Regione;
+import it.verding.edo.model.TipoCombustibile;
+import it.verding.edo.model.TipoEnte;
+import it.verding.edo.model.TipoTerminaleRiscaldamento;
 import it.verding.edo.model.ZonaClimatica;
 import it.verding.edo.repositories.ComuneRepo;
 import it.verding.edo.repositories.ProvinciaRepo;
 import it.verding.edo.repositories.RegioneRepo;
+import it.verding.edo.repositories.TipoCombustibileRepo;
+import it.verding.edo.repositories.TipoEnteRepo;
+import it.verding.edo.repositories.TipoTerminaleRiscaldamentoRepo;
 import it.verding.edo.repositories.ZonaClimaticaRepo;
 
 import java.io.File;
@@ -42,6 +48,32 @@ public class FooController {
 	@Autowired ProvinciaRepo provinciaRepo;
 	@Autowired ComuneRepo comuneRepo;
 	@Autowired ZonaClimaticaRepo zonaClimaticaRepo;
+	@Autowired TipoCombustibileRepo tipoCombustibileRepo;
+	@Autowired TipoEnteRepo tipoEnteRepo;
+	@Autowired TipoTerminaleRiscaldamentoRepo tipoTerminaleRiscaldamentoRepo; 
+	
+	@RequestMapping("/populate")
+	public String populate(HttpServletRequest request, Model model) throws IOException {
+		// Chi sei?
+		tipoEnteRepo.save(new TipoEnte("Cittadino"));
+		tipoEnteRepo.save(new TipoEnte("Impresa"));
+		tipoEnteRepo.save(new TipoEnte("Pubblica Amministrazione"));
+		
+		// Che combustibile usi? 
+		tipoCombustibileRepo.save(new TipoCombustibile("Alimentato a gasolio"));
+		tipoCombustibileRepo.save(new TipoCombustibile("Alimentato a GPL"));
+		tipoCombustibileRepo.save(new TipoCombustibile("Alimentato a aria propanata"));
+		tipoCombustibileRepo.save(new TipoCombustibile("Alimentato a gas naturale"));
+		
+		// Come sono i tuoi terminali di riscaldamento? 
+		tipoTerminaleRiscaldamentoRepo.save(new TipoTerminaleRiscaldamento("Radiatori in ghisa"));
+		tipoTerminaleRiscaldamentoRepo.save(new TipoTerminaleRiscaldamento("Radiatori in acciaio"));
+		tipoTerminaleRiscaldamentoRepo.save(new TipoTerminaleRiscaldamento("Pannelli radianti a pavimento"));
+		tipoTerminaleRiscaldamentoRepo.save(new TipoTerminaleRiscaldamento("Ventilconvettori"));
+		
+		
+		return "redirect:/";
+	}
 	
 	@RequestMapping("/populateZonaClimatica")
 	public String generateZonaClimatica(HttpServletRequest request, Model model) throws IOException {

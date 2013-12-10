@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+<nav id="mainmenu" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" xmlns:spring="http://www.springframework.org/tags" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <spring:url value="/" var="home"/>
@@ -12,7 +12,6 @@
     <spring:message code="filosofia_label" htmlEscape="false" var="filosofia_label"/>
     <spring:message code="howitworks_label" htmlEscape="false" var="howitworks_label"/>
     <spring:message code="contatti_label" htmlEscape="false" var="contatti_label"/>
-    <nav id="mainmenu">
         <ul id="menu">
             <li>
                 <a href="${home}">${fn:escapeXml(home_label)}</a>
@@ -30,11 +29,10 @@
                 <a href="${contatti}">${fn:escapeXml(contatti_label)}</a>
             </li>
         </ul>
-    </nav>
     <menu:menu id="_menu" render="false" z="user-managed">
         <menu:category id="c_questionarioriscaldamento" z="3ym6JkXy8/OzLJFYGK6GvEBw+GU=">
             <menu:item id="i_questionarioriscaldamento_new" messageCode="global_menu_new" url="/riscaldamento?form" z="he6KwMB73f5qrMisLTVkbHhzgm4="/>
             <menu:item id="i_questionarioriscaldamento_list" messageCode="global_menu_list" url="/riscaldamento?page=1&amp;size=${empty param.size ? 10 : param.size}" z="V/MohCMW83DA0W0uj94kwELf6Vw="/>
         </menu:category>
     </menu:menu>
-</div>
+</nav>
