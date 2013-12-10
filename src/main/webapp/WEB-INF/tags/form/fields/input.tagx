@@ -101,7 +101,7 @@
       </c:if>
       <script type="text/javascript">
 	      $(document).ready(function(){
-	  		$('#_${sec_field}_id').tooltip({trigger: 'focus', placement: 'auto right', animation: 'true', title:'${label}'});
+	  		$('#_${sec_field}_id').tooltip({trigger: 'focus', placement: 'right', animation: 'true', title:'${label}'});
 	  		$('#_${sec_field}_id').rules('add', { 
 	  			required: ${required},
 	  			
@@ -121,6 +121,6 @@
 	  	  }); 
       </script>
     </div>
-    <br />
+    <div class="clear"><jsp:text/></div>
   </c:if>
 </jsp:root>

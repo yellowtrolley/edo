@@ -15,6 +15,6 @@ public class ComuneServiceImpl implements ComuneService {
 	
 	@Override
 	public List<Comune> findComunesByNomeLike(String nome) {
-		return comuneRepo.findByNomeStartingWithIgnoreCase(nome, new PageRequest(0, 10, Direction.ASC, "nome"));
+		return comuneRepo.findByNomeStartingWithIgnoreCase(nome, new PageRequest(0, 15, Direction.ASC, "nome"));
 	}
 }

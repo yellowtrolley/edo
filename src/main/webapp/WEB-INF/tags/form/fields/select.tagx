@@ -41,7 +41,7 @@
       <spring:escapeBody htmlEscape="true" >${itemLabel}</spring:escapeBody>
     </c:set>
 
-    <!--  <div id="_${fn:escapeXml(id)}_id"> -->
+    <div id="_${fn:escapeXml(id)}_id">
       <c:choose>
         <c:when test="${not empty items}">
           <label for="_${sec_field}_id" style="float: left;font-weight: 800;line-height: normal;margin: 2px;" >
@@ -110,7 +110,7 @@
                       </c:choose>
                     </c:otherwise>
                   </c:choose>
-                  <br />
+                  <div class="clear"><jsp:text/></div>
                   <form:errors cssClass="errors" id="_${sec_field}_error_id" path="${sec_field}" />
                 </c:otherwise>
               </c:choose>
@@ -176,7 +176,6 @@
                       </c:choose>
                     </c:otherwise>
                   </c:choose>
-                  <br />
                   <form:errors cssClass="errors" id="_${sec_field}_error_id" path="${sec_field}" />
                 </c:otherwise>
               </c:choose>
@@ -187,12 +186,12 @@
           <field:reference field="${label}" id="${id}" path="${path}" required="${required}" />
         </c:otherwise>
       </c:choose>
-    <!-- </div> -->
-    <br />
+    </div>
+    <div class="clear"><jsp:text/></div>
     <c:if test="${not empty items}">
 	    <script type="text/javascript">
 		  $(document).ready(function(){
-			$('#_${sec_field}_id').tooltip({trigger: 'focus', placement: 'auto right', animation: 'true', title:'${label}'});
+			$('#_${sec_field}_id').tooltip({trigger: 'focus', placement: 'right', animation: 'true', title:'${label}'});
 		    $('#_${sec_field}_id').rules('add', { required: ${required}, messages: { required:'${field_validation}' } });
 		  });
 		</script>

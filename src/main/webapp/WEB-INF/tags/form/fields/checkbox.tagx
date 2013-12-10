@@ -30,6 +30,6 @@
         </c:otherwise>
       </c:choose>
     </div>
-    <br />
+    <div class="clear"><jsp:text/></div>
   </c:if>
 </jsp:root>
