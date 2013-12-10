@@ -63,11 +63,11 @@
 			</div>
 			<p>
 			  <c:choose>
-				<c:when test="${empty buttonLabel}">
+				<c:when test="${empty buttonLabelCode}">
 		          <spring:message code="button_save" var="save_button" htmlEscape="false" />
 				</c:when>
 				<c:otherwise>
-				  <spring:message code="buttonLabelCode" var="save_button" htmlEscape="false" />
+				  <spring:message code="${buttonLabelCode}" var="save_button" htmlEscape="false" />
 				</c:otherwise>
 			  </c:choose>
 	          <input id="proceed" class="button large blue" type="submit" value="${fn:escapeXml(save_button)}"/>
