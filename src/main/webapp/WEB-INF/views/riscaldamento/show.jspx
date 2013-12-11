@@ -2,61 +2,72 @@
 <div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <spring:message code="label_result_questionarioriscaldamento_bestritorno" var="label" htmlEscape="false" />
-    <spring:message code="label_result_questionarioriscaldamento_tuoi_dati" var="touiDatiLabel" htmlEscape="false" />
+    <spring:message code="label_result_questionarioriscaldamento_bestritorno" htmlEscape="false" var="label"/>
+    <spring:message code="label_result_questionarioriscaldamento_tuoi_dati" htmlEscape="false" var="touiDatiLabel"/>
     <h5>${label}</h5>
     <div class="panel">
-	    <page:show label="${touiDatiLabel}" id="ps_it_verding_edo_model_QuestionarioRiscaldamento" object="${questionarioriscaldamento}" path="/riscaldamento" z="user-managed">
-	        <field:display field="tipoEnte.nome" id="s_it_verding_edo_model_QuestionarioRiscaldamento_tipoEnte" object="${questionarioriscaldamento}" z="user-managed"/>
-	        <field:display field="comune.nome" id="s_it_verding_edo_model_QuestionarioRiscaldamento_comune" object="${questionarioriscaldamento}" z="user-managed"/>
-	        <field:display field="tipoCombustibile.nome" id="s_it_verding_edo_model_QuestionarioRiscaldamento_tipoCombustibile" object="${questionarioriscaldamento}" z="user-managed"/>
-	        <field:display field="tipoTerminaleRiscaldamento.nome" id="s_it_verding_edo_model_QuestionarioRiscaldamento_tipoTerminaleRiscaldamento" object="${questionarioriscaldamento}" z="user-managed"/>
-	        <field:display field="metri2" id="s_it_verding_edo_model_QuestionarioRiscaldamento_metri2" object="${questionarioriscaldamento}" z="user-managed"/>
-	        <field:display field="litriCombustibileAnno" id="s_it_verding_edo_model_QuestionarioRiscaldamento_litriCombustibileAnno" object="${questionarioriscaldamento}" z="user-managed"/>
-	        <field:display field="isSistemaTermoregolazione" id="s_it_verding_edo_model_QuestionarioRiscaldamento_isSistemaTermoregolazione" object="${questionarioriscaldamento}" z="user-managed"/>
-	        <field:display field="isPiuDi10anni" id="s_it_verding_edo_model_QuestionarioRiscaldamento_isPiuDi10anni" object="${questionarioriscaldamento}" z="user-managed"/>
-	        <field:display render="false" field="soluzioni" id="s_it_verding_edo_model_QuestionarioRiscaldamento_soluzioni" object="${questionarioriscaldamento}" z="user-managed"/>
-	        <field:display render="false" field="bestRisparmio" id="s_it_verding_edo_model_QuestionarioRiscaldamento_bestRisparmio" object="${questionarioriscaldamento}" z="user-managed"/>
-	        <field:display render="false" field="secondBestRisparmio" id="s_it_verding_edo_model_QuestionarioRiscaldamento_secondBestRisparmio" object="${questionarioriscaldamento}" z="user-managed"/>
-	        <field:display render="false" field="bestRitorno" id="s_it_verding_edo_model_QuestionarioRiscaldamento_bestRitorno" object="${questionarioriscaldamento}" z="user-managed"/>
-	        <field:display render="false" field="secondBestRitorno" id="s_it_verding_edo_model_QuestionarioRiscaldamento_secondBestRitorno" object="${questionarioriscaldamento}" z="user-managed"/>
-	    </page:show>
-	    
-	   	<c:forEach items="${questionarioriscaldamento.soluzioni}" end="1" var="soluzinone">
-		    <h5>${soluzinone.nome}</h5>
-		    <div class="panel">
-				<ul class="tabs">
-                    <li class="active"><a href="#sample1">Investimento iniziale</a></li>
-                    <li class=""><a href="#sample2">Risparmio annuo</a></li>
-                    <li class=""><a href="#sample3">Anni in cui si ripaga</a></li>                 
-                    <li class=""><a href="#sample4">Impatto ecologico</a></li>                 							
+        <page:show id="ps_it_verding_edo_domain_QuestionarioRiscaldamento" label="${touiDatiLabel}" object="${questionarioriscaldamento}" path="/riscaldamento" z="user-managed">
+            <field:display field="tipoEnte.nome" id="s_it_verding_edo_domain_QuestionarioRiscaldamento_tipoEnte" object="${questionarioriscaldamento}" z="user-managed"/>
+            <field:display field="comune.nome" id="s_it_verding_edo_domain_QuestionarioRiscaldamento_comune" object="${questionarioriscaldamento}" z="user-managed"/>
+            <field:display field="tipoCombustibile.nome" id="s_it_verding_edo_domain_QuestionarioRiscaldamento_tipoCombustibile" object="${questionarioriscaldamento}" z="user-managed"/>
+            <field:display field="tipoTerminaleRiscaldamento.nome" id="s_it_verding_edo_domain_QuestionarioRiscaldamento_tipoTerminaleRiscaldamento" object="${questionarioriscaldamento}" z="user-managed"/>
+            <field:display field="metri2" id="s_it_verding_edo_domain_QuestionarioRiscaldamento_metri2" object="${questionarioriscaldamento}" z="user-managed"/>
+            <field:display field="litriCombustibileAnno" id="s_it_verding_edo_domain_QuestionarioRiscaldamento_litriCombustibileAnno" object="${questionarioriscaldamento}" z="user-managed"/>
+            <field:display field="isSistemaTermoregolazione" id="s_it_verding_edo_domain_QuestionarioRiscaldamento_isSistemaTermoregolazione" object="${questionarioriscaldamento}" z="user-managed"/>
+            <field:display field="isPiuDi10anni" id="s_it_verding_edo_domain_QuestionarioRiscaldamento_isPiuDi10anni" object="${questionarioriscaldamento}" z="user-managed"/>
+            <field:display field="soluzioni" id="s_it_verding_edo_domain_QuestionarioRiscaldamento_soluzioni" object="${questionarioriscaldamento}" render="false" z="user-managed"/>
+            <field:display field="bestRisparmio" id="s_it_verding_edo_domain_QuestionarioRiscaldamento_bestRisparmio" object="${questionarioriscaldamento}" render="false" z="user-managed"/>
+            <field:display field="secondBestRisparmio" id="s_it_verding_edo_domain_QuestionarioRiscaldamento_secondBestRisparmio" object="${questionarioriscaldamento}" render="false" z="user-managed"/>
+            <field:display field="bestRitorno" id="s_it_verding_edo_domain_QuestionarioRiscaldamento_bestRitorno" object="${questionarioriscaldamento}" render="false" z="user-managed"/>
+            <field:display field="secondBestRitorno" id="s_it_verding_edo_domain_QuestionarioRiscaldamento_secondBestRitorno" object="${questionarioriscaldamento}" render="false" z="user-managed"/>
+        </page:show>
+        <c:forEach end="1" items="${questionarioriscaldamento.soluzioni}" var="soluzinone">
+            <h5>${soluzinone.nome}</h5>
+            <div class="panel">
+                <ul class="tabs">
+                    <li class="active">
+                        <a href="#sample1">Investimento iniziale</a>
+                    </li>
+                    <li class="">
+                        <a href="#sample2">Risparmio annuo</a>
+                    </li>
+                    <li class="">
+                        <a href="#sample3">Anni in cui si ripaga</a>
+                    </li>
+                    <li class="">
+                        <a href="#sample4">Impatto ecologico</a>
+                    </li>
                 </ul>
                 <div class="tab_container">
-                    <div class="tab_content" id="sample1" style="display: block;">                            
+                    <div class="tab_content" id="sample1" style="display: block;">
                         <p>
-                        	<strong>Investimento iniziale:</strong> 
-                        	<span class="figures">€ ${soluzinone.costoIntervento}</span>
-                        </p>                                  
-                    </div>
-                                                            
-                    <div class="tab_content" id="sample2" style="display: none;">                            
-                        <p>
-                        	<strong>Risparmio annuo:</strong>                              
-                      		<span class="figures">€ ${soluzinone.risparmioAnnuo}</span>
+                            <strong>Investimento iniziale:</strong>
+                            <span class="figures">€ ${soluzinone.costoIntervento}</span>
                         </p>
                     </div>
-                    <div class="tab_content" id="sample3" style="display: none;">                     	                          
-                        <p><strong>Questo investimenti si ripaga al massimo in: </strong><span class="figures">${soluzinone.recuperoInvestimento} anni</span></p>                                  
-                    </div>                                                                  
-                    <div class="tab_content" id="sample4" style="display: none;">                     	                          
+                    <div class="tab_content" id="sample2" style="display: none;">
                         <p>
-                        	<strong>Tonnellate di CO2 evitate: </strong>
-                        	<span class="figures">${soluzinone.riduzioneCO2 / 1000} </span></p>                                  
-                    </div>                                                                  							
-                </div>       
-              	<p>
-              	<a class="button large blue" href="provaedo-step3-schedasoluzione1.php">Visualizza scheda soluzione 1</a></p>
-	    	</div>
-    	</c:forEach>
+                            <strong>Risparmio annuo:</strong>
+                            <span class="figures">€ ${soluzinone.risparmioAnnuo}</span>
+                        </p>
+                    </div>
+                    <div class="tab_content" id="sample3" style="display: none;">
+                        <p>
+                            <strong>Questo investimenti si ripaga al massimo in: </strong>
+                            <span class="figures">${soluzinone.recuperoInvestimento} anni</span>
+                        </p>
+                    </div>
+                    <div class="tab_content" id="sample4" style="display: none;">
+                        <p>
+                            <strong>Tonnellate di CO2 evitate: </strong>
+                            <span class="figures">${soluzinone.riduzioneCO2 / 1000} </span>
+                        </p>
+                    </div>
+                </div>
+                <p>
+                    <a class="button large blue" href="provaedo-step3-schedasoluzione1.php">Visualizza scheda soluzione 1</a>
+                </p>
+            </div>
+        </c:forEach>
     </div>
 </div>

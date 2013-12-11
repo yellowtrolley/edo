@@ -2,14 +2,14 @@
 <div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <page:list id="pl_it_verding_edo_model_QuestionarioRiscaldamento" items="${questionarioriscaldamentoes}" z="rxLxnB8Ipgp1BXHrPBSu2qH+bBY=">
-        <table:table data="${questionarioriscaldamentoes}" id="l_it_verding_edo_model_QuestionarioRiscaldamento" path="/riscaldamento" z="y6fiUYqQQr5OZk4RTYeB/nmMVYI=">
-            <table:column id="c_it_verding_edo_model_QuestionarioRiscaldamento_tipoEnte" property="tipoEnte" z="QdQQ4HBe+Co/dHMoydtSMXP8PUc="/>
-            <table:column id="c_it_verding_edo_model_QuestionarioRiscaldamento_comune" property="comune" z="BsF4lpcoADZp8u9/gFRi0hFEacE="/>
-            <table:column id="c_it_verding_edo_model_QuestionarioRiscaldamento_tipoCombustibile" property="tipoCombustibile" z="dYzB1WT2R8y3+OYa1rzv46QEWFc="/>
-            <table:column id="c_it_verding_edo_model_QuestionarioRiscaldamento_tipoTerminaleRiscaldamento" property="tipoTerminaleRiscaldamento" z="rexVD3Pax2CTUUpax4hEsjzYInk="/>
-            <table:column id="c_it_verding_edo_model_QuestionarioRiscaldamento_metri2" property="metri2" z="ymzjabnfzfHDH6i+4siykRQ3TmU="/>
-            <table:column id="c_it_verding_edo_model_QuestionarioRiscaldamento_litriCombustibileAnno" property="litriCombustibileAnno" z="Hrywy8OeP0WsDZSontCrnETgC9o="/>
+    <page:list id="pl_it_verding_edo_domain_QuestionarioRiscaldamento" items="${questionarioriscaldamentoes}" z="PrOjoaYcvtMFGjkaUdEnMq7QYn0=">
+        <table:table data="${questionarioriscaldamentoes}" id="l_it_verding_edo_domain_QuestionarioRiscaldamento" path="/riscaldamento" z="WQufz5s7+TwAVbO1DSjr1so5YQs=">
+            <table:column id="c_it_verding_edo_domain_QuestionarioRiscaldamento_tipoEnte" property="tipoEnte" z="gPakF8M43WItvT1L0iw9iGWk1J8="/>
+            <table:column id="c_it_verding_edo_domain_QuestionarioRiscaldamento_comune" property="comune" z="f/hR/V4UIt6XC6IxtCXuAnlo6KM="/>
+            <table:column id="c_it_verding_edo_domain_QuestionarioRiscaldamento_tipoCombustibile" property="tipoCombustibile" z="uW5RQlL9AvN+SbNGb7g22/BkUh0="/>
+            <table:column id="c_it_verding_edo_domain_QuestionarioRiscaldamento_tipoTerminaleRiscaldamento" property="tipoTerminaleRiscaldamento" z="wENHvA/SIs987nEP9Qm0TnsW5AI="/>
+            <table:column id="c_it_verding_edo_domain_QuestionarioRiscaldamento_metri2" property="metri2" z="c8LvY2yoOLXCkxJ5h20r7OXDUt4="/>
+            <table:column id="c_it_verding_edo_domain_QuestionarioRiscaldamento_litriCombustibileAnno" property="litriCombustibileAnno" z="QCEDbXPopnBP8NUF7TISxyxTSb8="/>
         </table:table>
     </page:list>
 </div>

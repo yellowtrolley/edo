@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_it_verding_edo_domain_Provincia" object="${provincia}" path="/provincias" z="TUTSMJi4Zsnercuv1MrkYLCbkMc=">
+        <field:display field="nome" id="s_it_verding_edo_domain_Provincia_nome" object="${provincia}" z="em5/Xmk3bTAwOVVdgiawOnEV6tI="/>
+        <field:display field="comuni" id="s_it_verding_edo_domain_Provincia_comuni" object="${provincia}" z="R1PAXCG/tPBfe02106SPqG+v7u8="/>
+    </page:show>
+</div>

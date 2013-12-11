@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="zonaclimaticas/list">
+        <put-attribute name="body" value="/WEB-INF/views/zonaclimaticas/list.jspx"/>
+    </definition>
+<definition extends="default" name="zonaclimaticas/show">
+        <put-attribute name="body" value="/WEB-INF/views/zonaclimaticas/show.jspx"/>
+    </definition>
+<definition extends="default" name="zonaclimaticas/create">
+        <put-attribute name="body" value="/WEB-INF/views/zonaclimaticas/create.jspx"/>
+    </definition>
+<definition extends="default" name="zonaclimaticas/update">
+        <put-attribute name="body" value="/WEB-INF/views/zonaclimaticas/update.jspx"/>
+    </definition>
+</tiles-definitions>

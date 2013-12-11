@@ -3,7 +3,7 @@
 
 package it.verding.edo.repositories;
 
-import it.verding.edo.model.TipoTerminaleRiscaldamento;
+import it.verding.edo.domain.TipoTerminaleRiscaldamento;
 import it.verding.edo.repositories.TipoTerminaleRiscaldamentoRepo;
 import org.bson.types.ObjectId;
 import org.springframework.data.repository.PagingAndSortingRepository;

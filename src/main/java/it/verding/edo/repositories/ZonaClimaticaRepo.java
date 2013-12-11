@@ -1,5 +1,5 @@
 package it.verding.edo.repositories;
-import it.verding.edo.model.ZonaClimatica;
+import it.verding.edo.domain.ZonaClimatica;
 
 import java.util.List;
 

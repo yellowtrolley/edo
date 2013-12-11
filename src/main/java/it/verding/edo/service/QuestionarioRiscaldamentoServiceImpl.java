@@ -1,11 +1,11 @@
 package it.verding.edo.service;
 
-import it.verding.edo.model.QuestionarioRiscaldamento;
-import it.verding.edo.model.Soluzione;
-import it.verding.edo.model.TipoCaldaia;
-import it.verding.edo.model.TipoCombustibile;
-import it.verding.edo.model.TipoEnte;
-import it.verding.edo.model.TipoTerminaleRiscaldamento;
+import it.verding.edo.domain.QuestionarioRiscaldamento;
+import it.verding.edo.domain.Soluzione;
+import it.verding.edo.domain.TipoCaldaia;
+import it.verding.edo.domain.TipoCombustibile;
+import it.verding.edo.domain.TipoEnte;
+import it.verding.edo.domain.TipoTerminaleRiscaldamento;
 import it.verding.edo.repositories.TipoCombustibileRepo;
 import it.verding.edo.repositories.TipoEnteRepo;
 import it.verding.edo.repositories.TipoTerminaleRiscaldamentoRepo;

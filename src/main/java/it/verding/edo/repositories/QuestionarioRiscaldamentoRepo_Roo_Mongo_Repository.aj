@@ -3,7 +3,7 @@
 
 package it.verding.edo.repositories;
 
-import it.verding.edo.model.QuestionarioRiscaldamento;
+import it.verding.edo.domain.QuestionarioRiscaldamento;
 import it.verding.edo.repositories.QuestionarioRiscaldamentoRepo;
 import org.bson.types.ObjectId;
 import org.springframework.data.repository.PagingAndSortingRepository;

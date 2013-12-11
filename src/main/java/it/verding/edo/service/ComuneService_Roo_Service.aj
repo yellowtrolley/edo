@@ -3,7 +3,7 @@
 
 package it.verding.edo.service;
 
-import it.verding.edo.model.Comune;
+import it.verding.edo.domain.Comune;
 import it.verding.edo.service.ComuneService;
 import java.util.List;
 import org.bson.types.ObjectId;

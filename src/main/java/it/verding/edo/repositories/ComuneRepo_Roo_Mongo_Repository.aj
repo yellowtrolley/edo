@@ -3,7 +3,7 @@
 
 package it.verding.edo.repositories;
 
-import it.verding.edo.model.Comune;
+import it.verding.edo.domain.Comune;
 import it.verding.edo.repositories.ComuneRepo;
 import org.bson.types.ObjectId;
 import org.springframework.data.repository.PagingAndSortingRepository;

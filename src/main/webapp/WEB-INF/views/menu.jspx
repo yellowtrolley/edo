@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<nav id="mainmenu" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+<nav xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" xmlns:spring="http://www.springframework.org/tags" id="mainmenu" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <spring:url value="/" var="home"/>
@@ -12,27 +12,61 @@
     <spring:message code="filosofia_label" htmlEscape="false" var="filosofia_label"/>
     <spring:message code="howitworks_label" htmlEscape="false" var="howitworks_label"/>
     <spring:message code="contatti_label" htmlEscape="false" var="contatti_label"/>
-        <ul id="menu">
-            <li>
-                <a href="${home}">${fn:escapeXml(home_label)}</a>
-            </li>
-            <li>
-                <a href="${about}">${fn:escapeXml(about_label)}</a>
-            </li>
-            <li>
-                <a href="${filosofia}">${fn:escapeXml(filosofia_label)}</a>
-            </li>
-            <li>
-                <a href="${howitworks}">${fn:escapeXml(howitworks_label)}</a>
-            </li>
-            <li>
-                <a href="${contatti}">${fn:escapeXml(contatti_label)}</a>
-            </li>
-        </ul>
+    <ul id="menu">
+        <li>
+            <a href="${home}">${fn:escapeXml(home_label)}</a>
+        </li>
+        <li>
+            <a href="${about}">${fn:escapeXml(about_label)}</a>
+        </li>
+        <li>
+            <a href="${filosofia}">${fn:escapeXml(filosofia_label)}</a>
+        </li>
+        <li>
+            <a href="${howitworks}">${fn:escapeXml(howitworks_label)}</a>
+        </li>
+        <li>
+            <a href="${contatti}">${fn:escapeXml(contatti_label)}</a>
+        </li>
+    </ul>
     <menu:menu id="_menu" render="false" z="user-managed">
         <menu:category id="c_questionarioriscaldamento" z="3ym6JkXy8/OzLJFYGK6GvEBw+GU=">
             <menu:item id="i_questionarioriscaldamento_new" messageCode="global_menu_new" url="/riscaldamento?form" z="he6KwMB73f5qrMisLTVkbHhzgm4="/>
             <menu:item id="i_questionarioriscaldamento_list" messageCode="global_menu_list" url="/riscaldamento?page=1&amp;size=${empty param.size ? 10 : param.size}" z="V/MohCMW83DA0W0uj94kwELf6Vw="/>
+        </menu:category>
+        <menu:category id="c_soluzione" z="JEeMZs1ki5NloscCODpsM2PnQh8=">
+            <menu:item id="i_soluzione_new" messageCode="global_menu_new" url="/soluziones?form" z="9UgRhLMyRaGatFB+V67itibHNA0="/>
+        </menu:category>
+        <menu:category id="c_tipocombustibile" z="LGTSv5p9l8IPlNbid1vhvKlRPto=">
+            <menu:item id="i_tipocombustibile_new" messageCode="global_menu_new" url="/tipocombustibiles?form" z="1fTGsg2mKEouPYpVEFr7Mkm5FXE="/>
+            <menu:item id="i_tipocombustibile_list" messageCode="global_menu_list" url="/tipocombustibiles?page=1&amp;size=${empty param.size ? 10 : param.size}" z="r/Ji1Is+TKoV3d39VyCyt9Lc3cU="/>
+        </menu:category>
+        <menu:category id="c_tipocaldaia" z="DTlzmMZSSm77NYy7QjSVyAuioeY=">
+            <menu:item id="i_tipocaldaia_new" messageCode="global_menu_new" url="/tipocaldaias?form" z="PMFm1oKwzc5uYqH/iQqum+4Rngc="/>
+        </menu:category>
+        <menu:category id="c_provincia" z="s40QIrkTEEQmQJE7n3s/kBpd4As=">
+            <menu:item id="i_provincia_new" messageCode="global_menu_new" url="/provincias?form" z="aptiyVobvnotHzHyHAejklRSmWM="/>
+            <menu:item id="i_provincia_list" messageCode="global_menu_list" url="/provincias?page=1&amp;size=${empty param.size ? 10 : param.size}" z="DbRgNOqg8bLq24SILSrImBD1jxo="/>
+        </menu:category>
+        <menu:category id="c_zonaclimatica" z="em9eMv3vY57fAtc0W/33SSbz4TI=">
+            <menu:item id="i_zonaclimatica_new" messageCode="global_menu_new" url="/zonaclimaticas?form" z="9AupsJQ14WqiMJ8R/J/SWXdzyG0="/>
+            <menu:item id="i_zonaclimatica_list" messageCode="global_menu_list" url="/zonaclimaticas?page=1&amp;size=${empty param.size ? 10 : param.size}" z="KXUtL4jimRMRiAGUJ7UFQGF0PKM="/>
+        </menu:category>
+        <menu:category id="c_regione" z="4LZopQn39M0EyiQNtF4+hmHfsNM=">
+            <menu:item id="i_regione_new" messageCode="global_menu_new" url="/regiones?form" z="umWrEKPLBaDmI1yKRELvDP5S1qs="/>
+            <menu:item id="i_regione_list" messageCode="global_menu_list" url="/regiones?page=1&amp;size=${empty param.size ? 10 : param.size}" z="IuTSseecZp/VH4VT5+UeD2uXAkE="/>
+        </menu:category>
+        <menu:category id="c_tipoterminaleriscaldamento" z="db957mZposjOc1oRgsNyfTmoGVY=">
+            <menu:item id="i_tipoterminaleriscaldamento_new" messageCode="global_menu_new" url="/tipoterminaleriscaldamentoes?form" z="qDQz3G57C9O4RwA6L8d84uE4oAQ="/>
+            <menu:item id="i_tipoterminaleriscaldamento_list" messageCode="global_menu_list" url="/tipoterminaleriscaldamentoes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="QPo5cClvq7EChr7ez5lXIIHIOY0="/>
+        </menu:category>
+        <menu:category id="c_tipoente" z="STDvHizZ/Qmyll6a1NvjFt+bJEA=">
+            <menu:item id="i_tipoente_new" messageCode="global_menu_new" url="/tipoentes?form" z="7IPuBPwz0Z2KOHRKE9M28IR+ax4="/>
+            <menu:item id="i_tipoente_list" messageCode="global_menu_list" url="/tipoentes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="aKj3+Xl/n3HV4/AnaLDfat39QUw="/>
+        </menu:category>
+        <menu:category id="c_comune" z="YqDVCXROeMaHnmBf0f9f5XlEQAU=">
+            <menu:item id="i_comune_new" messageCode="global_menu_new" url="/comunes?form" z="d5CWrcAiYXOwAqfFTVyVj+xllLs="/>
+            <menu:item id="i_comune_list" messageCode="global_menu_list" url="/comunes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="Q0llPKqLsALu6NTgAOyDovGubEc="/>
         </menu:category>
     </menu:menu>
 </nav>

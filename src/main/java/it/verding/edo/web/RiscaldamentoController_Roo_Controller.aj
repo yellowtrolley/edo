@@ -3,7 +3,7 @@
 
 package it.verding.edo.web;
 
-import it.verding.edo.model.QuestionarioRiscaldamento;
+import it.verding.edo.domain.QuestionarioRiscaldamento;
 import it.verding.edo.service.QuestionarioRiscaldamentoService;
 import it.verding.edo.web.RiscaldamentoController;
 import java.io.UnsupportedEncodingException;

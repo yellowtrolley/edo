@@ -3,7 +3,7 @@
 
 package it.verding.edo.repositories;
 
-import it.verding.edo.model.ZonaClimatica;
+import it.verding.edo.domain.ZonaClimatica;
 import it.verding.edo.repositories.ZonaClimaticaRepo;
 import org.bson.types.ObjectId;
 import org.springframework.data.repository.PagingAndSortingRepository;

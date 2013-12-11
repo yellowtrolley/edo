@@ -1,5 +1,5 @@
 package it.verding.edo.web;
-import it.verding.edo.model.Comune;
+import it.verding.edo.domain.Comune;
 
 import java.util.List;
 

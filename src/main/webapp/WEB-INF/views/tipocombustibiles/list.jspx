@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_it_verding_edo_domain_TipoCombustibile" items="${tipocombustibiles}" z="wqY9rw/qvfToATYXkK8CM4azW+8=">
+        <table:table data="${tipocombustibiles}" id="l_it_verding_edo_domain_TipoCombustibile" path="/tipocombustibiles" z="83j2IaS17MJlesaYSvbQpfes0T4=">
+            <table:column id="c_it_verding_edo_domain_TipoCombustibile_nome" property="nome" z="7lwQDK7GqTA+D/uB+TMMYEb1E8A="/>
+            <table:column id="c_it_verding_edo_domain_TipoCombustibile_costo" property="costo" z="nrL0GdzXugSldzdgvoVLVgKqvDs="/>
+            <table:column id="c_it_verding_edo_domain_TipoCombustibile_energiaPrimaria" property="energiaPrimaria" z="yLUr4TSsaWz4j7FxkMGQO1JEMU0="/>
+            <table:column id="c_it_verding_edo_domain_TipoCombustibile_fattoreDiEmissione" property="fattoreDiEmissione" z="mf6WSO8vlVD4OtdcxuXOxc+ap0Y="/>
+        </table:table>
+    </page:list>
+</div>

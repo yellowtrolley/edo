@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_it_verding_edo_domain_Soluzione" modelAttribute="soluzione" path="/soluziones" versionField="none" z="WcSYyuYeMwUXS/kx292QEYRdLxE=">
+        <field:input field="nome" id="c_it_verding_edo_domain_Soluzione_nome" z="DwDe1vZK4VLcYW2Ysy0yK/d95BI="/>
+        <field:input field="litriAnno" id="c_it_verding_edo_domain_Soluzione_litriAnno" z="HJp++ZqCyYxn5NCHU7dysr2+NzQ="/>
+        <field:input field="tipoCaldaia" id="c_it_verding_edo_domain_Soluzione_tipoCaldaia" z="KQKI6Svqv7taBxX+FGdz3QeC9RI="/>
+        <field:input field="costoIntervento" id="c_it_verding_edo_domain_Soluzione_costoIntervento" validationMessageCode="field_invalid_number" z="HfPm11mU3sg1oD73xh3wh5L8Qjo="/>
+        <field:input field="nuovoConsumo" id="c_it_verding_edo_domain_Soluzione_nuovoConsumo" validationMessageCode="field_invalid_number" z="pMhujwp+1vJLxTOiy25rvhp/qdM="/>
+        <field:input field="costoAnnuoCombustibileNuovoImpianto" id="c_it_verding_edo_domain_Soluzione_costoAnnuoCombustibileNuovoImpianto" validationMessageCode="field_invalid_number" z="IqccjoWY50lFjv8p+6kfiOJhji4="/>
+        <field:input field="risparmioAnnuo" id="c_it_verding_edo_domain_Soluzione_risparmioAnnuo" validationMessageCode="field_invalid_number" z="VvnW63e/D7D/Q5+Yu6XnN0t+04U="/>
+        <field:input field="recuperoInvestimento" id="c_it_verding_edo_domain_Soluzione_recuperoInvestimento" validationMessageCode="field_invalid_number" z="IT7SZeH8g0NL3JvOLDJd+l58jvI="/>
+        <field:input field="riduzioneCO2" id="c_it_verding_edo_domain_Soluzione_riduzioneCO2" validationMessageCode="field_invalid_number" z="yKfk+M2Xl880IGMs9orPotqJdN4="/>
+        <field:input field="eventualiAgevolazioniEconomiche" id="c_it_verding_edo_domain_Soluzione_eventualiAgevolazioniEconomiche" validationMessageCode="field_invalid_number" z="bG6xNHiTbi//mwcQT3b7uDVp09A="/>
+        <field:input field="eventualiAgevolazioniEconomicheContoTermico" id="c_it_verding_edo_domain_Soluzione_eventualiAgevolazioniEconomicheContoTermico" validationMessageCode="field_invalid_number" z="BftuHZ4cL6zelWr/iFfVTl1jhXI="/>
+        <field:input field="recuperoInvestimentoConAgevolazioniConDetrazioniFiscali" id="c_it_verding_edo_domain_Soluzione_recuperoInvestimentoConAgevolazioniConDetrazioniFiscali" validationMessageCode="field_invalid_number" z="kIv0rZkaB73Lln8vdntrAkjHnkY="/>
+        <field:input field="recuperoInvestimentoConAgevolazioniConContoTermico" id="c_it_verding_edo_domain_Soluzione_recuperoInvestimentoConAgevolazioniConContoTermico" validationMessageCode="field_invalid_number" z="/t3aWtUK2/KMrfZ/Iz+kUZ3ppPU="/>
+        <field:input field="ricavo10anniConDetrazioni" id="c_it_verding_edo_domain_Soluzione_ricavo10anniConDetrazioni" validationMessageCode="field_invalid_number" z="gjNMrIzTYtq4OM5uBUwu0FW4iec="/>
+        <field:input field="ricavo10anniConContoTermico" id="c_it_verding_edo_domain_Soluzione_ricavo10anniConContoTermico" validationMessageCode="field_invalid_number" z="27XUATlgx0rlgFlKdHLefVe/9oo="/>
+    </form:update>
+</div>

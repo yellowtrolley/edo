@@ -1,6 +1,8 @@
 package it.verding.edo.repositories;
-import it.verding.edo.model.TipoTerminaleRiscaldamento;
+import it.verding.edo.domain.TipoTerminaleRiscaldamento;
+
 import java.util.List;
+
 import org.springframework.roo.addon.layers.repository.mongo.RooMongoRepository;
 
 @RooMongoRepository(domainType = TipoTerminaleRiscaldamento.class)

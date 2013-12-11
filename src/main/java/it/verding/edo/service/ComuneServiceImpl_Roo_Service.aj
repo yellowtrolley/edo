@@ -3,7 +3,7 @@
 
 package it.verding.edo.service;
 
-import it.verding.edo.model.Comune;
+import it.verding.edo.domain.Comune;
 import it.verding.edo.repositories.ComuneRepo;
 import it.verding.edo.service.ComuneServiceImpl;
 import java.util.List;

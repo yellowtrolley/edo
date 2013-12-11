@@ -3,7 +3,7 @@
 
 package it.verding.edo.web;
 
-import it.verding.edo.model.Comune;
+import it.verding.edo.domain.Comune;
 import it.verding.edo.service.ComuneService;
 import it.verding.edo.web.ComuneController;
 import org.bson.types.ObjectId;

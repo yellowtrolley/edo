@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_it_verding_edo_domain_Soluzione" object="${soluzione}" path="/soluziones" z="vtdgKZ3uBSrSqU9zV/AiBfTbItk=">
+        <field:display field="nome" id="s_it_verding_edo_domain_Soluzione_nome" object="${soluzione}" z="jCFIpzpaunS5g1RPPe+aaHroTIo="/>
+        <field:display field="litriAnno" id="s_it_verding_edo_domain_Soluzione_litriAnno" object="${soluzione}" z="nuQDf+kTiWZbvSzG8KLLo4Vrcso="/>
+        <field:display field="tipoCaldaia" id="s_it_verding_edo_domain_Soluzione_tipoCaldaia" object="${soluzione}" z="f0KHijK4s1j/qBZNsKAm0adtRNE="/>
+        <field:display field="costoIntervento" id="s_it_verding_edo_domain_Soluzione_costoIntervento" object="${soluzione}" z="CSBTH6THGqIygJDPbyNo/9uRVCk="/>
+        <field:display field="nuovoConsumo" id="s_it_verding_edo_domain_Soluzione_nuovoConsumo" object="${soluzione}" z="8U0DoJWmO31UPcCbE5rwsNz25E4="/>
+        <field:display field="costoAnnuoCombustibileNuovoImpianto" id="s_it_verding_edo_domain_Soluzione_costoAnnuoCombustibileNuovoImpianto" object="${soluzione}" z="LLYQfTnbQv1sLGgVHtt/EwuI0Nw="/>
+        <field:display field="risparmioAnnuo" id="s_it_verding_edo_domain_Soluzione_risparmioAnnuo" object="${soluzione}" z="VqPVWX184x9/mGGDC63Qlttaav4="/>
+        <field:display field="recuperoInvestimento" id="s_it_verding_edo_domain_Soluzione_recuperoInvestimento" object="${soluzione}" z="rlZuxzMF0X86LtjaJikg1QMP8yc="/>
+        <field:display field="riduzioneCO2" id="s_it_verding_edo_domain_Soluzione_riduzioneCO2" object="${soluzione}" z="Pye3+s2GhDSJ+wMqn9i66oxDYKI="/>
+        <field:display field="eventualiAgevolazioniEconomiche" id="s_it_verding_edo_domain_Soluzione_eventualiAgevolazioniEconomiche" object="${soluzione}" z="Zn9A+uDOhJ9ePEV/gSx0tXFwgow="/>
+        <field:display field="eventualiAgevolazioniEconomicheContoTermico" id="s_it_verding_edo_domain_Soluzione_eventualiAgevolazioniEconomicheContoTermico" object="${soluzione}" z="LnTJiwERs1RieaKmxXNRFu/Pl2s="/>
+        <field:display field="recuperoInvestimentoConAgevolazioniConDetrazioniFiscali" id="s_it_verding_edo_domain_Soluzione_recuperoInvestimentoConAgevolazioniConDetrazioniFiscali" object="${soluzione}" z="ogg7Q92BIUyFaM/8IMKG08VusTc="/>
+        <field:display field="recuperoInvestimentoConAgevolazioniConContoTermico" id="s_it_verding_edo_domain_Soluzione_recuperoInvestimentoConAgevolazioniConContoTermico" object="${soluzione}" z="BcYWMIOQM74m/wLFIIikvF4QFxw="/>
+        <field:display field="ricavo10anniConDetrazioni" id="s_it_verding_edo_domain_Soluzione_ricavo10anniConDetrazioni" object="${soluzione}" z="aq+T0/932UooBp8ryc7hv+thIhQ="/>
+        <field:display field="ricavo10anniConContoTermico" id="s_it_verding_edo_domain_Soluzione_ricavo10anniConContoTermico" object="${soluzione}" z="XF3ou73JE+Z7mgeh6Vvyzd10RaY="/>
+    </page:show>
+</div>

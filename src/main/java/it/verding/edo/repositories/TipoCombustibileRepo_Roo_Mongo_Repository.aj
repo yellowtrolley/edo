@@ -3,7 +3,7 @@
 
 package it.verding.edo.repositories;
 
-import it.verding.edo.model.TipoCombustibile;
+import it.verding.edo.domain.TipoCombustibile;
 import it.verding.edo.repositories.TipoCombustibileRepo;
 import org.bson.types.ObjectId;
 import org.springframework.data.repository.PagingAndSortingRepository;

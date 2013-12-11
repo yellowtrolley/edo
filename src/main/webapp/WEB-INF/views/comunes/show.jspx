@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_it_verding_edo_domain_Comune" object="${comune}" path="/comunes" z="kLNU+7VXZrt0Ypp9poPjELgPdEA=">
+        <field:display field="nome" id="s_it_verding_edo_domain_Comune_nome" object="${comune}" z="uohuDrhK5gPzEem14y3jJvW1NQ4="/>
+        <field:display field="altSLM" id="s_it_verding_edo_domain_Comune_altSLM" object="${comune}" z="KDpnYUzWeBnZ69023IPNcX/Eefg="/>
+        <field:display field="gradiGiorno" id="s_it_verding_edo_domain_Comune_gradiGiorno" object="${comune}" z="e/sF+u41xNglKLtL5ddSJh/OErU="/>
+        <field:display field="zonaClimatica" id="s_it_verding_edo_domain_Comune_zonaClimatica" object="${comune}" z="jjOc0LMW+jWHNHfY9/A1BZveopQ="/>
+    </page:show>
+</div>

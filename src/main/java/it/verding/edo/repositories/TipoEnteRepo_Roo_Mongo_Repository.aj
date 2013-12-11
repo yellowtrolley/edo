@@ -3,7 +3,7 @@
 
 package it.verding.edo.repositories;
 
-import it.verding.edo.model.TipoEnte;
+import it.verding.edo.domain.TipoEnte;
 import it.verding.edo.repositories.TipoEnteRepo;
 import org.bson.types.ObjectId;
 import org.springframework.data.repository.PagingAndSortingRepository;

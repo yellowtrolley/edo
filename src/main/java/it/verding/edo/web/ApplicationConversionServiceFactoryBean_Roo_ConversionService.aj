@@ -3,7 +3,23 @@
 
 package it.verding.edo.web;
 
-import it.verding.edo.model.QuestionarioRiscaldamento;
+import it.verding.edo.domain.Comune;
+import it.verding.edo.domain.Provincia;
+import it.verding.edo.domain.QuestionarioRiscaldamento;
+import it.verding.edo.domain.Regione;
+import it.verding.edo.domain.Soluzione;
+import it.verding.edo.domain.TipoCaldaia;
+import it.verding.edo.domain.TipoCombustibile;
+import it.verding.edo.domain.TipoEnte;
+import it.verding.edo.domain.TipoTerminaleRiscaldamento;
+import it.verding.edo.domain.ZonaClimatica;
+import it.verding.edo.repositories.ProvinciaRepo;
+import it.verding.edo.repositories.RegioneRepo;
+import it.verding.edo.repositories.TipoCombustibileRepo;
+import it.verding.edo.repositories.TipoEnteRepo;
+import it.verding.edo.repositories.TipoTerminaleRiscaldamentoRepo;
+import it.verding.edo.repositories.ZonaClimaticaRepo;
+import it.verding.edo.service.ComuneService;
 import it.verding.edo.service.QuestionarioRiscaldamentoService;
 import it.verding.edo.web.ApplicationConversionServiceFactoryBean;
 import org.bson.types.ObjectId;
@@ -17,10 +33,79 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     declare @type: ApplicationConversionServiceFactoryBean: @Configurable;
     
     @Autowired
+    ComuneService ApplicationConversionServiceFactoryBean.comuneService;
+    
+    @Autowired
+    ProvinciaRepo ApplicationConversionServiceFactoryBean.provinciaRepo;
+    
+    @Autowired
     QuestionarioRiscaldamentoService ApplicationConversionServiceFactoryBean.questionarioRiscaldamentoService;
     
+    @Autowired
+    RegioneRepo ApplicationConversionServiceFactoryBean.regioneRepo;
+    
+    @Autowired
+    TipoCombustibileRepo ApplicationConversionServiceFactoryBean.tipoCombustibileRepo;
+    
+    @Autowired
+    TipoEnteRepo ApplicationConversionServiceFactoryBean.tipoEnteRepo;
+    
+    @Autowired
+    TipoTerminaleRiscaldamentoRepo ApplicationConversionServiceFactoryBean.tipoTerminaleRiscaldamentoRepo;
+    
+    @Autowired
+    ZonaClimaticaRepo ApplicationConversionServiceFactoryBean.zonaClimaticaRepo;
+    
+    public Converter<Comune, String> ApplicationConversionServiceFactoryBean.getComuneToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<it.verding.edo.domain.Comune, java.lang.String>() {
+            public String convert(Comune comune) {
+                return new StringBuilder().append(comune.getNome()).append(' ').append(comune.getAltSLM()).append(' ').append(comune.getGradiGiorno()).toString();
+            }
+        };
+    }
+    
+    public Converter<ObjectId, Comune> ApplicationConversionServiceFactoryBean.getIdToComuneConverter() {
+        return new org.springframework.core.convert.converter.Converter<org.bson.types.ObjectId, it.verding.edo.domain.Comune>() {
+            public it.verding.edo.domain.Comune convert(org.bson.types.ObjectId id) {
+                return comuneService.findComune(id);
+            }
+        };
+    }
+    
+    public Converter<String, Comune> ApplicationConversionServiceFactoryBean.getStringToComuneConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, it.verding.edo.domain.Comune>() {
+            public it.verding.edo.domain.Comune convert(String id) {
+                return getObject().convert(getObject().convert(id, ObjectId.class), Comune.class);
+            }
+        };
+    }
+    
+    public Converter<Provincia, String> ApplicationConversionServiceFactoryBean.getProvinciaToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<it.verding.edo.domain.Provincia, java.lang.String>() {
+            public String convert(Provincia provincia) {
+                return new StringBuilder().append(provincia.getNome()).toString();
+            }
+        };
+    }
+    
+    public Converter<ObjectId, Provincia> ApplicationConversionServiceFactoryBean.getIdToProvinciaConverter() {
+        return new org.springframework.core.convert.converter.Converter<org.bson.types.ObjectId, it.verding.edo.domain.Provincia>() {
+            public it.verding.edo.domain.Provincia convert(org.bson.types.ObjectId id) {
+                return provinciaRepo.findOne(id);
+            }
+        };
+    }
+    
+    public Converter<String, Provincia> ApplicationConversionServiceFactoryBean.getStringToProvinciaConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, it.verding.edo.domain.Provincia>() {
+            public it.verding.edo.domain.Provincia convert(String id) {
+                return getObject().convert(getObject().convert(id, ObjectId.class), Provincia.class);
+            }
+        };
+    }
+    
     public Converter<QuestionarioRiscaldamento, String> ApplicationConversionServiceFactoryBean.getQuestionarioRiscaldamentoToStringConverter() {
-        return new org.springframework.core.convert.converter.Converter<it.verding.edo.model.QuestionarioRiscaldamento, java.lang.String>() {
+        return new org.springframework.core.convert.converter.Converter<it.verding.edo.domain.QuestionarioRiscaldamento, java.lang.String>() {
             public String convert(QuestionarioRiscaldamento questionarioRiscaldamento) {
                 return new StringBuilder().append(questionarioRiscaldamento.getMetri2()).append(' ').append(questionarioRiscaldamento.getLitriCombustibileAnno()).append(' ').append(questionarioRiscaldamento.getBestRisparmio()).append(' ').append(questionarioRiscaldamento.getSecondBestRisparmio()).toString();
             }
@@ -28,25 +113,202 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     }
     
     public Converter<ObjectId, QuestionarioRiscaldamento> ApplicationConversionServiceFactoryBean.getIdToQuestionarioRiscaldamentoConverter() {
-        return new org.springframework.core.convert.converter.Converter<org.bson.types.ObjectId, it.verding.edo.model.QuestionarioRiscaldamento>() {
-            public it.verding.edo.model.QuestionarioRiscaldamento convert(org.bson.types.ObjectId id) {
+        return new org.springframework.core.convert.converter.Converter<org.bson.types.ObjectId, it.verding.edo.domain.QuestionarioRiscaldamento>() {
+            public it.verding.edo.domain.QuestionarioRiscaldamento convert(org.bson.types.ObjectId id) {
                 return questionarioRiscaldamentoService.findQuestionarioRiscaldamento(id);
             }
         };
     }
     
     public Converter<String, QuestionarioRiscaldamento> ApplicationConversionServiceFactoryBean.getStringToQuestionarioRiscaldamentoConverter() {
-        return new org.springframework.core.convert.converter.Converter<java.lang.String, it.verding.edo.model.QuestionarioRiscaldamento>() {
-            public it.verding.edo.model.QuestionarioRiscaldamento convert(String id) {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, it.verding.edo.domain.QuestionarioRiscaldamento>() {
+            public it.verding.edo.domain.QuestionarioRiscaldamento convert(String id) {
                 return getObject().convert(getObject().convert(id, ObjectId.class), QuestionarioRiscaldamento.class);
             }
         };
     }
     
+    public Converter<Regione, String> ApplicationConversionServiceFactoryBean.getRegioneToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<it.verding.edo.domain.Regione, java.lang.String>() {
+            public String convert(Regione regione) {
+                return new StringBuilder().append(regione.getNome()).toString();
+            }
+        };
+    }
+    
+    public Converter<ObjectId, Regione> ApplicationConversionServiceFactoryBean.getIdToRegioneConverter() {
+        return new org.springframework.core.convert.converter.Converter<org.bson.types.ObjectId, it.verding.edo.domain.Regione>() {
+            public it.verding.edo.domain.Regione convert(org.bson.types.ObjectId id) {
+                return regioneRepo.findOne(id);
+            }
+        };
+    }
+    
+    public Converter<String, Regione> ApplicationConversionServiceFactoryBean.getStringToRegioneConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, it.verding.edo.domain.Regione>() {
+            public it.verding.edo.domain.Regione convert(String id) {
+                return getObject().convert(getObject().convert(id, ObjectId.class), Regione.class);
+            }
+        };
+    }
+    
+    public Converter<Soluzione, String> ApplicationConversionServiceFactoryBean.getSoluzioneToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<it.verding.edo.domain.Soluzione, java.lang.String>() {
+            public String convert(Soluzione soluzione) {
+                return new StringBuilder().append(soluzione.getNome()).append(' ').append(soluzione.getLitriAnno()).append(' ').append(soluzione.getCostoIntervento()).append(' ').append(soluzione.getNuovoConsumo()).toString();
+            }
+        };
+    }
+    
+    public Converter<String, Soluzione> ApplicationConversionServiceFactoryBean.getStringToSoluzioneConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, it.verding.edo.domain.Soluzione>() {
+            public it.verding.edo.domain.Soluzione convert(String id) {
+                return getObject().convert(getObject().convert(id, ObjectId.class), Soluzione.class);
+            }
+        };
+    }
+    
+    public Converter<TipoCaldaia, String> ApplicationConversionServiceFactoryBean.getTipoCaldaiaToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<it.verding.edo.domain.TipoCaldaia, java.lang.String>() {
+            public String convert(TipoCaldaia tipoCaldaia) {
+                return new StringBuilder().append(tipoCaldaia.getNome()).toString();
+            }
+        };
+    }
+    
+    public Converter<String, TipoCaldaia> ApplicationConversionServiceFactoryBean.getStringToTipoCaldaiaConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, it.verding.edo.domain.TipoCaldaia>() {
+            public it.verding.edo.domain.TipoCaldaia convert(String id) {
+                return getObject().convert(getObject().convert(id, ObjectId.class), TipoCaldaia.class);
+            }
+        };
+    }
+    
+    public Converter<TipoCombustibile, String> ApplicationConversionServiceFactoryBean.getTipoCombustibileToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<it.verding.edo.domain.TipoCombustibile, java.lang.String>() {
+            public String convert(TipoCombustibile tipoCombustibile) {
+                return new StringBuilder().append(tipoCombustibile.getNome()).append(' ').append(tipoCombustibile.getCosto()).append(' ').append(tipoCombustibile.getEnergiaPrimaria()).append(' ').append(tipoCombustibile.getFattoreDiEmissione()).toString();
+            }
+        };
+    }
+    
+    public Converter<ObjectId, TipoCombustibile> ApplicationConversionServiceFactoryBean.getIdToTipoCombustibileConverter() {
+        return new org.springframework.core.convert.converter.Converter<org.bson.types.ObjectId, it.verding.edo.domain.TipoCombustibile>() {
+            public it.verding.edo.domain.TipoCombustibile convert(org.bson.types.ObjectId id) {
+                return tipoCombustibileRepo.findOne(id);
+            }
+        };
+    }
+    
+    public Converter<String, TipoCombustibile> ApplicationConversionServiceFactoryBean.getStringToTipoCombustibileConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, it.verding.edo.domain.TipoCombustibile>() {
+            public it.verding.edo.domain.TipoCombustibile convert(String id) {
+                return getObject().convert(getObject().convert(id, ObjectId.class), TipoCombustibile.class);
+            }
+        };
+    }
+    
+    public Converter<TipoEnte, String> ApplicationConversionServiceFactoryBean.getTipoEnteToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<it.verding.edo.domain.TipoEnte, java.lang.String>() {
+            public String convert(TipoEnte tipoEnte) {
+                return new StringBuilder().append(tipoEnte.getNome()).toString();
+            }
+        };
+    }
+    
+    public Converter<ObjectId, TipoEnte> ApplicationConversionServiceFactoryBean.getIdToTipoEnteConverter() {
+        return new org.springframework.core.convert.converter.Converter<org.bson.types.ObjectId, it.verding.edo.domain.TipoEnte>() {
+            public it.verding.edo.domain.TipoEnte convert(org.bson.types.ObjectId id) {
+                return tipoEnteRepo.findOne(id);
+            }
+        };
+    }
+    
+    public Converter<String, TipoEnte> ApplicationConversionServiceFactoryBean.getStringToTipoEnteConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, it.verding.edo.domain.TipoEnte>() {
+            public it.verding.edo.domain.TipoEnte convert(String id) {
+                return getObject().convert(getObject().convert(id, ObjectId.class), TipoEnte.class);
+            }
+        };
+    }
+    
+    public Converter<TipoTerminaleRiscaldamento, String> ApplicationConversionServiceFactoryBean.getTipoTerminaleRiscaldamentoToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<it.verding.edo.domain.TipoTerminaleRiscaldamento, java.lang.String>() {
+            public String convert(TipoTerminaleRiscaldamento tipoTerminaleRiscaldamento) {
+                return new StringBuilder().append(tipoTerminaleRiscaldamento.getNome()).toString();
+            }
+        };
+    }
+    
+    public Converter<ObjectId, TipoTerminaleRiscaldamento> ApplicationConversionServiceFactoryBean.getIdToTipoTerminaleRiscaldamentoConverter() {
+        return new org.springframework.core.convert.converter.Converter<org.bson.types.ObjectId, it.verding.edo.domain.TipoTerminaleRiscaldamento>() {
+            public it.verding.edo.domain.TipoTerminaleRiscaldamento convert(org.bson.types.ObjectId id) {
+                return tipoTerminaleRiscaldamentoRepo.findOne(id);
+            }
+        };
+    }
+    
+    public Converter<String, TipoTerminaleRiscaldamento> ApplicationConversionServiceFactoryBean.getStringToTipoTerminaleRiscaldamentoConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, it.verding.edo.domain.TipoTerminaleRiscaldamento>() {
+            public it.verding.edo.domain.TipoTerminaleRiscaldamento convert(String id) {
+                return getObject().convert(getObject().convert(id, ObjectId.class), TipoTerminaleRiscaldamento.class);
+            }
+        };
+    }
+    
+    public Converter<ZonaClimatica, String> ApplicationConversionServiceFactoryBean.getZonaClimaticaToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<it.verding.edo.domain.ZonaClimatica, java.lang.String>() {
+            public String convert(ZonaClimatica zonaClimatica) {
+                return new StringBuilder().append(zonaClimatica.getNome()).append(' ').append(zonaClimatica.getValoreDaContoTermico()).toString();
+            }
+        };
+    }
+    
+    public Converter<ObjectId, ZonaClimatica> ApplicationConversionServiceFactoryBean.getIdToZonaClimaticaConverter() {
+        return new org.springframework.core.convert.converter.Converter<org.bson.types.ObjectId, it.verding.edo.domain.ZonaClimatica>() {
+            public it.verding.edo.domain.ZonaClimatica convert(org.bson.types.ObjectId id) {
+                return zonaClimaticaRepo.findOne(id);
+            }
+        };
+    }
+    
+    public Converter<String, ZonaClimatica> ApplicationConversionServiceFactoryBean.getStringToZonaClimaticaConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, it.verding.edo.domain.ZonaClimatica>() {
+            public it.verding.edo.domain.ZonaClimatica convert(String id) {
+                return getObject().convert(getObject().convert(id, ObjectId.class), ZonaClimatica.class);
+            }
+        };
+    }
+    
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
+        registry.addConverter(getComuneToStringConverter());
+        registry.addConverter(getIdToComuneConverter());
+        registry.addConverter(getStringToComuneConverter());
+        registry.addConverter(getProvinciaToStringConverter());
+        registry.addConverter(getIdToProvinciaConverter());
+        registry.addConverter(getStringToProvinciaConverter());
         registry.addConverter(getQuestionarioRiscaldamentoToStringConverter());
         registry.addConverter(getIdToQuestionarioRiscaldamentoConverter());
         registry.addConverter(getStringToQuestionarioRiscaldamentoConverter());
+        registry.addConverter(getRegioneToStringConverter());
+        registry.addConverter(getIdToRegioneConverter());
+        registry.addConverter(getStringToRegioneConverter());
+        registry.addConverter(getSoluzioneToStringConverter());
+        registry.addConverter(getStringToSoluzioneConverter());
+        registry.addConverter(getTipoCaldaiaToStringConverter());
+        registry.addConverter(getStringToTipoCaldaiaConverter());
+        registry.addConverter(getTipoCombustibileToStringConverter());
+        registry.addConverter(getIdToTipoCombustibileConverter());
+        registry.addConverter(getStringToTipoCombustibileConverter());
+        registry.addConverter(getTipoEnteToStringConverter());
+        registry.addConverter(getIdToTipoEnteConverter());
+        registry.addConverter(getStringToTipoEnteConverter());
+        registry.addConverter(getTipoTerminaleRiscaldamentoToStringConverter());
+        registry.addConverter(getIdToTipoTerminaleRiscaldamentoConverter());
+        registry.addConverter(getStringToTipoTerminaleRiscaldamentoConverter());
+        registry.addConverter(getZonaClimaticaToStringConverter());
+        registry.addConverter(getIdToZonaClimaticaConverter());
+        registry.addConverter(getStringToZonaClimaticaConverter());
     }
     
     public void ApplicationConversionServiceFactoryBean.afterPropertiesSet() {

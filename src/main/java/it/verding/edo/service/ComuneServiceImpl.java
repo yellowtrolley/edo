@@ -1,6 +1,6 @@
 package it.verding.edo.service;
 
-import it.verding.edo.model.Comune;
+import it.verding.edo.domain.Comune;
 
 import java.util.List;
 

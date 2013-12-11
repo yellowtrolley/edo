@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_it_verding_edo_domain_ZonaClimatica" object="${zonaclimatica}" path="/zonaclimaticas" z="yIWgwVgPyLOCksL9QQf3+SLHA1k=">
+        <field:display field="nome" id="s_it_verding_edo_domain_ZonaClimatica_nome" object="${zonaclimatica}" z="blxZ5P6YCG8PmLpN20UlkUWJEWU="/>
+        <field:display field="valoreDaContoTermico" id="s_it_verding_edo_domain_ZonaClimatica_valoreDaContoTermico" object="${zonaclimatica}" z="6a1aFZu6kVGUwJg8qMbj9nZczqI="/>
+    </page:show>
+</div>

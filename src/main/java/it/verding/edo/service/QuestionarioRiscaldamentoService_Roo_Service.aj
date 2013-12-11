@@ -3,7 +3,7 @@
 
 package it.verding.edo.service;
 
-import it.verding.edo.model.QuestionarioRiscaldamento;
+import it.verding.edo.domain.QuestionarioRiscaldamento;
 import it.verding.edo.service.QuestionarioRiscaldamentoService;
 import java.util.List;
 import org.bson.types.ObjectId;

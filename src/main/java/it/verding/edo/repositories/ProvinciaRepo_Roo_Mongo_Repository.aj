@@ -3,7 +3,7 @@
 
 package it.verding.edo.repositories;
 
-import it.verding.edo.model.Provincia;
+import it.verding.edo.domain.Provincia;
 import it.verding.edo.repositories.ProvinciaRepo;
 import org.bson.types.ObjectId;
 import org.springframework.data.repository.PagingAndSortingRepository;

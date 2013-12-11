@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_it_verding_edo_domain_Soluzione" items="${soluziones}" z="+uPYQ51c5waZr0GC/Clw0Z7WBxY=">
+        <table:table data="${soluziones}" id="l_it_verding_edo_domain_Soluzione" path="/soluziones" z="Uye+ADp39B+BqAyoLlqkaNwrhf4=">
+            <table:column id="c_it_verding_edo_domain_Soluzione_nome" property="nome" z="P4TAvzOIuq8Kvx2ehOjpG7vxOAQ="/>
+            <table:column id="c_it_verding_edo_domain_Soluzione_litriAnno" property="litriAnno" z="Cw1GFhKKmspC4q9N93poPS/ogds="/>
+            <table:column id="c_it_verding_edo_domain_Soluzione_tipoCaldaia" property="tipoCaldaia" z="YOQYDNk/sfYBGgbpmTjWbVdCCvY="/>
+            <table:column id="c_it_verding_edo_domain_Soluzione_costoIntervento" property="costoIntervento" z="1oL3lUinn9sjakL6d2R4b29KP50="/>
+            <table:column id="c_it_verding_edo_domain_Soluzione_nuovoConsumo" property="nuovoConsumo" z="+a4cOJpO+GRVVYaugzjtiZIFvM4="/>
+            <table:column id="c_it_verding_edo_domain_Soluzione_costoAnnuoCombustibileNuovoImpianto" property="costoAnnuoCombustibileNuovoImpianto" z="9kuzlTelpZ9OOdcr29/GievKkHA="/>
+        </table:table>
+    </page:list>
+</div>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_it_verding_edo_domain_TipoCombustibile" object="${tipocombustibile}" path="/tipocombustibiles" z="6nxVzRViBPzizkvOl3OrlD2vDw8=">
+        <field:display field="nome" id="s_it_verding_edo_domain_TipoCombustibile_nome" object="${tipocombustibile}" z="niXhqYIo88rRUunGFhTOiaR4KRk="/>
+        <field:display field="costo" id="s_it_verding_edo_domain_TipoCombustibile_costo" object="${tipocombustibile}" z="BHXUzo3kMEGcsOWBfFuzOwv5ico="/>
+        <field:display field="energiaPrimaria" id="s_it_verding_edo_domain_TipoCombustibile_energiaPrimaria" object="${tipocombustibile}" z="OZcPDKqQXjmKUSD/OUQxci4Yg3s="/>
+        <field:display field="fattoreDiEmissione" id="s_it_verding_edo_domain_TipoCombustibile_fattoreDiEmissione" object="${tipocombustibile}" z="Lwk+j94x340W8Pv77yAkqAG7ejM="/>
+    </page:show>
+</div>
