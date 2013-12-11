@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <page:show id="ps_it_verding_edo_model_Bar" object="${bar}" path="/bars" z="Mps1BnA6WBQTvcY0wpDfbmEirTk=">
-        <field:display field="birra" id="s_it_verding_edo_model_Bar_birra" object="${bar}" z="AZbZn6bS5Ek9XylHK8uwC0EmAl4="/>
-    </page:show>
-</div>

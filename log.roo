@@ -10,6 +10,7 @@ entity mongo --class ~.model.TipoEnte --identifierType org.bson.types.ObjectId
 entity mongo --class ~.model.TipoCombustibile --identifierType org.bson.types.ObjectId
 entity mongo --class ~.model.TipoTerminaleRiscaldamento --identifierType org.bson.types.ObjectId
 entity mongo --class ~.model.QuestionarioRiscaldamento --identifierType org.bson.types.ObjectId
+entity mongo --class ~.model.Soluzione --identifierType org.bson.types.ObjectId
 
 repository mongo --entity ~.model.ZonaClimatica --interface ~.repositories.ZonaClimaticaRepo
 repository mongo --entity ~.model.Comune --interface ~.repositories.ComuneRepo 
@@ -37,8 +38,4 @@ security setup
 json add --class ~.model.Comune 
 web mvc json add --jsonObject ~.model.Comune 
 web mvc json add --jsonObject ~.model.Comune --class ~.web.ComuneController
-// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-12-06 18:18:18
-// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-12-08 20:25:12
-// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-12-10 00:00:58
-// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-12-10 09:26:51
-// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2013-12-10 18:32:29
+entity mongo --class ~.model.TipoCaldaia --identifierType org.bson.types.ObjectId

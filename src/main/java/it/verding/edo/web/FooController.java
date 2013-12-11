@@ -60,10 +60,10 @@ public class FooController {
 		tipoEnteRepo.save(new TipoEnte("Pubblica Amministrazione"));
 		
 		// Che combustibile usi? 
-		tipoCombustibileRepo.save(new TipoCombustibile("Alimentato a gasolio"));
-		tipoCombustibileRepo.save(new TipoCombustibile("Alimentato a GPL"));
-		tipoCombustibileRepo.save(new TipoCombustibile("Alimentato a aria propanata"));
-		tipoCombustibileRepo.save(new TipoCombustibile("Alimentato a gas naturale"));
+		tipoCombustibileRepo.save(new TipoCombustibile("Alimentato a gasolio", Double.valueOf(1.30), Double.valueOf(10), Double.valueOf(0.267)));
+		tipoCombustibileRepo.save(new TipoCombustibile("Alimentato a GPL", Double.valueOf(1.10), Double.valueOf(6.6), Double.valueOf(0.227)));
+		tipoCombustibileRepo.save(new TipoCombustibile("Alimentato a aria propanata", Double.valueOf(1.50), Double.valueOf(6), Double.valueOf(0.227)));
+		tipoCombustibileRepo.save(new TipoCombustibile("Alimentato a gas naturale", Double.valueOf(0.85), Double.valueOf(9.59), Double.valueOf(0.202)));
 		
 		// Come sono i tuoi terminali di riscaldamento? 
 		tipoTerminaleRiscaldamentoRepo.save(new TipoTerminaleRiscaldamento("Radiatori in ghisa"));

@@ -11,5 +11,10 @@
         <field:input field="litriCombustibileAnno" id="c_it_verding_edo_model_QuestionarioRiscaldamento_litriCombustibileAnno" validationMessageCode="field_invalid_integer" z="VizrjK9vQjeRGhDx7h/oGU7OM4Q="/>
         <field:checkbox field="isSistemaTermoregolazione" id="c_it_verding_edo_model_QuestionarioRiscaldamento_isSistemaTermoregolazione" z="a4wpRetaDoHc6f5FEGLsYQHjNu0="/>
         <field:checkbox field="isPiuDi10anni" id="c_it_verding_edo_model_QuestionarioRiscaldamento_isPiuDi10anni" z="qlDNXA0RDPDbfgtRKPVV9wFluAY="/>
+        <field:input field="soluzioni" id="c_it_verding_edo_model_QuestionarioRiscaldamento_soluzioni" z="vr9PAOUhJac8Nfb4GW4nt3hHut4="/>
+        <field:input field="bestRisparmio" id="c_it_verding_edo_model_QuestionarioRiscaldamento_bestRisparmio" validationMessageCode="field_invalid_number" z="URFewiPHG8XeqmyEqKS0j6y2sX0="/>
+        <field:input field="secondBestRisparmio" id="c_it_verding_edo_model_QuestionarioRiscaldamento_secondBestRisparmio" validationMessageCode="field_invalid_number" z="c4UuZILqG9HuEo2qtN/fRAyWCpk="/>
+        <field:input field="bestRitorno" id="c_it_verding_edo_model_QuestionarioRiscaldamento_bestRitorno" validationMessageCode="field_invalid_number" z="S9d8WI/rDCa+4PUC7wCTE6l40Fw="/>
+        <field:input field="secondBestRitorno" id="c_it_verding_edo_model_QuestionarioRiscaldamento_secondBestRitorno" validationMessageCode="field_invalid_number" z="FKDuWEukjzTc4l1sa+0ZFE6uilY="/>
     </form:update>
 </div>

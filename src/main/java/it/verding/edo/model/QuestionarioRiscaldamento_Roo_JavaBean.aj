@@ -5,9 +5,11 @@ package it.verding.edo.model;
 
 import it.verding.edo.model.Comune;
 import it.verding.edo.model.QuestionarioRiscaldamento;
+import it.verding.edo.model.Soluzione;
 import it.verding.edo.model.TipoCombustibile;
 import it.verding.edo.model.TipoEnte;
 import it.verding.edo.model.TipoTerminaleRiscaldamento;
+import java.util.List;
 
 privileged aspect QuestionarioRiscaldamento_Roo_JavaBean {
     
@@ -73,6 +75,46 @@ privileged aspect QuestionarioRiscaldamento_Roo_JavaBean {
     
     public void QuestionarioRiscaldamento.setIsPiuDi10anni(Boolean isPiuDi10anni) {
         this.isPiuDi10anni = isPiuDi10anni;
+    }
+    
+    public List<Soluzione> QuestionarioRiscaldamento.getSoluzioni() {
+        return this.soluzioni;
+    }
+    
+    public void QuestionarioRiscaldamento.setSoluzioni(List<Soluzione> soluzioni) {
+        this.soluzioni = soluzioni;
+    }
+    
+    public Double QuestionarioRiscaldamento.getBestRisparmio() {
+        return this.bestRisparmio;
+    }
+    
+    public void QuestionarioRiscaldamento.setBestRisparmio(Double bestRisparmio) {
+        this.bestRisparmio = bestRisparmio;
+    }
+    
+    public Double QuestionarioRiscaldamento.getSecondBestRisparmio() {
+        return this.secondBestRisparmio;
+    }
+    
+    public void QuestionarioRiscaldamento.setSecondBestRisparmio(Double secondBestRisparmio) {
+        this.secondBestRisparmio = secondBestRisparmio;
+    }
+    
+    public Double QuestionarioRiscaldamento.getBestRitorno() {
+        return this.bestRitorno;
+    }
+    
+    public void QuestionarioRiscaldamento.setBestRitorno(Double bestRitorno) {
+        this.bestRitorno = bestRitorno;
+    }
+    
+    public Double QuestionarioRiscaldamento.getSecondBestRitorno() {
+        return this.secondBestRitorno;
+    }
+    
+    public void QuestionarioRiscaldamento.setSecondBestRitorno(Double secondBestRitorno) {
+        this.secondBestRitorno = secondBestRitorno;
     }
     
 }

@@ -7,4 +7,5 @@ import org.springframework.roo.addon.layers.repository.mongo.RooMongoRepository;
 public interface TipoCombustibileRepo {
 
     List<TipoCombustibile> findAll();
+    TipoCombustibile findByNome(String nome);
 }

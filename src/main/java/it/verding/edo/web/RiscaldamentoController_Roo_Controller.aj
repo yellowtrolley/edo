@@ -25,17 +25,6 @@ privileged aspect RiscaldamentoController_Roo_Controller {
     @Autowired
     QuestionarioRiscaldamentoService RiscaldamentoController.questionarioRiscaldamentoService;
     
-    @RequestMapping(method = RequestMethod.POST, produces = "text/html")
-    public String RiscaldamentoController.create(@Valid QuestionarioRiscaldamento questionarioRiscaldamento, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            populateEditForm(uiModel, questionarioRiscaldamento);
-            return "riscaldamento/create";
-        }
-        uiModel.asMap().clear();
-        questionarioRiscaldamentoService.saveQuestionarioRiscaldamento(questionarioRiscaldamento);
-        return "redirect:/riscaldamento/" + encodeUrlPathSegment(questionarioRiscaldamento.getId().toString(), httpServletRequest);
-    }
-    
     @RequestMapping(value = "/{id}", produces = "text/html")
     public String RiscaldamentoController.show(@PathVariable("id") ObjectId id, Model uiModel) {
         uiModel.addAttribute("questionarioriscaldamento", questionarioRiscaldamentoService.findQuestionarioRiscaldamento(id));

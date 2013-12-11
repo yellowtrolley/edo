@@ -11,6 +11,7 @@
   <spring:url value="/resources/js/bootstrap.min.js" var="bootstrap_url" /> <!-- ??? -->
   <spring:url value="/resources/js/jquery.base64.min.js" var="jquery_base64_url" />
   <spring:url value="/resources/styles/ui-lightness/jquery-ui-1.10.3.custom.min.css" var="jquery_ui_css_url" />
+  <spring:url value="/resources/js/jquery.ui.totop.min.js" var="jquery_ui_totop_url" />
   <spring:url value="/resources/images/iconaedo.png" var="favicon" />
   
   <link rel="stylesheet" type="text/css" media="screen" href="${roo_css_url}" />
@@ -30,5 +31,6 @@
   <script src="${jquery_ui_url}" type="text/javascript"><!-- required for FF3 and Opera --></script>
   <script src="${jquery_effects_url}" type="text/javascript"><!-- required for FF3 and Opera --></script>
   <script src="${jquery_base64_url}" type="text/javascript"><!-- required for FF3 and Opera --></script>
+  <script src="${jquery_ui_totop_url}" type="text/javascript"><!-- required for FF3 and Opera --></script>
   <script src="${bootstrap_url}" type="text/javascript"><!-- required for FF3 and Opera --></script>
 </jsp:root>

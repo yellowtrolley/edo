@@ -1,10 +1,22 @@
 package it.verding.edo.web;
 import it.verding.edo.model.QuestionarioRiscaldamento;
+import it.verding.edo.model.Soluzione;
+import it.verding.edo.model.TipoCaldaia;
+import it.verding.edo.model.TipoCombustibile;
+import it.verding.edo.util.Combustibili;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @RequestMapping("/riscaldamento")
 @Controller
@@ -15,6 +27,20 @@ public class RiscaldamentoController {
     public String createForm(Model uiModel) {
         populateEditForm(uiModel, new QuestionarioRiscaldamento());
         return "riscaldamento/create";
+    }
+	
+	@RequestMapping(method = RequestMethod.POST, produces = "text/html")
+    public String create(@Valid QuestionarioRiscaldamento questionarioRiscaldamento, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+        if (bindingResult.hasErrors()) {
+            populateEditForm(uiModel, questionarioRiscaldamento);
+            return "riscaldamento/create";
+        }
+        uiModel.asMap().clear();
+        
+        questionarioRiscaldamentoService.populateSoluzioni(questionarioRiscaldamento);
+        questionarioRiscaldamentoService.saveQuestionarioRiscaldamento(questionarioRiscaldamento);
+
+        return "redirect:/riscaldamento/" + encodeUrlPathSegment(questionarioRiscaldamento.getId().toString(), httpServletRequest);
     }
 	
 	

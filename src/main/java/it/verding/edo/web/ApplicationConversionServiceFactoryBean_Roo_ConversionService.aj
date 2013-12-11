@@ -22,7 +22,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<QuestionarioRiscaldamento, String> ApplicationConversionServiceFactoryBean.getQuestionarioRiscaldamentoToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<it.verding.edo.model.QuestionarioRiscaldamento, java.lang.String>() {
             public String convert(QuestionarioRiscaldamento questionarioRiscaldamento) {
-                return new StringBuilder().append(questionarioRiscaldamento.getMetri2()).append(' ').append(questionarioRiscaldamento.getLitriCombustibileAnno()).toString();
+                return new StringBuilder().append(questionarioRiscaldamento.getMetri2()).append(' ').append(questionarioRiscaldamento.getLitriCombustibileAnno()).append(' ').append(questionarioRiscaldamento.getBestRisparmio()).append(' ').append(questionarioRiscaldamento.getSecondBestRisparmio()).toString();
             }
         };
     }

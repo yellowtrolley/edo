@@ -15,4 +15,28 @@ privileged aspect TipoCombustibile_Roo_JavaBean {
         this.nome = nome;
     }
     
+    public Double TipoCombustibile.getCosto() {
+        return this.costo;
+    }
+    
+    public void TipoCombustibile.setCosto(Double costo) {
+        this.costo = costo;
+    }
+    
+    public Double TipoCombustibile.getEnergiaPrimaria() {
+        return this.energiaPrimaria;
+    }
+    
+    public void TipoCombustibile.setEnergiaPrimaria(Double energiaPrimaria) {
+        this.energiaPrimaria = energiaPrimaria;
+    }
+    
+    public Double TipoCombustibile.getFattoreDiEmissione() {
+        return this.fattoreDiEmissione;
+    }
+    
+    public void TipoCombustibile.setFattoreDiEmissione(Double fattoreDiEmissione) {
+        this.fattoreDiEmissione = fattoreDiEmissione;
+    }
+    
 }
