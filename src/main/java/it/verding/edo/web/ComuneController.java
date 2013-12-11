@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/comuni")
 public class ComuneController {
 	// TODO SECURE or remove create, update, delete
-	
+	// TODO Comune (PR)
 	@RequestMapping(headers = "Accept=application/json")
     @ResponseBody
     public ResponseEntity<String> listJson(@RequestParam("term") String nome) {

@@ -6,19 +6,18 @@
     <script><![CDATA[
     
     	$(function(){
-    		$("#_comune_id").autocomplete({
+    		$("#_comuneV_id").autocomplete({
     	        source: "${comuniUrl}",
     	        minLength: 2,
     	        select: function (event,ui){
-    	        	console.log(ui.item);
-				    $('#_comune_id').val(ui.item.value);
-				    // $('#_comune_id').val(ui.item.label);
-				    // return false;
+    	        	var objectId = JSON.stringify(ui.item.id)
+    	        	console.log(objectId);
+			        $('#comune').val(objectId);
+			        ui.item.value=ui.item.nome;
 				}
     	    }).data( "ui-autocomplete" )._renderItem = function( ul, item ) {
-    	    		console.log(item.id);
     	        	return $( "<li>" )
-    	        	.attr( "data-value", item.nome )
+    	        	.attr( "data-value", item.id )
     	        	.append( $( "<a>" ).text( item.nome ) )
     	        	.appendTo( ul );
         	};
@@ -26,7 +25,8 @@
     ]]></script>
     <form:create buttonLabelCode="label_button_questionarioriscaldamento" id="fc_it_verding_edo_domain_QuestionarioRiscaldamento" label="Compila i campi" modelAttribute="questionarioRiscaldamento" path="/riscaldamento" render="${empty dependencies}" z="user-managed">
         <field:select field="tipoEnte" id="c_it_verding_edo_domain_QuestionarioRiscaldamento_tipoEnte" itemLabel="nome" itemValue="id" items="${tipiEnte}" path="/tipoEnte" z="user-managed"/>
-        <field:input field="comune" id="c_it_verding_edo_domain_QuestionarioRiscaldamento_comune" z=""/>
+        <field:input disableFormBinding="true" field="comuneV" id="c_it_verding_edo_domain_QuestionarioRiscaldamento_comune" z=""/>
+        <input type="hidden" name="comune" id="comune" />
         <field:select field="tipoCombustibile" id="c_it_verding_edo_domain_QuestionarioRiscaldamento_tipoCombustibile" itemLabel="nome" itemValue="id" items="${tipiCombustibile}" path="/tipoCombustibile" z="user-managed"/>
         <field:select field="tipoEnte" id="c_it_verding_edo_domain_QuestionarioRiscaldamento_tipoTerminaleRiscaldamento" itemLabel="nome" itemValue="id" items="${tipiTerminaleRiscaldamento}" path="/tipoTerminaleRiscaldamento" z="user-managed"/>
         <field:input field="metri2" id="c_it_verding_edo_domain_QuestionarioRiscaldamento_metri2" validationMessageCode="field_invalid_integer" z="user-managed"/>
