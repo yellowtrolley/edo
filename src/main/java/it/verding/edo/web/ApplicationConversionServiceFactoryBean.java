@@ -15,4 +15,13 @@ public class ApplicationConversionServiceFactoryBean extends FormattingConversio
 		super.installFormatters(registry);
 		// Register application converters and formatters
 	}
+	/*
+	public Converter<String, Comune> getStringToComuneConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, it.verding.edo.domain.Comune>() {
+            public it.verding.edo.domain.Comune convert(String id) {
+                return getObject().convert(getObject().convert(id, ObjectId.class), Comune.class);
+            }
+        };
+    }
+	 */
 }

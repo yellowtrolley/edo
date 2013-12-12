@@ -4,10 +4,8 @@
 package it.verding.edo.web;
 
 import it.verding.edo.domain.Comune;
-import it.verding.edo.service.ComuneService;
 import it.verding.edo.web.ComuneController;
 import org.bson.types.ObjectId;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,9 +16,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 privileged aspect ComuneController_Roo_Controller_Json {
-    
-    @Autowired
-    ComuneService ComuneController.comuneService;
     
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, headers = "Accept=application/json")
     @ResponseBody

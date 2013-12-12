@@ -8,7 +8,6 @@
         <field:input field="tipoCombustibile" id="c_it_verding_edo_domain_QuestionarioRiscaldamento_tipoCombustibile" z="wU+bYYOoCeT+i+bJkcysBGkusCg="/>
         <field:input field="tipoTerminaleRiscaldamento" id="c_it_verding_edo_domain_QuestionarioRiscaldamento_tipoTerminaleRiscaldamento" z="qx6fynqaZwSH9nBXnvOcU4LHuQw="/>
         <field:input field="metri2" id="c_it_verding_edo_domain_QuestionarioRiscaldamento_metri2" validationMessageCode="field_invalid_integer" z="41S+nWAtrnYCHJT4EczSyBjXKOY="/>
-        <field:input field="litriCombustibileAnno" id="c_it_verding_edo_domain_QuestionarioRiscaldamento_litriCombustibileAnno" validationMessageCode="field_invalid_integer" z="Z6CWfaTq4QL6u90zevpW1VTS6hU="/>
         <field:checkbox field="isSistemaTermoregolazione" id="c_it_verding_edo_domain_QuestionarioRiscaldamento_isSistemaTermoregolazione" z="dPfrvi5uS4zX47c90wkagmshw+k="/>
         <field:checkbox field="isPiuDi10anni" id="c_it_verding_edo_domain_QuestionarioRiscaldamento_isPiuDi10anni" z="4ZkyQdKtX8vP+8qWuCQTHrtyQkU="/>
         <field:input field="soluzioni" id="c_it_verding_edo_domain_QuestionarioRiscaldamento_soluzioni" z="72AC+/+SQL0odR0inpX1T0tQ6Ws="/>
@@ -16,5 +15,6 @@
         <field:input field="secondBestRisparmio" id="c_it_verding_edo_domain_QuestionarioRiscaldamento_secondBestRisparmio" validationMessageCode="field_invalid_number" z="+wo03n6j+BObNlg/3+NZrBXbgqY="/>
         <field:input field="bestRitorno" id="c_it_verding_edo_domain_QuestionarioRiscaldamento_bestRitorno" validationMessageCode="field_invalid_number" z="aGmONhDEsR6YfH3a54JPAqiJ838="/>
         <field:input field="secondBestRitorno" id="c_it_verding_edo_domain_QuestionarioRiscaldamento_secondBestRitorno" validationMessageCode="field_invalid_number" z="XgqE7j9nMI4Nj9l+ZJEyD2hudVU="/>
+        <field:input field="litriCombustibileAnno" id="c_it_verding_edo_domain_QuestionarioRiscaldamento_litriCombustibileAnno" validationMessageCode="field_invalid_integer" z="Z6CWfaTq4QL6u90zevpW1VTS6hU="/>
     </form:update>
 </div>

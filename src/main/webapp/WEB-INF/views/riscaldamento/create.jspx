@@ -10,9 +10,7 @@
     	        source: "${comuniUrl}",
     	        minLength: 2,
     	        select: function (event,ui){
-    	        	var objectId = JSON.stringify(ui.item.id)
-    	        	console.log(objectId);
-			        $('#comune').val(objectId);
+			        $('#comune').val(ui.item.id);
 			        ui.item.value=ui.item.nome;
 				}
     	    }).data( "ui-autocomplete" )._renderItem = function( ul, item ) {
