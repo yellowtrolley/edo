@@ -46,21 +46,21 @@ public class QuestionarioRiscaldamentoServiceImpl implements QuestionarioRiscald
         
         // Soluzione 1
         TipoCaldaia tipoCaldaia1 = new TipoCaldaia("NUOVO GENERATORE ALIMENTATO A GASOLIO", findTipoCombustibile(Combustibili.GASOLIO.nome()));
-        soluzioni.add(getSoluzione("SOLUZIONE 1", tipoCaldaia1, questionarioRiscaldamento, 800, 0.053));
+        soluzioni.add(getSoluzione("SOLUZIONE 1", tipoCaldaia1, questionarioRiscaldamento, Double.valueOf(800), Double.valueOf(0.053)));
         
         TipoCaldaia tipoCaldaia2 = new TipoCaldaia("NUOVO GENERATORE ALIMENTATO A GPL", findTipoCombustibile(Combustibili.GPL.nome()));
-        soluzioni.add(getSoluzione("SOLUZIONE 2", tipoCaldaia2, questionarioRiscaldamento, 900, 0.055));
+        soluzioni.add(getSoluzione("SOLUZIONE 2", tipoCaldaia2, questionarioRiscaldamento, Double.valueOf(900), Double.valueOf(0.055)));
         
         TipoCaldaia tipoCaldaia3 = new TipoCaldaia("NUOVO GENERATORE ALIMENTATO AD ARIA PROPANATA", findTipoCombustibile(Combustibili.PROPANO.nome()));
-        soluzioni.add(getSoluzione("SOLUZIONE 3", tipoCaldaia3, questionarioRiscaldamento, 900, 0.055));
+        soluzioni.add(getSoluzione("SOLUZIONE 3", tipoCaldaia3, questionarioRiscaldamento, Double.valueOf(900), Double.valueOf(0.055)));
         
         TipoCaldaia tipoCaldaia4 = new TipoCaldaia("NUOVO GENERATORE ALIMENTATO A GAS NATURALE", findTipoCombustibile(Combustibili.GAS_NATURALE.nome()));
-        soluzioni.add(getSoluzione("SOLUZIONE 4", tipoCaldaia4, questionarioRiscaldamento, 1100, 0.055));
+        soluzioni.add(getSoluzione("SOLUZIONE 4", tipoCaldaia4, questionarioRiscaldamento, Double.valueOf(1100), Double.valueOf(0.055)));
         
         questionarioRiscaldamento.setSoluzioni(soluzioni);
         
         // Best risparmio & ritorno
-        double bestRisparmio, secondBestRisparmio, bestRitorno, secondBestRitorno;
+        Double bestRisparmio, secondBestRisparmio, bestRitorno, secondBestRitorno;
         
         Collections.sort(soluzioni, new Comparator<Soluzione>() {
 							@Override
@@ -92,37 +92,38 @@ public class QuestionarioRiscaldamentoServiceImpl implements QuestionarioRiscald
 	
 	// TODO DARE UN NOME A PARAM1 E PARAM2. Se sono relativi al tipo caldaia inserirli nel model
 	private Soluzione getSoluzione(String nome, TipoCaldaia tipoCaldaia, QuestionarioRiscaldamento questionarioRiscaldamento,
-			double param1, double param2) {
+			Double param1, Double param2) {
 		// Dati di input
-        int litriAnno = questionarioRiscaldamento.getLitriCombustibileAnno();
+        Integer litriAnno = questionarioRiscaldamento.getLitriCombustibileAnno();
         TipoCombustibile combustibile = questionarioRiscaldamento.getTipoCombustibile();
-        int m2 = questionarioRiscaldamento.getMetri2(); // TODO * massimo valore inputabile 450 m2 ???
-        double fattoreSistTermoregolazione = questionarioRiscaldamento.getIsSistemaTermoregolazione() ? 1 : 0.9;
-        double fattorePiuDi10anni = questionarioRiscaldamento.getIsPiuDi10anni() ? 0.75 : 0.85;
-        double spesaAnnua = litriAnno * combustibile.getCosto();
+        Integer m2 = questionarioRiscaldamento.getMetri2(); // TODO * massimo valore inputabile 450 m2 ???
+        Double fattoreSistTermoregolazione = questionarioRiscaldamento.getIsSistemaTermoregolazione() ? 1 : 0.9;
+        Double fattorePiuDi10anni = questionarioRiscaldamento.getIsPiuDi10anni() ? 0.75 : 0.85;
+        Double spesaAnnua = litriAnno * combustibile.getCosto();
         
 		Soluzione soluzione = new Soluzione(nome, tipoCaldaia, litriAnno);
 		
-        double costoIntervento1 = (param1 + param2 * 3 * 35 * m2) * 1.21;
+		Double costoIntervento1 = (param1 + param2 * 3 * 35 * m2) * 1.21;
         
         // nuovo consumo
-        double nuovoConsumo1 = litriAnno * tipoCaldaia.getTipoCombustibile().getEnergiaPrimaria() * fattorePiuDi10anni / (0.85 * combustibile.getEnergiaPrimaria()) * fattoreSistTermoregolazione;
+		Double nuovoConsumo = litriAnno * tipoCaldaia.getTipoCombustibile().getEnergiaPrimaria() * fattorePiuDi10anni / (0.85 * combustibile.getEnergiaPrimaria()) * fattoreSistTermoregolazione;
 
         // risparmio annuo (€)
-        double risparmioAnnuo = spesaAnnua - soluzione.getCostoAnnuoCombustibileNuovoImpianto();
+		Double costoAnnuoCombustibileNuovoImpianto = nuovoConsumo * tipoCaldaia.getTipoCombustibile().getCosto();
+		Double risparmioAnnuo = spesaAnnua - costoAnnuoCombustibileNuovoImpianto;
         
         // riduzione CO2 (kg/anno)
-        double riduzioneCO2 = combustibile.getFattoreDiEmissione() * litriAnno * combustibile.getEnergiaPrimaria() 
-        		- tipoCaldaia.getTipoCombustibile().getFattoreDiEmissione() * soluzione.getNuovoConsumo() * tipoCaldaia.getTipoCombustibile().getEnergiaPrimaria();
+		Double riduzioneCO2 = combustibile.getFattoreDiEmissione() * litriAnno * combustibile.getEnergiaPrimaria() 
+        		- tipoCaldaia.getTipoCombustibile().getFattoreDiEmissione() * nuovoConsumo * tipoCaldaia.getTipoCombustibile().getEnergiaPrimaria();
         
         // TODO 0.5 o 0.65? Inserire nel model? eventuali agevolazioni economiche al 50% o al 65%  (€)
-        double eventualiAgevolazioniEconomiche = costoIntervento1 * 0.5;
+		Double eventualiAgevolazioniEconomiche = costoIntervento1 * 0.5;
 
         soluzione.setCostoIntervento(costoIntervento1);
-        soluzione.setNuovoConsumo(nuovoConsumo1);
+        soluzione.setNuovoConsumo(nuovoConsumo);
         soluzione.setRisparmioAnnuo(risparmioAnnuo);
         soluzione.setRiduzioneCO2(riduzioneCO2);
-        soluzione.setCostoAnnuoCombustibileNuovoImpianto(nuovoConsumo1 * tipoCaldaia.getTipoCombustibile().getCosto());
+        soluzione.setCostoAnnuoCombustibileNuovoImpianto(costoAnnuoCombustibileNuovoImpianto);
         soluzione.setRecuperoInvestimento(costoIntervento1 / risparmioAnnuo);
         soluzione.setEventualiAgevolazioniEconomiche(eventualiAgevolazioniEconomiche);
         soluzione.setRecuperoInvestimentoConAgevolazioniConDetrazioniFiscali(costoIntervento1 / (eventualiAgevolazioniEconomiche / 10 + risparmioAnnuo));

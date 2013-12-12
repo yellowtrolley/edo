@@ -11,6 +11,8 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RooWebScaffold(path = "riscaldamento", formBackingObject = QuestionarioRiscaldamento.class)
 public class RiscaldamentoController {
+	Logger log = LoggerFactory.getLogger(this.getClass());
 	
 	@RequestMapping(params = "form", produces = "text/html")
     public String createForm(Model uiModel) {

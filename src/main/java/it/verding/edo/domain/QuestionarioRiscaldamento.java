@@ -19,9 +19,9 @@ public class QuestionarioRiscaldamento {
 	private Integer litriCombustibileAnno;
 	private Boolean isSistemaTermoregolazione;
 	private Boolean isPiuDi10anni;
-	private List<Soluzione> soluzioni;
 	private Double bestRisparmio;
 	private Double secondBestRisparmio;
 	private Double bestRitorno;
 	private Double secondBestRitorno;
+	private List<Soluzione> soluzioni;
 }

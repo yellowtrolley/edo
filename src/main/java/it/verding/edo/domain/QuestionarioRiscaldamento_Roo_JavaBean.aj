@@ -77,14 +77,6 @@ privileged aspect QuestionarioRiscaldamento_Roo_JavaBean {
         this.isPiuDi10anni = isPiuDi10anni;
     }
     
-    public List<Soluzione> QuestionarioRiscaldamento.getSoluzioni() {
-        return this.soluzioni;
-    }
-    
-    public void QuestionarioRiscaldamento.setSoluzioni(List<Soluzione> soluzioni) {
-        this.soluzioni = soluzioni;
-    }
-    
     public Double QuestionarioRiscaldamento.getBestRisparmio() {
         return this.bestRisparmio;
     }
@@ -115,6 +107,14 @@ privileged aspect QuestionarioRiscaldamento_Roo_JavaBean {
     
     public void QuestionarioRiscaldamento.setSecondBestRitorno(Double secondBestRitorno) {
         this.secondBestRitorno = secondBestRitorno;
+    }
+    
+    public List<Soluzione> QuestionarioRiscaldamento.getSoluzioni() {
+        return this.soluzioni;
+    }
+    
+    public void QuestionarioRiscaldamento.setSoluzioni(List<Soluzione> soluzioni) {
+        this.soluzioni = soluzioni;
     }
     
 }
