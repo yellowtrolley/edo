@@ -1,10 +1,6 @@
 package it.verding.edo.domain;
 
-import java.util.Set;
-
 import org.bson.types.ObjectId;
-import org.pgg.mongo.mapping.Cascade;
-import org.pgg.mongo.mapping.CascadeType;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -22,14 +18,13 @@ public class Provincia {
 	private String nome;
 	
 	@DBRef
-	@Cascade(cascadeType = CascadeType.SAVE)
-	private Set<Comune> comuni;
+	private Regione regione;
 	
 	public Provincia() {}
 
-	public Provincia(String nome, Set<Comune> comuni) {
+	public Provincia(String nome, Regione regione) {
 		super();
 		this.nome = nome;
-		this.comuni = comuni;
+		this.regione = regione;
 	}
 }

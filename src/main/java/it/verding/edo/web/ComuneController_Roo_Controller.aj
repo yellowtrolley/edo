@@ -4,6 +4,7 @@
 package it.verding.edo.web;
 
 import it.verding.edo.domain.Comune;
+import it.verding.edo.repositories.ProvinciaRepo;
 import it.verding.edo.repositories.ZonaClimaticaRepo;
 import it.verding.edo.service.ComuneService;
 import it.verding.edo.web.ComuneController;
@@ -25,6 +26,9 @@ privileged aspect ComuneController_Roo_Controller {
     
     @Autowired
     ComuneService ComuneController.comuneService;
+    
+    @Autowired
+    ProvinciaRepo ComuneController.provinciaRepo;
     
     @Autowired
     ZonaClimaticaRepo ComuneController.zonaClimaticaRepo;
@@ -96,6 +100,7 @@ privileged aspect ComuneController_Roo_Controller {
     
     void ComuneController.populateEditForm(Model uiModel, Comune comune) {
         uiModel.addAttribute("comune", comune);
+        uiModel.addAttribute("provincias", provinciaRepo.findAll());
         uiModel.addAttribute("zonaclimaticas", zonaClimaticaRepo.findAll());
     }
     

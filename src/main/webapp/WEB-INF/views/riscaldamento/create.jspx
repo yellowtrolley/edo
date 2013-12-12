@@ -11,12 +11,12 @@
     	        minLength: 2,
     	        select: function (event,ui){
 			        $('#comune').val(ui.item.id);
-			        ui.item.value=ui.item.nome;
+			        ui.item.value=ui.item.nome + " (" + ui.item.provincia.nome  + ")";
 				}
     	    }).data( "ui-autocomplete" )._renderItem = function( ul, item ) {
     	        	return $( "<li>" )
     	        	.attr( "data-value", item.id )
-    	        	.append( $( "<a>" ).text( item.nome ) )
+    	        	.append( $( "<a>" ).text( item.nome + " (" + item.provincia.nome  + ")") )
     	        	.appendTo( ul );
         	};
     	});

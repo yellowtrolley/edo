@@ -22,6 +22,9 @@ public class Comune {
 
     @Indexed
     private String nome;
+    
+    @DBRef
+    private Provincia provincia;
 
     private Integer altSLM;
 
@@ -33,11 +36,12 @@ public class Comune {
     public Comune() {
     }
 
-    public Comune(String nome, Integer altSLM, Integer gg, ZonaClimatica zonaClimatica) {
+    public Comune(String nome, Integer altSLM, Integer gg, ZonaClimatica zonaClimatica, Provincia provincia) {
         this.nome = nome;
         this.altSLM = altSLM;
         this.gradiGiorno = gg;
         this.zonaClimatica = zonaClimatica;
+        this.provincia = provincia;
     }
     
     public static String toJsonArray(Collection<Comune> collection) {

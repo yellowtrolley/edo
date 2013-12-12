@@ -5,7 +5,7 @@ package it.verding.edo.web;
 
 import it.verding.edo.domain.Provincia;
 import it.verding.edo.repositories.ProvinciaRepo;
-import it.verding.edo.service.ComuneService;
+import it.verding.edo.repositories.RegioneRepo;
 import it.verding.edo.web.ProvinciaController;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
@@ -27,7 +27,7 @@ privileged aspect ProvinciaController_Roo_Controller {
     ProvinciaRepo ProvinciaController.provinciaRepo;
     
     @Autowired
-    ComuneService ProvinciaController.comuneService;
+    RegioneRepo ProvinciaController.regioneRepo;
     
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")
     public String ProvinciaController.create(@Valid Provincia provincia, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
@@ -96,7 +96,7 @@ privileged aspect ProvinciaController_Roo_Controller {
     
     void ProvinciaController.populateEditForm(Model uiModel, Provincia provincia) {
         uiModel.addAttribute("provincia", provincia);
-        uiModel.addAttribute("comunes", comuneService.findAllComunes());
+        uiModel.addAttribute("regiones", regioneRepo.findAll());
     }
     
     String ProvinciaController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

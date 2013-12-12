@@ -114,11 +114,10 @@ public class FooController {
 				
 				if(StringUtils.isNotBlank(regioneCell.getContents())) {
 					// Nuova regione
-					regione = new Regione(WordUtils.capitalize(regioneCell.getContents().toLowerCase()), new HashSet<Provincia>());
-					provincia = new Provincia(sheet.getCell(1, i+1).getContents(), new HashSet<Comune>());
-					
-					regione.getProvincie().add(provincia);
+					regione = new Regione(WordUtils.capitalize(regioneCell.getContents().toLowerCase()));
+					provincia = new Provincia(sheet.getCell(1, i+1).getContents(), regione);
 					regioneRepo.save(regione);
+					provinciaRepo.save(provincia);
 				} else {
 					Cell provinciaCell = sheet.getCell(1, i);
 					Cell comuneCell = sheet.getCell(2, i);
@@ -126,18 +125,16 @@ public class FooController {
 					Cell gradiGiornoCell = sheet.getCell(4, i);
 					Cell zonaClimaticaCell = sheet.getCell(5, i);
 				
-					ZonaClimatica zona = zonaClimaticaRepo.findByNome(zonaClimaticaCell.getContents());
-					comune = new Comune(comuneCell.getContents(), Integer.valueOf(altSlmCell.getContents()), Integer.valueOf(gradiGiornoCell.getContents()), zona);
-					
 					if(!provinciaCell.getContents().equals(provincia.getNome())) {
 						// Nuova provincia
-						provincia = new Provincia(provinciaCell.getContents(), new HashSet<Comune>());
-						regione.getProvincie().add(provincia);
+						provincia = new Provincia(provinciaCell.getContents(), regione);
+						provinciaRepo.save(provincia);
 					}
-					
-					provincia.getComuni().add(comune);
-					
-					regioneRepo.save(regione);
+
+					ZonaClimatica zona = zonaClimaticaRepo.findByNome(zonaClimaticaCell.getContents());
+					comune = new Comune(comuneCell.getContents(), Integer.valueOf(altSlmCell.getContents()), Integer.valueOf(gradiGiornoCell.getContents()), zona, provincia);
+					comuneRepo.save(comune);
+					log.debug("Comune salvato: " + comune + ", Provincia: " + comune.getProvincia() + "Regione: " + comune.getProvincia().getRegione());
 				}
 			}
 		} catch (BiffException e) {

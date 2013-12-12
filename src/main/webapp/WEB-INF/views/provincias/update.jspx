@@ -4,6 +4,6 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_it_verding_edo_domain_Provincia" modelAttribute="provincia" path="/provincias" versionField="none" z="MW83uFywNUhBAxnkz8YwAmeuINs=">
         <field:input field="nome" id="c_it_verding_edo_domain_Provincia_nome" z="zzDEWok5Cdf67G0NcGzciBcldkA="/>
-        <field:input field="comuni" id="c_it_verding_edo_domain_Provincia_comuni" z="EMEuo+Rp/2U8JdqoWxMT8YDn5HE="/>
+        <field:input field="regione" id="c_it_verding_edo_domain_Provincia_regione" z="tAEes4ZMDnEiA1zRBJOETmu/hhE="/>
     </form:update>
 </div>

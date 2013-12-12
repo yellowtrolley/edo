@@ -39,3 +39,4 @@ web mvc json add --jsonObject ~.domain.Comune --class ~.web.ComuneController
 entity mongo --class ~.domain.TipoCaldaia --identifierType org.bson.types.ObjectId
 quit
 web mvc all --package it.verding.edo.domain
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2013-12-12 18:56:49

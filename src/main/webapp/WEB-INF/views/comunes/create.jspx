@@ -8,6 +8,7 @@
         <field:input field="gradiGiorno" id="c_it_verding_edo_domain_Comune_gradiGiorno" validationMessageCode="field_invalid_integer" z="U+MYjUObJrHGAgRvTRBWnkI6DNU="/>
         <field:input field="zonaClimatica" id="c_it_verding_edo_domain_Comune_zonaClimatica" z="7Uafhf+u4UT+PBVzixxX8NZPPRU="/>
         <field:input field="id" id="c_it_verding_edo_domain_Comune_id" required="true" z="gob3ngzjaMfG0eL4FYXXEsr5XgQ="/>
+        <field:input field="provincia" id="c_it_verding_edo_domain_Comune_provincia" z="tdqEEao3o6k9HIvJup2vf0ydN9g="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_it_verding_edo_domain_Comune" render="${not empty dependencies}" z="c+FNLxjxUcD8mxLKPHZaZOTOuAI="/>
 </div>

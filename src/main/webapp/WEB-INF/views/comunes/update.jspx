@@ -7,5 +7,6 @@
         <field:input field="altSLM" id="c_it_verding_edo_domain_Comune_altSLM" validationMessageCode="field_invalid_integer" z="J8adic7K6tulMNMuCHd0tQzXTNE="/>
         <field:input field="gradiGiorno" id="c_it_verding_edo_domain_Comune_gradiGiorno" validationMessageCode="field_invalid_integer" z="U+MYjUObJrHGAgRvTRBWnkI6DNU="/>
         <field:input field="zonaClimatica" id="c_it_verding_edo_domain_Comune_zonaClimatica" z="7Uafhf+u4UT+PBVzixxX8NZPPRU="/>
+        <field:input field="provincia" id="c_it_verding_edo_domain_Comune_provincia" z="tdqEEao3o6k9HIvJup2vf0ydN9g="/>
     </form:update>
 </div>

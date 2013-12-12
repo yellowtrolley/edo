@@ -4,8 +4,8 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_it_verding_edo_domain_Provincia" modelAttribute="provincia" path="/provincias" render="${empty dependencies}" z="IhkliRT3aFOaVN9pLoUvSmVOpxk=">
         <field:input field="nome" id="c_it_verding_edo_domain_Provincia_nome" z="zzDEWok5Cdf67G0NcGzciBcldkA="/>
-        <field:input field="comuni" id="c_it_verding_edo_domain_Provincia_comuni" z="EMEuo+Rp/2U8JdqoWxMT8YDn5HE="/>
         <field:input field="id" id="c_it_verding_edo_domain_Provincia_id" required="true" z="bFY4O1QJSGw/yfZ50vLilPr1Yd4="/>
+        <field:input field="regione" id="c_it_verding_edo_domain_Provincia_regione" z="tAEes4ZMDnEiA1zRBJOETmu/hhE="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_it_verding_edo_domain_Provincia" render="${not empty dependencies}" z="JcYOc1bmQQG7Gb3zjLphpK+2ZgA="/>
 </div>

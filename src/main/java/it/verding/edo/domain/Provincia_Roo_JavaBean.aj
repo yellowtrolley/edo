@@ -3,9 +3,8 @@
 
 package it.verding.edo.domain;
 
-import it.verding.edo.domain.Comune;
 import it.verding.edo.domain.Provincia;
-import java.util.Set;
+import it.verding.edo.domain.Regione;
 
 privileged aspect Provincia_Roo_JavaBean {
     
@@ -17,12 +16,12 @@ privileged aspect Provincia_Roo_JavaBean {
         this.nome = nome;
     }
     
-    public Set<Comune> Provincia.getComuni() {
-        return this.comuni;
+    public Regione Provincia.getRegione() {
+        return this.regione;
     }
     
-    public void Provincia.setComuni(Set<Comune> comuni) {
-        this.comuni = comuni;
+    public void Provincia.setRegione(Regione regione) {
+        this.regione = regione;
     }
     
 }

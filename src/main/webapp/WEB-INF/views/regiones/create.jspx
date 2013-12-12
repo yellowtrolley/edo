@@ -4,7 +4,6 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_it_verding_edo_domain_Regione" modelAttribute="regione" path="/regiones" render="${empty dependencies}" z="qKjvz8xdzllN9t6ilKSJBm4KvrM=">
         <field:input field="nome" id="c_it_verding_edo_domain_Regione_nome" z="ONGGXRXN8ubezSs49oJunFWO81I="/>
-        <field:input field="provincie" id="c_it_verding_edo_domain_Regione_provincie" z="MC0KjwIfJ+uHatQwEBDh/Nrol50="/>
         <field:input field="id" id="c_it_verding_edo_domain_Regione_id" required="true" z="07HLrqm/zapHoCFTnMzHNzgGtUQ="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_it_verding_edo_domain_Regione" render="${not empty dependencies}" z="98P4gL+sT2gqcppx9gUj8AaDcRY="/>

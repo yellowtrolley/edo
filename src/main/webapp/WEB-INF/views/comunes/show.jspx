@@ -7,5 +7,6 @@
         <field:display field="altSLM" id="s_it_verding_edo_domain_Comune_altSLM" object="${comune}" z="KDpnYUzWeBnZ69023IPNcX/Eefg="/>
         <field:display field="gradiGiorno" id="s_it_verding_edo_domain_Comune_gradiGiorno" object="${comune}" z="e/sF+u41xNglKLtL5ddSJh/OErU="/>
         <field:display field="zonaClimatica" id="s_it_verding_edo_domain_Comune_zonaClimatica" object="${comune}" z="jjOc0LMW+jWHNHfY9/A1BZveopQ="/>
+        <field:display field="provincia" id="s_it_verding_edo_domain_Comune_provincia" object="${comune}" z="bE2/DUUJmQh3HxfPJmt5PxS/cNE="/>
     </page:show>
 </div>

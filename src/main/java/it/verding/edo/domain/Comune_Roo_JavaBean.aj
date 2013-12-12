@@ -4,6 +4,7 @@
 package it.verding.edo.domain;
 
 import it.verding.edo.domain.Comune;
+import it.verding.edo.domain.Provincia;
 import it.verding.edo.domain.ZonaClimatica;
 
 privileged aspect Comune_Roo_JavaBean {
@@ -14,6 +15,14 @@ privileged aspect Comune_Roo_JavaBean {
     
     public void Comune.setNome(String nome) {
         this.nome = nome;
+    }
+    
+    public Provincia Comune.getProvincia() {
+        return this.provincia;
+    }
+    
+    public void Comune.setProvincia(Provincia provincia) {
+        this.provincia = provincia;
     }
     
     public Integer Comune.getAltSLM() {

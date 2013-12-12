@@ -5,7 +5,6 @@
     <page:list id="pl_it_verding_edo_domain_Regione" items="${regiones}" z="/OaCpNXSvLOLyixE+fHP4Ig5JDU=">
         <table:table data="${regiones}" id="l_it_verding_edo_domain_Regione" path="/regiones" z="QpMs4eHPSSRmYxIilbjTgtlymRg=">
             <table:column id="c_it_verding_edo_domain_Regione_nome" property="nome" z="gil/wLjLWV9pZ0vAc+aDbuqz3WY="/>
-            <table:column id="c_it_verding_edo_domain_Regione_provincie" property="provincie" z="IkVSdvdAhBo4Ifc4MnnBDVfjnh4="/>
         </table:table>
     </page:list>
 </div>

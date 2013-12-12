@@ -5,7 +5,7 @@
     <page:list id="pl_it_verding_edo_domain_Provincia" items="${provincias}" z="yHWCpxW1pyU+rAl+Vb4IR0NZsQg=">
         <table:table data="${provincias}" id="l_it_verding_edo_domain_Provincia" path="/provincias" z="Ik2hQGN1Iz5mWOlMETM1+mwh0DQ=">
             <table:column id="c_it_verding_edo_domain_Provincia_nome" property="nome" z="csGCuMb7QJ/isHTbqEO1qPf5BtE="/>
-            <table:column id="c_it_verding_edo_domain_Provincia_comuni" property="comuni" z="fJ3FN/L4DsMC/ESp+aBJXVBNh8c="/>
+            <table:column id="c_it_verding_edo_domain_Provincia_regione" property="regione" z="T1Q3jYsRvCEv4VQYbWn5dSaJe5o="/>
         </table:table>
     </page:list>
 </div>

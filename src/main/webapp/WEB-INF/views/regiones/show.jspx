@@ -4,6 +4,5 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_it_verding_edo_domain_Regione" object="${regione}" path="/regiones" z="BwOUhRfrW007GFTV1aCclgPIQwA=">
         <field:display field="nome" id="s_it_verding_edo_domain_Regione_nome" object="${regione}" z="CINEoHWEvd77/c4oK8t4IOCqj0s="/>
-        <field:display field="provincie" id="s_it_verding_edo_domain_Regione_provincie" object="${regione}" z="CiIsI6uUq2u2Jv/raEAjnnN195E="/>
     </page:show>
 </div>

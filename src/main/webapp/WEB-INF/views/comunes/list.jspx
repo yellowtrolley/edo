@@ -8,6 +8,7 @@
             <table:column id="c_it_verding_edo_domain_Comune_altSLM" property="altSLM" z="s0Yw/R1YZgaSbq6c8/02dyLV2Yk="/>
             <table:column id="c_it_verding_edo_domain_Comune_gradiGiorno" property="gradiGiorno" z="/XXcOsivK29lWMtqoKj5n4ma5zk="/>
             <table:column id="c_it_verding_edo_domain_Comune_zonaClimatica" property="zonaClimatica" z="AN5KBky2+sKhlvaL/p4J9mRN7Lk="/>
+            <table:column id="c_it_verding_edo_domain_Comune_provincia" property="provincia" z="mLSGOonjqCasXIfDP1p4l9CsfEw="/>
         </table:table>
     </page:list>
 </div>
