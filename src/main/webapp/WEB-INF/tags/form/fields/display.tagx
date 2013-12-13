@@ -38,7 +38,7 @@
             </spring:escapeBody>
           </c:when>
           <c:otherwise>
-            <spring:eval expression="object[field]" />
+            <spring:eval expression="object.${field}" /><!-- issues with nested evaluations https://jira.springsource.org/browse/ROO-3114 -->
           </c:otherwise>
         </c:choose>
       </div>

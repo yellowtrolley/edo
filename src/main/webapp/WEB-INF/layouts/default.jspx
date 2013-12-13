@@ -54,5 +54,6 @@
 	  	<footer>   		  
     		<tiles:insertAttribute name="footer" ignore="true"/>
 	    </footer>
+	    <a id="toTop" href="#" style="display: inline;"><span id="toTopHover" style="opacity: 0;"></span>To Top</a>
 	</body>
 </html>

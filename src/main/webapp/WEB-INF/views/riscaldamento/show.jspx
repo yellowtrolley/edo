@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:fmt="http://java.sun.com/jsp/jstl/fmt" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:spring="http://www.springframework.org/tags" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
+    <script>
+	    $(function() {
+			$(".tab_container").tabs();
+			
+			$( "#toggleScheda0" ).click(function() {
+				$( "#scheda0" ).toggle( "slide" );
+			});
+			$( "#toggleScheda1" ).click(function() {
+				$( "#scheda1" ).toggle( "slide" );
+			});
+		});
+    </script>
     <spring:message code="label_result_questionarioriscaldamento_bestritorno" htmlEscape="false" var="label"/>
     <spring:message code="label_result_questionarioriscaldamento_tuoi_dati" htmlEscape="false" var="touiDatiLabel"/>
     <h5>${label}</h5>
     <div class="panel">
-        <page:show id="ps_it_verding_edo_domain_QuestionarioRiscaldamento" label="${touiDatiLabel}" object="${questionarioriscaldamento}" path="/riscaldamento" z="user-managed">
+    	<page:show create="false" delete="false" list="false" update="falase" id="ps_it_verding_edo_domain_QuestionarioRiscaldamento" label="${touiDatiLabel}" object="${questionarioriscaldamento}" path="/riscaldamento" z="user-managed">
             <field:display field="tipoEnte.nome" id="s_it_verding_edo_domain_QuestionarioRiscaldamento_tipoEnte" object="${questionarioriscaldamento}" z="user-managed"/>
             <field:display field="comune.nome" id="s_it_verding_edo_domain_QuestionarioRiscaldamento_comune" object="${questionarioriscaldamento}" z="user-managed"/>
             <field:display field="tipoCombustibile.nome" id="s_it_verding_edo_domain_QuestionarioRiscaldamento_tipoCombustibile" object="${questionarioriscaldamento}" z="user-managed"/>
@@ -21,53 +33,76 @@
             <field:display field="bestRitorno" id="s_it_verding_edo_domain_QuestionarioRiscaldamento_bestRitorno" object="${questionarioriscaldamento}" render="false" z="user-managed"/>
             <field:display field="secondBestRitorno" id="s_it_verding_edo_domain_QuestionarioRiscaldamento_secondBestRitorno" object="${questionarioriscaldamento}" render="false" z="user-managed"/>
         </page:show>
-        <c:forEach end="1" items="${questionarioriscaldamento.soluzioni}" var="soluzinone">
-            <h5>${soluzinone.nome}</h5>
+        <c:forEach end="1" items="${questionarioriscaldamento.soluzioni}" var="soluzinone" varStatus="status">
+        	<spring:message code="label_it_verding_edo_domain_soluzione" htmlEscape="false" var="labelSoluzione"/>
+            <h5> ${fn:toUpperCase(labelSoluzione)} ${status.index + 1}</h5>
             <div class="panel">
+              <div class="tab_container">
                 <ul class="tabs">
                     <li class="active">
-                        <a href="#sample1">Investimento iniziale</a>
+                        <a href="#tabs${status.index}-1">Investimento iniziale</a>
                     </li>
                     <li class="">
-                        <a href="#sample2">Risparmio annuo</a>
+                        <a href="#tabs${status.index}-2">Risparmio annuo</a>
                     </li>
                     <li class="">
-                        <a href="#sample3">Anni in cui si ripaga</a>
+                        <a href="#tabs${status.index}-3">Anni in cui si ripaga</a>
                     </li>
                     <li class="">
-                        <a href="#sample4">Impatto ecologico</a>
+                        <a href="#tabs${status.index}-4">Impatto ecologico</a>
                     </li>
                 </ul>
-                <div class="tab_container">
-                    <div class="tab_content" id="sample1" style="display: block;">
+                <div class="clear"><jsp:text /></div>
+                    <div class="tab_content" id="tabs${status.index}-1" style="display: block;">
                         <p>
                             <strong>Investimento iniziale:</strong>
-                            <span class="figures">€ ${soluzinone.costoIntervento}</span>
+                            <span class="figures">€ <fmt:formatNumber value="${soluzinone.costoIntervento}" maxFractionDigits="2"/> </span>
                         </p>
                     </div>
-                    <div class="tab_content" id="sample2" style="display: none;">
+                    <div class="tab_content" id="tabs${status.index}-2" style="display: none;">
                         <p>
                             <strong>Risparmio annuo:</strong>
-                            <span class="figures">€ ${soluzinone.risparmioAnnuo}</span>
+                            <span class="figures">€ <fmt:formatNumber value="${soluzinone.risparmioAnnuo}" maxFractionDigits="2"/></span>
                         </p>
                     </div>
-                    <div class="tab_content" id="sample3" style="display: none;">
+                    <div class="tab_content" id="tabs${status.index}-3" style="display: none;">
                         <p>
                             <strong>Questo investimenti si ripaga al massimo in: </strong>
-                            <span class="figures">${soluzinone.recuperoInvestimento} anni</span>
+                            <span class="figures"><fmt:formatNumber value="${soluzinone.recuperoInvestimento}" maxFractionDigits="2"/> anni</span>
                         </p>
                     </div>
-                    <div class="tab_content" id="sample4" style="display: none;">
+                    <div class="tab_content" id="tabs${status.index}-4" style="display: none;">
                         <p>
                             <strong>Tonnellate di CO2 evitate: </strong>
-                            <span class="figures">${soluzinone.riduzioneCO2 / 1000} </span>
+                            <span class="figures"><fmt:formatNumber value="${soluzinone.riduzioneCO2 / 1000}" maxFractionDigits="2"/></span>
                         </p>
                     </div>
-                </div>
+              	</div>
                 <p>
-                    <a class="button large blue" href="provaedo-step3-schedasoluzione1.php">Visualizza scheda soluzione 1</a>
+                    <a id="toggleScheda${status.index}" class="button large blue" >
+                    	<spring:message code="label_link_scheda_soluzione" arguments="${status.index + 1}" htmlEscape="false"/>
+                    </a>
                 </p>
+                
+                <div id="scheda${status.index}" style="display:none">
+                	Tipo Caldaia: ${soluzinone.tipoCaldaia.nome} <br/>
+                	Costo intervento: ${soluzinone.costoIntervento}<br/>
+                	Nuovo consumo: ${soluzinone.nuovoConsumo}<br/>
+                	Costo annuo combustibile nuovo impianto: ${soluzinone.costoAnnuoCombustibileNuovoImpianto}<br/>
+                	Risparmio annuo: <br/>
+                	Recupero dell'investimento:<br/> 
+                	Riduzione CO2: <br/>
+                	Eventuali agevolazioni economiche al 50% o al 65%:<br/>
+                	Eventuale agevolazione economica con conto termico:<br/>
+                	Ritorno investimento con agevolazioni con detrazioni fiscali:<br/> 
+					Ritorno investimento con agevolazioni con conto termico: <br/>
+					RICAVO DOPO 10 ANNI AL NETTO DELLA SPESA INIZIALE con detrazioni:<br/> 
+					RICAVO DOPO 10 ANNI AL NETTO DELLA SPESA INIZIALE con conto termico:
+                </div>
             </div>
+            <p>
+            	<a class="button large blue" href="provaedo-step2-scopricome.php">Contatta EDO per una consulenza</a>
+            </p>
         </c:forEach>
     </div>
 </div>

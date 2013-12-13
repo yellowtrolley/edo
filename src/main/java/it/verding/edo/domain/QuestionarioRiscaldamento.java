@@ -2,6 +2,8 @@ package it.verding.edo.domain;
 import java.util.List;
 
 import org.bson.types.ObjectId;
+import org.pgg.mongo.mapping.Cascade;
+import org.pgg.mongo.mapping.CascadeType;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.layers.repository.mongo.RooMongoEntity;
@@ -23,5 +25,6 @@ public class QuestionarioRiscaldamento {
 	private Double secondBestRisparmio;
 	private Double bestRitorno;
 	private Double secondBestRitorno;
-	private List<Soluzione> soluzioni;
+	@Cascade(cascadeType = CascadeType.SAVE)
+	@DBRef private List<Soluzione> soluzioni;
 }

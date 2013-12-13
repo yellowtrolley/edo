@@ -48,16 +48,16 @@ public class QuestionarioRiscaldamentoServiceImpl implements QuestionarioRiscald
         
         // Soluzione 1
         TipoGeneratore tipoCaldaia1 = tipoGeneratoreRepo.findByNome("Nuovo generatore alimentato a gasolio");
-        soluzioni.add(getSoluzione("SOLUZIONE 1", tipoCaldaia1, questionarioRiscaldamento, Double.valueOf(800), Double.valueOf(0.053)));
+        soluzioni.add(getSoluzione(tipoCaldaia1, questionarioRiscaldamento, Double.valueOf(800), Double.valueOf(0.053)));
         
         TipoGeneratore tipoCaldaia2 = tipoGeneratoreRepo.findByNome("Nuovo generatore alimentato a GPL");
-        soluzioni.add(getSoluzione("SOLUZIONE 2", tipoCaldaia2, questionarioRiscaldamento, Double.valueOf(900), Double.valueOf(0.055)));
+        soluzioni.add(getSoluzione(tipoCaldaia2, questionarioRiscaldamento, Double.valueOf(900), Double.valueOf(0.055)));
         
         TipoGeneratore tipoCaldaia3 = tipoGeneratoreRepo.findByNome("Nuovo generatore alimentato ad aria propanata");
-        soluzioni.add(getSoluzione("SOLUZIONE 3", tipoCaldaia3, questionarioRiscaldamento, Double.valueOf(900), Double.valueOf(0.055)));
+        soluzioni.add(getSoluzione(tipoCaldaia3, questionarioRiscaldamento, Double.valueOf(900), Double.valueOf(0.055)));
         
         TipoGeneratore tipoCaldaia4 = tipoGeneratoreRepo.findByNome("Nuovo generatore alimentato a gas naturale");
-        soluzioni.add(getSoluzione("SOLUZIONE 4", tipoCaldaia4, questionarioRiscaldamento, Double.valueOf(1100), Double.valueOf(0.055)));
+        soluzioni.add(getSoluzione(tipoCaldaia4, questionarioRiscaldamento, Double.valueOf(1100), Double.valueOf(0.055)));
         
         questionarioRiscaldamento.setSoluzioni(soluzioni);
         
@@ -93,7 +93,7 @@ public class QuestionarioRiscaldamentoServiceImpl implements QuestionarioRiscald
 	
 	
 	// TODO DARE UN NOME A PARAM1 E PARAM2. Se sono relativi al tipo caldaia inserirli nel model
-	private Soluzione getSoluzione(String nome, TipoGeneratore tipoGeneratore, QuestionarioRiscaldamento questionarioRiscaldamento,
+	private Soluzione getSoluzione(TipoGeneratore tipoGeneratore, QuestionarioRiscaldamento questionarioRiscaldamento,
 			Double param1, Double param2) {
 		// Dati di input
         Integer litriAnno = questionarioRiscaldamento.getLitriCombustibileAnno();
@@ -103,7 +103,7 @@ public class QuestionarioRiscaldamentoServiceImpl implements QuestionarioRiscald
         Double fattorePiuDi10anni = questionarioRiscaldamento.getIsPiuDi10anni() ? 0.75 : 0.85;
         Double spesaAnnua = litriAnno * combustibile.getCosto();
         
-		Soluzione soluzione = new Soluzione(nome, tipoGeneratore, litriAnno);
+		Soluzione soluzione = new Soluzione(tipoGeneratore, litriAnno);
 		
 		Double costoIntervento1 = (param1 + param2 * 3 * 35 * m2) * 1.21;
         

@@ -4,17 +4,23 @@
 package it.verding.edo.web;
 
 import it.verding.edo.domain.Soluzione;
+import it.verding.edo.repositories.TipoGeneratoreRepo;
 import it.verding.edo.web.SoluzioneController;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
 
 privileged aspect SoluzioneController_Roo_Controller {
     
+    @Autowired
+    TipoGeneratoreRepo SoluzioneController.tipoGeneratoreRepo;
+    
     void SoluzioneController.populateEditForm(Model uiModel, Soluzione soluzione) {
         uiModel.addAttribute("soluzione", soluzione);
+        uiModel.addAttribute("tipogeneratores", tipoGeneratoreRepo.findAll());
     }
     
     String SoluzioneController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

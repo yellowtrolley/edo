@@ -1,6 +1,5 @@
 package it.verding.edo.domain;
 import org.bson.types.ObjectId;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.layers.repository.mongo.RooMongoEntity;
 import org.springframework.roo.addon.tostring.RooToString;
@@ -10,6 +9,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooMongoEntity(identifierType = ObjectId.class)
 public class Soluzione {
 	/*
+	 * TODO Serve?
 	 * Nome
 	 */
 	private String nome;
@@ -22,7 +22,6 @@ public class Soluzione {
 	/*
 	 * Tipo di Caldaia
 	 */
-	@DBRef
 	private TipoGeneratore tipoGeneratore;
 
 	/*
@@ -86,8 +85,7 @@ public class Soluzione {
     private Double ricavo10anniConContoTermico;
     
     
-    public Soluzione(String nome, TipoGeneratore tipoGeneratore, int litriAnno) {
-    	this.nome = nome;
+    public Soluzione(TipoGeneratore tipoGeneratore, int litriAnno) {
 		this.tipoGeneratore = tipoGeneratore;
 		this.litriAnno = litriAnno;
 		this.tipoGeneratore = tipoGeneratore;

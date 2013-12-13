@@ -26,7 +26,7 @@
         <field:input disableFormBinding="true" field="comuneV" id="c_it_verding_edo_domain_QuestionarioRiscaldamento_comune" z=""/>
         <input type="hidden" name="comune" id="comune" />
         <field:select field="tipoCombustibile" id="c_it_verding_edo_domain_QuestionarioRiscaldamento_tipoCombustibile" itemLabel="nome" itemValue="id" items="${tipiCombustibile}" path="/tipoCombustibile" z="user-managed"/>
-        <field:select field="tipoEnte" id="c_it_verding_edo_domain_QuestionarioRiscaldamento_tipoTerminaleRiscaldamento" itemLabel="nome" itemValue="id" items="${tipiTerminaleRiscaldamento}" path="/tipoTerminaleRiscaldamento" z="user-managed"/>
+        <field:select field="tipoTerminaleRiscaldamento" id="c_it_verding_edo_domain_QuestionarioRiscaldamento_tipoTerminaleRiscaldamento" itemLabel="nome" itemValue="id" items="${tipiTerminaleRiscaldamento}" path="/tipoTerminaleRiscaldamento" z="user-managed"/>
         <field:input field="metri2" id="c_it_verding_edo_domain_QuestionarioRiscaldamento_metri2" validationMessageCode="field_invalid_integer" z="user-managed"/>
         <field:input field="litriCombustibileAnno" id="c_it_verding_edo_domain_QuestionarioRiscaldamento_litriCombustibileAnno" validationMessageCode="field_invalid_integer" z="user-managed"/>
         <field:checkbox field="isSistemaTermoregolazione" id="c_it_verding_edo_domain_QuestionarioRiscaldamento_isSistemaTermoregolazione" z="user-managed"/>
