@@ -7,7 +7,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJavaBean
 @RooToString
 @RooMongoEntity(identifierType = ObjectId.class)
-public class TipoCaldaia {
+public class TipoGeneratore {
 	/*
 	 * Nome
 	 */
@@ -18,7 +18,7 @@ public class TipoCaldaia {
 	 */
 	private TipoCombustibile tipoCombustibile;
 
-	public TipoCaldaia(String nome, TipoCombustibile tipoCombustibile) {
+	public TipoGeneratore(String nome, TipoCombustibile tipoCombustibile) {
 		super();
 		this.nome = nome;
 		this.tipoCombustibile = tipoCombustibile;

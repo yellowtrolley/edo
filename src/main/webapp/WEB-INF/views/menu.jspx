@@ -68,5 +68,8 @@
             <menu:item id="i_comune_new" messageCode="global_menu_new" url="/comunes?form" z="d5CWrcAiYXOwAqfFTVyVj+xllLs="/>
             <menu:item id="i_comune_list" messageCode="global_menu_list" url="/comunes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="Q0llPKqLsALu6NTgAOyDovGubEc="/>
         </menu:category>
+        <menu:category id="c_tipogeneratore" z="t5YedOB00TnUDhdSjymXIFOCGCo=">
+            <menu:item id="i_tipogeneratore_new" messageCode="global_menu_new" url="/tipocaldaias?form" z="JMS++0AkCtVKGXBKrchSLwX+bjE="/>
+        </menu:category>
     </menu:menu>
 </nav>

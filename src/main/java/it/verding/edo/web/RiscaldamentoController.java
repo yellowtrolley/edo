@@ -1,7 +1,7 @@
 package it.verding.edo.web;
 import it.verding.edo.domain.QuestionarioRiscaldamento;
 import it.verding.edo.domain.Soluzione;
-import it.verding.edo.domain.TipoCaldaia;
+import it.verding.edo.domain.TipoGeneratore;
 import it.verding.edo.domain.TipoCombustibile;
 import it.verding.edo.util.Combustibili;
 

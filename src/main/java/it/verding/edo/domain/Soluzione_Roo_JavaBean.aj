@@ -4,7 +4,7 @@
 package it.verding.edo.domain;
 
 import it.verding.edo.domain.Soluzione;
-import it.verding.edo.domain.TipoCaldaia;
+import it.verding.edo.domain.TipoGeneratore;
 
 privileged aspect Soluzione_Roo_JavaBean {
     
@@ -24,12 +24,12 @@ privileged aspect Soluzione_Roo_JavaBean {
         this.litriAnno = litriAnno;
     }
     
-    public TipoCaldaia Soluzione.getTipoCaldaia() {
-        return this.tipoCaldaia;
+    public TipoGeneratore Soluzione.getTipoGeneratore() {
+        return this.tipoGeneratore;
     }
     
-    public void Soluzione.setTipoCaldaia(TipoCaldaia tipoCaldaia) {
-        this.tipoCaldaia = tipoCaldaia;
+    public void Soluzione.setTipoGeneratore(TipoGeneratore tipoGeneratore) {
+        this.tipoGeneratore = tipoGeneratore;
     }
     
     public Double Soluzione.getCostoIntervento() {

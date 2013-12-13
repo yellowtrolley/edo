@@ -1,5 +1,6 @@
 package it.verding.edo.domain;
 import org.bson.types.ObjectId;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.layers.repository.mongo.RooMongoEntity;
 import org.springframework.roo.addon.tostring.RooToString;
@@ -21,7 +22,8 @@ public class Soluzione {
 	/*
 	 * Tipo di Caldaia
 	 */
-	private TipoCaldaia tipoCaldaia;
+	@DBRef
+	private TipoGeneratore tipoGeneratore;
 
 	/*
 	 * Costo intervento (€)
@@ -84,10 +86,10 @@ public class Soluzione {
     private Double ricavo10anniConContoTermico;
     
     
-    public Soluzione(String nome, TipoCaldaia tipoCaldaia, int litriAnno) {
+    public Soluzione(String nome, TipoGeneratore tipoGeneratore, int litriAnno) {
     	this.nome = nome;
-		this.tipoCaldaia = tipoCaldaia;
+		this.tipoGeneratore = tipoGeneratore;
 		this.litriAnno = litriAnno;
-		this.tipoCaldaia = tipoCaldaia;
+		this.tipoGeneratore = tipoGeneratore;
 	}
 }

@@ -2,12 +2,13 @@ package it.verding.edo.service;
 
 import it.verding.edo.domain.QuestionarioRiscaldamento;
 import it.verding.edo.domain.Soluzione;
-import it.verding.edo.domain.TipoCaldaia;
 import it.verding.edo.domain.TipoCombustibile;
 import it.verding.edo.domain.TipoEnte;
+import it.verding.edo.domain.TipoGeneratore;
 import it.verding.edo.domain.TipoTerminaleRiscaldamento;
 import it.verding.edo.repositories.TipoCombustibileRepo;
 import it.verding.edo.repositories.TipoEnteRepo;
+import it.verding.edo.repositories.TipoGeneratoreRepo;
 import it.verding.edo.repositories.TipoTerminaleRiscaldamentoRepo;
 import it.verding.edo.util.Combustibili;
 
@@ -22,6 +23,7 @@ public class QuestionarioRiscaldamentoServiceImpl implements QuestionarioRiscald
 	@Autowired TipoEnteRepo tipoEnteRepo;
 	@Autowired TipoCombustibileRepo tipoCombustibileRepo;
 	@Autowired TipoTerminaleRiscaldamentoRepo tipoTerminaleRiscaldamentoRepo;
+	@Autowired TipoGeneratoreRepo tipoGeneratoreRepo;
 	
 	@Override
 	public List<TipoEnte> findAllTipoEnte() {
@@ -45,16 +47,16 @@ public class QuestionarioRiscaldamentoServiceImpl implements QuestionarioRiscald
         List<Soluzione> soluzioni = new ArrayList<>();
         
         // Soluzione 1
-        TipoCaldaia tipoCaldaia1 = new TipoCaldaia("NUOVO GENERATORE ALIMENTATO A GASOLIO", findTipoCombustibile(Combustibili.GASOLIO.nome()));
+        TipoGeneratore tipoCaldaia1 = tipoGeneratoreRepo.findByNome("Nuovo generatore alimentato a gasolio");
         soluzioni.add(getSoluzione("SOLUZIONE 1", tipoCaldaia1, questionarioRiscaldamento, Double.valueOf(800), Double.valueOf(0.053)));
         
-        TipoCaldaia tipoCaldaia2 = new TipoCaldaia("NUOVO GENERATORE ALIMENTATO A GPL", findTipoCombustibile(Combustibili.GPL.nome()));
+        TipoGeneratore tipoCaldaia2 = tipoGeneratoreRepo.findByNome("Nuovo generatore alimentato a GPL");
         soluzioni.add(getSoluzione("SOLUZIONE 2", tipoCaldaia2, questionarioRiscaldamento, Double.valueOf(900), Double.valueOf(0.055)));
         
-        TipoCaldaia tipoCaldaia3 = new TipoCaldaia("NUOVO GENERATORE ALIMENTATO AD ARIA PROPANATA", findTipoCombustibile(Combustibili.PROPANO.nome()));
+        TipoGeneratore tipoCaldaia3 = tipoGeneratoreRepo.findByNome("Nuovo generatore alimentato ad aria propanata");
         soluzioni.add(getSoluzione("SOLUZIONE 3", tipoCaldaia3, questionarioRiscaldamento, Double.valueOf(900), Double.valueOf(0.055)));
         
-        TipoCaldaia tipoCaldaia4 = new TipoCaldaia("NUOVO GENERATORE ALIMENTATO A GAS NATURALE", findTipoCombustibile(Combustibili.GAS_NATURALE.nome()));
+        TipoGeneratore tipoCaldaia4 = tipoGeneratoreRepo.findByNome("Nuovo generatore alimentato a gas naturale");
         soluzioni.add(getSoluzione("SOLUZIONE 4", tipoCaldaia4, questionarioRiscaldamento, Double.valueOf(1100), Double.valueOf(0.055)));
         
         questionarioRiscaldamento.setSoluzioni(soluzioni);
@@ -91,7 +93,7 @@ public class QuestionarioRiscaldamentoServiceImpl implements QuestionarioRiscald
 	
 	
 	// TODO DARE UN NOME A PARAM1 E PARAM2. Se sono relativi al tipo caldaia inserirli nel model
-	private Soluzione getSoluzione(String nome, TipoCaldaia tipoCaldaia, QuestionarioRiscaldamento questionarioRiscaldamento,
+	private Soluzione getSoluzione(String nome, TipoGeneratore tipoGeneratore, QuestionarioRiscaldamento questionarioRiscaldamento,
 			Double param1, Double param2) {
 		// Dati di input
         Integer litriAnno = questionarioRiscaldamento.getLitriCombustibileAnno();
@@ -101,20 +103,20 @@ public class QuestionarioRiscaldamentoServiceImpl implements QuestionarioRiscald
         Double fattorePiuDi10anni = questionarioRiscaldamento.getIsPiuDi10anni() ? 0.75 : 0.85;
         Double spesaAnnua = litriAnno * combustibile.getCosto();
         
-		Soluzione soluzione = new Soluzione(nome, tipoCaldaia, litriAnno);
+		Soluzione soluzione = new Soluzione(nome, tipoGeneratore, litriAnno);
 		
 		Double costoIntervento1 = (param1 + param2 * 3 * 35 * m2) * 1.21;
         
         // nuovo consumo
-		Double nuovoConsumo = litriAnno * tipoCaldaia.getTipoCombustibile().getEnergiaPrimaria() * fattorePiuDi10anni / (0.85 * combustibile.getEnergiaPrimaria()) * fattoreSistTermoregolazione;
+		Double nuovoConsumo = litriAnno * tipoGeneratore.getTipoCombustibile().getEnergiaPrimaria() * fattorePiuDi10anni / (0.85 * combustibile.getEnergiaPrimaria()) * fattoreSistTermoregolazione;
 
         // risparmio annuo (€)
-		Double costoAnnuoCombustibileNuovoImpianto = nuovoConsumo * tipoCaldaia.getTipoCombustibile().getCosto();
+		Double costoAnnuoCombustibileNuovoImpianto = nuovoConsumo * tipoGeneratore.getTipoCombustibile().getCosto();
 		Double risparmioAnnuo = spesaAnnua - costoAnnuoCombustibileNuovoImpianto;
         
         // riduzione CO2 (kg/anno)
 		Double riduzioneCO2 = combustibile.getFattoreDiEmissione() * litriAnno * combustibile.getEnergiaPrimaria() 
-        		- tipoCaldaia.getTipoCombustibile().getFattoreDiEmissione() * nuovoConsumo * tipoCaldaia.getTipoCombustibile().getEnergiaPrimaria();
+        		- tipoGeneratore.getTipoCombustibile().getFattoreDiEmissione() * nuovoConsumo * tipoGeneratore.getTipoCombustibile().getEnergiaPrimaria();
         
         // TODO 0.5 o 0.65? Inserire nel model? eventuali agevolazioni economiche al 50% o al 65%  (€)
 		Double eventualiAgevolazioniEconomiche = costoIntervento1 * 0.5;

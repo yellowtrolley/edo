@@ -7,6 +7,6 @@ import org.springframework.roo.addon.layers.service.RooService;
 
 @RooService(domainTypes = { it.verding.edo.domain.Comune.class })
 public interface ComuneService {
-	List<Comune> findComunesByNome(String nome);
+	Comune findComuneByNomeAndProvincia(String nome, String nomeProvincia);
 	List<Comune> findComunesByNomeLike(String nome);
 }

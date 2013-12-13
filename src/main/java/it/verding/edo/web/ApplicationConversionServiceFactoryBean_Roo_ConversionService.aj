@@ -8,9 +8,9 @@ import it.verding.edo.domain.Provincia;
 import it.verding.edo.domain.QuestionarioRiscaldamento;
 import it.verding.edo.domain.Regione;
 import it.verding.edo.domain.Soluzione;
-import it.verding.edo.domain.TipoCaldaia;
 import it.verding.edo.domain.TipoCombustibile;
 import it.verding.edo.domain.TipoEnte;
+import it.verding.edo.domain.TipoGeneratore;
 import it.verding.edo.domain.TipoTerminaleRiscaldamento;
 import it.verding.edo.domain.ZonaClimatica;
 import it.verding.edo.repositories.ProvinciaRepo;
@@ -168,22 +168,6 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
-    public Converter<TipoCaldaia, String> ApplicationConversionServiceFactoryBean.getTipoCaldaiaToStringConverter() {
-        return new org.springframework.core.convert.converter.Converter<it.verding.edo.domain.TipoCaldaia, java.lang.String>() {
-            public String convert(TipoCaldaia tipoCaldaia) {
-                return new StringBuilder().append(tipoCaldaia.getNome()).toString();
-            }
-        };
-    }
-    
-    public Converter<String, TipoCaldaia> ApplicationConversionServiceFactoryBean.getStringToTipoCaldaiaConverter() {
-        return new org.springframework.core.convert.converter.Converter<java.lang.String, it.verding.edo.domain.TipoCaldaia>() {
-            public it.verding.edo.domain.TipoCaldaia convert(String id) {
-                return getObject().convert(getObject().convert(id, ObjectId.class), TipoCaldaia.class);
-            }
-        };
-    }
-    
     public Converter<TipoCombustibile, String> ApplicationConversionServiceFactoryBean.getTipoCombustibileToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<it.verding.edo.domain.TipoCombustibile, java.lang.String>() {
             public String convert(TipoCombustibile tipoCombustibile) {
@@ -228,6 +212,22 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         return new org.springframework.core.convert.converter.Converter<java.lang.String, it.verding.edo.domain.TipoEnte>() {
             public it.verding.edo.domain.TipoEnte convert(String id) {
                 return getObject().convert(getObject().convert(id, ObjectId.class), TipoEnte.class);
+            }
+        };
+    }
+    
+    public Converter<TipoGeneratore, String> ApplicationConversionServiceFactoryBean.getTipoGeneratoreToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<it.verding.edo.domain.TipoGeneratore, java.lang.String>() {
+            public String convert(TipoGeneratore tipoGeneratore) {
+                return new StringBuilder().append(tipoGeneratore.getNome()).toString();
+            }
+        };
+    }
+    
+    public Converter<String, TipoGeneratore> ApplicationConversionServiceFactoryBean.getStringToTipoGeneratoreConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, it.verding.edo.domain.TipoGeneratore>() {
+            public it.verding.edo.domain.TipoGeneratore convert(String id) {
+                return getObject().convert(getObject().convert(id, ObjectId.class), TipoGeneratore.class);
             }
         };
     }
@@ -295,14 +295,14 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getStringToRegioneConverter());
         registry.addConverter(getSoluzioneToStringConverter());
         registry.addConverter(getStringToSoluzioneConverter());
-        registry.addConverter(getTipoCaldaiaToStringConverter());
-        registry.addConverter(getStringToTipoCaldaiaConverter());
         registry.addConverter(getTipoCombustibileToStringConverter());
         registry.addConverter(getIdToTipoCombustibileConverter());
         registry.addConverter(getStringToTipoCombustibileConverter());
         registry.addConverter(getTipoEnteToStringConverter());
         registry.addConverter(getIdToTipoEnteConverter());
         registry.addConverter(getStringToTipoEnteConverter());
+        registry.addConverter(getTipoGeneratoreToStringConverter());
+        registry.addConverter(getStringToTipoGeneratoreConverter());
         registry.addConverter(getTipoTerminaleRiscaldamentoToStringConverter());
         registry.addConverter(getIdToTipoTerminaleRiscaldamentoConverter());
         registry.addConverter(getStringToTipoTerminaleRiscaldamentoConverter());

@@ -5,7 +5,6 @@
     <page:show id="ps_it_verding_edo_domain_Soluzione" object="${soluzione}" path="/soluziones" z="vtdgKZ3uBSrSqU9zV/AiBfTbItk=">
         <field:display field="nome" id="s_it_verding_edo_domain_Soluzione_nome" object="${soluzione}" z="jCFIpzpaunS5g1RPPe+aaHroTIo="/>
         <field:display field="litriAnno" id="s_it_verding_edo_domain_Soluzione_litriAnno" object="${soluzione}" z="nuQDf+kTiWZbvSzG8KLLo4Vrcso="/>
-        <field:display field="tipoCaldaia" id="s_it_verding_edo_domain_Soluzione_tipoCaldaia" object="${soluzione}" z="f0KHijK4s1j/qBZNsKAm0adtRNE="/>
         <field:display field="costoIntervento" id="s_it_verding_edo_domain_Soluzione_costoIntervento" object="${soluzione}" z="CSBTH6THGqIygJDPbyNo/9uRVCk="/>
         <field:display field="nuovoConsumo" id="s_it_verding_edo_domain_Soluzione_nuovoConsumo" object="${soluzione}" z="8U0DoJWmO31UPcCbE5rwsNz25E4="/>
         <field:display field="costoAnnuoCombustibileNuovoImpianto" id="s_it_verding_edo_domain_Soluzione_costoAnnuoCombustibileNuovoImpianto" object="${soluzione}" z="LLYQfTnbQv1sLGgVHtt/EwuI0Nw="/>
@@ -18,5 +17,6 @@
         <field:display field="recuperoInvestimentoConAgevolazioniConContoTermico" id="s_it_verding_edo_domain_Soluzione_recuperoInvestimentoConAgevolazioniConContoTermico" object="${soluzione}" z="BcYWMIOQM74m/wLFIIikvF4QFxw="/>
         <field:display field="ricavo10anniConDetrazioni" id="s_it_verding_edo_domain_Soluzione_ricavo10anniConDetrazioni" object="${soluzione}" z="aq+T0/932UooBp8ryc7hv+thIhQ="/>
         <field:display field="ricavo10anniConContoTermico" id="s_it_verding_edo_domain_Soluzione_ricavo10anniConContoTermico" object="${soluzione}" z="XF3ou73JE+Z7mgeh6Vvyzd10RaY="/>
+        <field:display field="tipoGeneratore" id="s_it_verding_edo_domain_Soluzione_tipoGeneratore" object="${soluzione}" z="4PoHIlTD2Pyuu0GIe9fMje9unHo="/>
     </page:show>
 </div>

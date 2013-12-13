@@ -7,6 +7,6 @@ import org.springframework.roo.addon.layers.repository.mongo.RooMongoRepository;
 
 @RooMongoRepository(domainType = TipoEnte.class)
 public interface TipoEnteRepo {
-
     List<TipoEnte> findAll();
+    TipoEnte findByNome(String nome);
 }

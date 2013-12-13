@@ -5,7 +5,6 @@
     <form:create id="fc_it_verding_edo_domain_Soluzione" modelAttribute="soluzione" path="/soluziones" render="${empty dependencies}" z="OhZDBClnbT9vtHnlrUVrmw6741Y=">
         <field:input field="nome" id="c_it_verding_edo_domain_Soluzione_nome" z="DwDe1vZK4VLcYW2Ysy0yK/d95BI="/>
         <field:input field="litriAnno" id="c_it_verding_edo_domain_Soluzione_litriAnno" z="HJp++ZqCyYxn5NCHU7dysr2+NzQ="/>
-        <field:input field="tipoCaldaia" id="c_it_verding_edo_domain_Soluzione_tipoCaldaia" z="KQKI6Svqv7taBxX+FGdz3QeC9RI="/>
         <field:input field="costoIntervento" id="c_it_verding_edo_domain_Soluzione_costoIntervento" validationMessageCode="field_invalid_number" z="HfPm11mU3sg1oD73xh3wh5L8Qjo="/>
         <field:input field="nuovoConsumo" id="c_it_verding_edo_domain_Soluzione_nuovoConsumo" validationMessageCode="field_invalid_number" z="pMhujwp+1vJLxTOiy25rvhp/qdM="/>
         <field:input field="costoAnnuoCombustibileNuovoImpianto" id="c_it_verding_edo_domain_Soluzione_costoAnnuoCombustibileNuovoImpianto" validationMessageCode="field_invalid_number" z="IqccjoWY50lFjv8p+6kfiOJhji4="/>
@@ -19,6 +18,7 @@
         <field:input field="ricavo10anniConDetrazioni" id="c_it_verding_edo_domain_Soluzione_ricavo10anniConDetrazioni" validationMessageCode="field_invalid_number" z="gjNMrIzTYtq4OM5uBUwu0FW4iec="/>
         <field:input field="ricavo10anniConContoTermico" id="c_it_verding_edo_domain_Soluzione_ricavo10anniConContoTermico" validationMessageCode="field_invalid_number" z="27XUATlgx0rlgFlKdHLefVe/9oo="/>
         <field:input field="id" id="c_it_verding_edo_domain_Soluzione_id" required="true" z="6rVvGJtZBafRNiC8Mg9D1p5XXqc="/>
+        <field:input field="tipoGeneratore" id="c_it_verding_edo_domain_Soluzione_tipoGeneratore" z="rxmQDyC/UZwv42Oe6H2y66kfG9Q="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_it_verding_edo_domain_Soluzione" render="${not empty dependencies}" z="l50I3Y1wwD8woWBhImqW8zxxM+Y="/>
 </div>

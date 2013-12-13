@@ -6,10 +6,10 @@
         <table:table data="${soluziones}" id="l_it_verding_edo_domain_Soluzione" path="/soluziones" z="Uye+ADp39B+BqAyoLlqkaNwrhf4=">
             <table:column id="c_it_verding_edo_domain_Soluzione_nome" property="nome" z="P4TAvzOIuq8Kvx2ehOjpG7vxOAQ="/>
             <table:column id="c_it_verding_edo_domain_Soluzione_litriAnno" property="litriAnno" z="Cw1GFhKKmspC4q9N93poPS/ogds="/>
-            <table:column id="c_it_verding_edo_domain_Soluzione_tipoCaldaia" property="tipoCaldaia" z="YOQYDNk/sfYBGgbpmTjWbVdCCvY="/>
             <table:column id="c_it_verding_edo_domain_Soluzione_costoIntervento" property="costoIntervento" z="1oL3lUinn9sjakL6d2R4b29KP50="/>
             <table:column id="c_it_verding_edo_domain_Soluzione_nuovoConsumo" property="nuovoConsumo" z="+a4cOJpO+GRVVYaugzjtiZIFvM4="/>
             <table:column id="c_it_verding_edo_domain_Soluzione_costoAnnuoCombustibileNuovoImpianto" property="costoAnnuoCombustibileNuovoImpianto" z="9kuzlTelpZ9OOdcr29/GievKkHA="/>
+            <table:column id="c_it_verding_edo_domain_Soluzione_tipoGeneratore" property="tipoGeneratore" z="wkH/CngOfRByWB9tek64vPCcdcY="/>
         </table:table>
     </page:list>
 </div>

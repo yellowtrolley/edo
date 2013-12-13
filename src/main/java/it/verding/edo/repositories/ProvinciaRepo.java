@@ -7,6 +7,6 @@ import org.springframework.roo.addon.layers.repository.mongo.RooMongoRepository;
 
 @RooMongoRepository(domainType = Provincia.class)
 public interface ProvinciaRepo {
-
     List<Provincia> findAll();
+    Provincia findByNome(String nome);
 }

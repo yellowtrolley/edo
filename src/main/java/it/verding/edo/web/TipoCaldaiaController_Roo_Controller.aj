@@ -3,7 +3,7 @@
 
 package it.verding.edo.web;
 
-import it.verding.edo.domain.TipoCaldaia;
+import it.verding.edo.domain.TipoGeneratore;
 import it.verding.edo.repositories.TipoCombustibileRepo;
 import it.verding.edo.web.TipoCaldaiaController;
 import java.io.UnsupportedEncodingException;
@@ -18,8 +18,8 @@ privileged aspect TipoCaldaiaController_Roo_Controller {
     @Autowired
     TipoCombustibileRepo TipoCaldaiaController.tipoCombustibileRepo;
     
-    void TipoCaldaiaController.populateEditForm(Model uiModel, TipoCaldaia tipoCaldaia) {
-        uiModel.addAttribute("tipoCaldaia", tipoCaldaia);
+    void TipoCaldaiaController.populateEditForm(Model uiModel, TipoGeneratore tipoGeneratore) {
+        uiModel.addAttribute("tipoGeneratore", tipoGeneratore);
         uiModel.addAttribute("tipocombustibiles", tipoCombustibileRepo.findAll());
     }
     
