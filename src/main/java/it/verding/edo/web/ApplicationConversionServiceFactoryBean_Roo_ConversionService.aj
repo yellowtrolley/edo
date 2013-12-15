@@ -10,14 +10,12 @@ import it.verding.edo.domain.Regione;
 import it.verding.edo.domain.Soluzione;
 import it.verding.edo.domain.TipoCombustibile;
 import it.verding.edo.domain.TipoEnte;
-import it.verding.edo.domain.TipoGeneratore;
 import it.verding.edo.domain.TipoTerminaleRiscaldamento;
 import it.verding.edo.domain.ZonaClimatica;
 import it.verding.edo.repositories.ProvinciaRepo;
 import it.verding.edo.repositories.RegioneRepo;
 import it.verding.edo.repositories.TipoCombustibileRepo;
 import it.verding.edo.repositories.TipoEnteRepo;
-import it.verding.edo.repositories.TipoGeneratoreRepo;
 import it.verding.edo.repositories.TipoTerminaleRiscaldamentoRepo;
 import it.verding.edo.repositories.ZonaClimaticaRepo;
 import it.verding.edo.service.ComuneService;
@@ -50,9 +48,6 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     
     @Autowired
     TipoEnteRepo ApplicationConversionServiceFactoryBean.tipoEnteRepo;
-    
-    @Autowired
-    TipoGeneratoreRepo ApplicationConversionServiceFactoryBean.tipoGeneratoreRepo;
     
     @Autowired
     TipoTerminaleRiscaldamentoRepo ApplicationConversionServiceFactoryBean.tipoTerminaleRiscaldamentoRepo;
@@ -220,30 +215,6 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
-    public Converter<TipoGeneratore, String> ApplicationConversionServiceFactoryBean.getTipoGeneratoreToStringConverter() {
-        return new org.springframework.core.convert.converter.Converter<it.verding.edo.domain.TipoGeneratore, java.lang.String>() {
-            public String convert(TipoGeneratore tipoGeneratore) {
-                return new StringBuilder().append(tipoGeneratore.getNome()).toString();
-            }
-        };
-    }
-    
-    public Converter<ObjectId, TipoGeneratore> ApplicationConversionServiceFactoryBean.getIdToTipoGeneratoreConverter() {
-        return new org.springframework.core.convert.converter.Converter<org.bson.types.ObjectId, it.verding.edo.domain.TipoGeneratore>() {
-            public it.verding.edo.domain.TipoGeneratore convert(org.bson.types.ObjectId id) {
-                return tipoGeneratoreRepo.findOne(id);
-            }
-        };
-    }
-    
-    public Converter<String, TipoGeneratore> ApplicationConversionServiceFactoryBean.getStringToTipoGeneratoreConverter() {
-        return new org.springframework.core.convert.converter.Converter<java.lang.String, it.verding.edo.domain.TipoGeneratore>() {
-            public it.verding.edo.domain.TipoGeneratore convert(String id) {
-                return getObject().convert(getObject().convert(id, ObjectId.class), TipoGeneratore.class);
-            }
-        };
-    }
-    
     public Converter<TipoTerminaleRiscaldamento, String> ApplicationConversionServiceFactoryBean.getTipoTerminaleRiscaldamentoToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<it.verding.edo.domain.TipoTerminaleRiscaldamento, java.lang.String>() {
             public String convert(TipoTerminaleRiscaldamento tipoTerminaleRiscaldamento) {
@@ -313,9 +284,6 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getTipoEnteToStringConverter());
         registry.addConverter(getIdToTipoEnteConverter());
         registry.addConverter(getStringToTipoEnteConverter());
-        registry.addConverter(getTipoGeneratoreToStringConverter());
-        registry.addConverter(getIdToTipoGeneratoreConverter());
-        registry.addConverter(getStringToTipoGeneratoreConverter());
         registry.addConverter(getTipoTerminaleRiscaldamentoToStringConverter());
         registry.addConverter(getIdToTipoTerminaleRiscaldamentoConverter());
         registry.addConverter(getStringToTipoTerminaleRiscaldamentoConverter());

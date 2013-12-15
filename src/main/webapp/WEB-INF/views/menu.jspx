@@ -70,6 +70,7 @@
         </menu:category>
         <menu:category id="c_tipogeneratore" z="t5YedOB00TnUDhdSjymXIFOCGCo=">
             <menu:item id="i_tipogeneratore_new" messageCode="global_menu_new" url="/tipocaldaias?form" z="JMS++0AkCtVKGXBKrchSLwX+bjE="/>
+            <menu:item id="i_tipogeneratore_list" messageCode="global_menu_list" url="/tipocaldaias?page=1&amp;size=${empty param.size ? 10 : param.size}" z="9jW8AeYvNNtxe9y4AieYIILXuc8="/>
         </menu:category>
     </menu:menu>
 </nav>
